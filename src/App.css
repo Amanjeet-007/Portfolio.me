@@ -1,0 +1,60 @@
+@font-face {
+  font-family: 'Bebas Neue';
+  src: url('../Font/BebasNeue-Regular.ttf') format('truetype');
+  gap: 2px;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Black ops';
+  src: url('../Font/BlackOpsOne-Regular.ttf') format('truetype');
+  gap: 2px;
+  font-weight: normal;
+  font-style: normal;
+}
+body {
+  background-color: black;
+  font-family: 'Bebas Neue', sans-serif;
+}
+.name{
+  font-family: 'Black ops',sans-serif;
+  
+}
+.menu{
+  transition: .7s;
+  transform-origin: center;
+  
+  max-width: 90%;
+  overflow:scroll;
+  flex-wrap: wrap;
+  scrollbar-3dlight-color: blueviolet;
+  -ms-overflow-style: none;  /* Hide scrollbar in IE/Edge */
+  scrollbar-width: none;      /* Hide scrollbar in Firefox */
+  
+}
+.menu ul li:hover{
+  color: black;
+  transition: .7s;
+  background-color: rgba(235, 222, 222, 0.788);
+
+}
+marquee{
+  font-family: 'Black ops',sans-serif;
+}
+/* Add this in your global styles (e.g., styles.css) */
+.menu::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in WebKit (Chrome, Safari, Edge) */
+}
+
+
+/*
+custom sccrollbar
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #ff0000, #ff7300);
+  border-radius: 10px;
+} */
