@@ -15,17 +15,16 @@
 body {
   background-color: black;
   font-family: 'Bebas Neue', sans-serif;
+  color: white;
 }
 .name{
   font-family: 'Black ops',sans-serif;
   
 }
 .menu{
-  transition: .6s;
+  transition: .4s;
   transform-origin: center;
-  
-  max-width: 90%;
-  overflow:scroll;
+  /* overflow:scroll; */
   flex-wrap: wrap;
   scrollbar-3dlight-color: blueviolet;
   -ms-overflow-style: none;  /* Hide scrollbar in IE/Edge */
@@ -35,6 +34,12 @@ body {
 .menu ul li:hover{
   color: black;
   transition: .7s;
+  background-color: rgba(235, 222, 222, 0.788);
+
+}
+.active{
+  border-radius:25px;
+  color: black;
   background-color: rgba(235, 222, 222, 0.788);
 
 }
@@ -57,4 +62,13 @@ custom sccrollbar
 ::-webkit-scrollbar-thumb {
   background: linear-gradient(to bottom, #ff0000, #ff7300);
   border-radius: 10px;
+} */
+
+.project{
+  background-color: chartreuse;
+  padding: 10px 5px  ;
+  width: 40rem;
+}
+/* .project img{
+
 } */
