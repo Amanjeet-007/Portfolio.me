@@ -3,6 +3,7 @@ import { useState, useRef, useEffect } from "react"
 import { NavLink } from "react-router";
 import '../App.css'
 import gsap from "gsap/src";
+import Ball from './Ball.jsx'
 // import { useGSAP } from "@gsap/react";
 export default function Navbar() {
     const [show, setShow] = useState(false)
@@ -18,7 +19,9 @@ export default function Navbar() {
 
     return (
         <>
-            <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-5 rounded justify-between">
+        
+            <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-5 rounded justify-between relative">
+                <Ball/>
                 <div className="icon h-min w-min" onClick={() => { icon(); (show ? setShow(false) : setShow(true)) }} ref={boxRef}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8 cursor-pointer" >
                         <path fillRule="evenodd" d="M3 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 5.25Zm0 4.5A.75.75 0 0 1 3.75 9h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />

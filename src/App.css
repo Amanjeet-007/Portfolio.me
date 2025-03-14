@@ -17,6 +17,10 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   color: white;
 }
+h2{
+  font-size: 100px;
+  font-family: 'Black ops',sans-serif;
+}
 .name{
   font-family: 'Black ops',sans-serif;
   
@@ -65,9 +69,8 @@ custom sccrollbar
 } */
 
 .project{
-  background-color: chartreuse;
   padding: 10px 5px  ;
-  width: 40rem;
+  
 }
 /* .project img{
 

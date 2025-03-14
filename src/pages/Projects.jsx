@@ -6,9 +6,19 @@ export default function Projects() {
                 <Navbar />
             </header>
             <main className="px-[10%] py-[4%]">
-                <h1 className="text-[4rem] mb-10">Projects</h1>
-                <div className="project">
-                    <img src="\AiCodeConverter.png" alt="Ai code Converter img" className="" />
+                <div className="project w-[98%]">
+                    <table className="w-full" >
+                        <caption><h1 className="text-[4rem] mb-10 ">Projects</h1></caption>
+                       <tbody>
+                        <tr className="p-[50px] align-middle">
+                            <td className="w-1/2 p-[20px]"><img src="\AiCodeConverter.png" alt="Ai code Converter img" /></td>
+                            <td className="p-[20px] ">              
+                            </td>
+                        </tr>
+                       </tbody>
+                        
+                    </table>
+                    
                 </div>
             </main>
         </>
