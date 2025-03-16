@@ -1,7 +1,6 @@
 
 import Navbar from './component/Navbar'
 import './App.css'
-// import Spline from '@splinetool/react-spline';
 
 
 function App() {
@@ -25,16 +24,21 @@ function App() {
       <header className='w-[100%] flex justify-center  '>
         <Navbar />
       </header>
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center h-full w-full ">
+        <div className="left w-1/2 flex items-center justify-center bg-red-800 h-full">
+          <p className='text-4xl mt-40 -1'>
+            Hello I'm Amanjeet kumar
+          </p>
+        </div>
+        <div className="right w-1/2 bg-yellow-500 flex h-full">
+        <div className="pic">PIC HERE
+        </div>
+        </div>
 
-         {/* <Spline scene="https://prod.spline.design/StmSkSoIRuIdfbyg/scene.splinecode" className='flex h-screen w-screen -z-10 absolute top-0 left-0 justify-center items-center h-10 ' 
-         onSplineMouseHover={(e)=>{
-
-         }} /> */}
       </div>
-       
 
-      
+
+
 
 
     </>

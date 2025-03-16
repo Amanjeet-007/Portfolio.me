@@ -43,9 +43,7 @@ h2{
 }
 .active{
   border-radius:25px;
-  color: black;
-  background-color: rgba(235, 222, 222, 0.788);
-
+  color: rgb(255, 0, 0);
 }
 marquee{
   font-family: 'Black ops',sans-serif;

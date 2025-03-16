@@ -20,7 +20,7 @@ export default function Navbar() {
     return (
         <>
         
-            <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-5 rounded justify-between relative">
+            <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-10 rounded justify-between relative">
                 <Ball/>
                 <div className="icon h-min w-min" onClick={() => { icon(); (show ? setShow(false) : setShow(true)) }} ref={boxRef}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8 cursor-pointer" >
