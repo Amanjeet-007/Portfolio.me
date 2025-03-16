@@ -20,15 +20,19 @@ export default function Navbar() {
     return (
         <>
         
-            <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-10 rounded justify-between relative">
+            <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-4 rounded justify-between relative">
                 <Ball/>
+
+                {/* icon */}
                 <div className="icon h-min w-min" onClick={() => { icon(); (show ? setShow(false) : setShow(true)) }} ref={boxRef}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8 cursor-pointer" >
                         <path fillRule="evenodd" d="M3 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 5.25Zm0 4.5A.75.75 0 0 1 3.75 9h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
                     </svg>
                 </div>
+
+                {/* menu div */}
                 <div className="w-full flex justify-center absolute top-27 left-0">
-                    <div className="menu h-min w-[40%] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
+                    <div className="menu h-min w-min bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
                         <ul className="flex flex-wrap items-center justify-center">
                             <NavLink to="/">
                                 <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl">
