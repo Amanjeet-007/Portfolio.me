@@ -7,6 +7,16 @@ export default function Projects() {
             </header>
             <main className="px-[10%] py-[4%]">
                 <div className="project w-[98%]">
+                     {/* <li className='mx-10 tracking-widest'>C</li>
+                              <li className='mx-10 tracking-widest'>C++</li>
+                              <li className='mx-10'>Java</li>
+                              <li className='mx-10 tracking-widest'>Python</li>
+                              <li className='mx-10 tracking-widest'>HTML & CSS</li>
+                              <li className='mx-10 tracking-widest'>Tailwind</li>
+                              <li className='mx-10 tracking-widest'>React</li>
+                              <li className='mx-10 tracking-widest'>Node</li>
+                              <li className='mx-10 tracking-widest'>MongoDB</li>
+                              <li className='mx-10 tracking-widest'>Express</li> */}
                     <table className="w-full" >
                         <caption><h1 className="text-[4rem] mb-10 ">Projects</h1></caption>
                        <tbody>
