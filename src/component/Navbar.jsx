@@ -21,7 +21,7 @@ export default function Navbar() {
         <>
         
             <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-4 rounded justify-between relative">
-                <Ball/>
+                {/* <Ball/> */}
 
                 {/* icon */}
                 <div className="icon h-min w-min" onClick={() => { icon(); (show ? setShow(false) : setShow(true)) }} ref={boxRef}>
@@ -32,8 +32,9 @@ export default function Navbar() {
 
                 {/* menu div */}
                 <div className="w-full flex justify-center absolute top-27 left-0">
-                    <div className="menu h-min w-min bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
-                        <ul className="flex flex-wrap items-center justify-center">
+
+                    <div className="menu h-min w-[50%] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
+                        <ul className="flex  flex-wrap items-center justify-center ">
                             <NavLink to="/">
                                 <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl">
                                     Home

@@ -13,6 +13,7 @@
   font-style: normal;
 }
 body {
+  overflow: hidden;
   background-color: black;
   font-family: 'Bebas Neue', sans-serif;
   color: white;
@@ -37,7 +38,8 @@ h2{
 }
 .menu ul li:hover{
   color: black;
-  transition: .7s;
+  transition: .5s;
+  scale: 1.1;
   background-color: rgba(235, 222, 222, 0.788);
 
 }
@@ -52,7 +54,49 @@ marquee{
 .menu::-webkit-scrollbar {
   display: none; /* Hide scrollbar in WebKit (Chrome, Safari, Edge) */
 }
+.year{
+  text-shadow:     0 0 5px #ff00ff, /* First layer of glow */
+  0 0 10px #ff0000, 
+  0 0 20px #ff0000, 
+  0 0 40px #ff0000, 
+  0 0 80px #ff0000;
+  
+}
+/* date button */
+.dbtn{
+  cursor: pointer;
+  margin: 5px;
+  border-radius: 5px;
+  border-left: 20px solid transparent; /* Left border is transparent */
+  border-right: 20px solid transparent; /* Right border is transparent */
+  border-bottom: 40px solid #007bff; /* Bottom border forms the visible triangle */
 
+}
+.hero{
+  flex-direction: row;
+}
+@media (max-width: 600px){
+  body{
+    overflow: scroll;
+  }
+  .hero{
+    flex-direction: column;
+  }
+  .left,.right{
+    width: 100vw;
+    height: min-content;
+  }
+  .year{
+    flex-direction: row;
+    align-items: center;
+  }
+  .dbtn{
+    rotate: 90deg;
+  }
+  .dbtn:first-child{
+    rotate: -90deg;
+  }
+}
 
 /*
 custom sccrollbar

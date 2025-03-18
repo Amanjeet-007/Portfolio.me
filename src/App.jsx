@@ -1,9 +1,11 @@
-
+import { useEffect ,useState } from 'react';
 import Navbar from './component/Navbar'
 import './App.css'
 
 
 function App() {
+  const [year,setYear] = useState(new Date().getFullYear())
+
   return (
     <>
       <marquee behavior="" direction="left" className="text-white absolute top-0.5">
@@ -24,15 +26,17 @@ function App() {
       <header className='w-[100%] flex justify-center  '>
         <Navbar />
       </header>
-      <div className="flex justify-center items-center h-full w-full ">
-        <div className="left w-1/2 flex items-center justify-center bg-red-800 h-full">
-          <p className='text-4xl mt-40 -1'>
-            Hello I'm Amanjeet kumar
-          </p>
+      <div className="  hero flex justify-center items-center h-full w-full ">
+       
+        <div className="left  w-1/2 flex items-center justify-center h-[85vh]">
+        <div className="year text-8xl flex flex-col items-end relative m-10">
+            <div className="dbtn" onClick={()=>{setYear(year-1)}}></div>
+            {year}
+            <div className="dbtn rotate-180" onClick={()=>{setYear(year+1)}} ></div>
         </div>
-        <div className="right w-1/2 bg-yellow-500 flex h-full">
-        <div className="pic">PIC HERE
         </div>
+        <div className="right w-1/2 h-[85vh] flex">
+       hii
         </div>
 
       </div>
