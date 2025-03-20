@@ -76,6 +76,18 @@ marquee{
 .hero{
   flex-direction: row;
 }
+.task{
+  display: flex;
+  word-wrap: normal;
+  letter-spacing: 2px;
+  font-size: 20px;
+  align-items: start;
+  justify-content: center;
+}
+.info{
+    flex-wrap: wrap;
+    width: 100%;
+  }
 @media (max-width: 600px){
   body{
     overflow: scroll;
@@ -83,13 +95,22 @@ marquee{
   .hero{
     flex-direction: column;
   }
+  .info{
+    display: none;
+  }
+  .task{
+    letter-spacing: 1px;
+  }
   .left,.right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100vw;
     height: min-content;
   }
   .year{
     position:absolute;
-    bottom: 0px;
+    bottom: 10px;
     flex-direction: row;
     align-items: center;
     font-size: 3rem;
@@ -103,8 +124,9 @@ marquee{
 
   .dbtn:first-child{
     rotate: -90deg;
-  }
-}
+  }}
+
+
 
 /*
 custom sccrollbar
@@ -120,7 +142,6 @@ custom sccrollbar
 
 .project{
   padding: 10px 5px  ;
-  
 }
 /* .project img{
 

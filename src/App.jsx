@@ -4,14 +4,24 @@ import Navbar from './component/Navbar'
 import './App.css'
 
 
+function Info(){
+  return( 
+  <div className="info w-full h-min flex gap-3">
+    <div className='m-4 flex items-center'><div className="mr-2 h-4 w-4 rounded-full bg-green-500"></div> compeleted Project/Task</div>
+    <div className='m-4 flex items-center' ><div className="mr-2 h-4 w-4 rounded-full bg-yellow-500"></div> upcoming Project/Task</div>
+    <div className='m-4 flex items-center' ><div className="mr-2 h-4 w-4 rounded-full bg-blue-500"></div>other</div>
+  </div>)
+}
+
 function App() {
   const [year,setYear] = useState(new Date().getFullYear())
-  const [data,setData] = useState("")
-  // useEffect(()=>{
-  //   console.log("Hii")
-  //     setData(Data.year.name)
-  //     console.log(data)
-  // },[])
+  const [data,setData] = useState([])
+  useEffect(()=>{
+    if(year < 2022 || year > 2025){
+     setData(Data["NA"])
+    }
+    setData(Data[year])
+  },[year])
 
   return (
     <>
@@ -32,8 +42,19 @@ function App() {
             <div className="dbtn rotate-180" onClick={()=>{setYear(year+1)}} ></div>
         </div>
         </div>
-        <div className="right w-1/2 h-[85vh] flex">
-          {/* {data} */}
+        <div className="right w-1/2 h-[85vh] flex p-10 flex-col">
+        <Info/>
+      
+        {data.map(el=>{
+          return(
+            <div className="task h-min p-4 w-[100%] rounded-3xl m-2 text-black"
+            style={{backgroundColor:(el.status?"green":"rgb(177, 177, 0)")}}
+            key={el.id}
+            >
+              {el.name}
+            </div>
+          ) 
+        })}
         </div>
 
       </div>
