@@ -31,9 +31,9 @@ export default function Navbar() {
                 </div>
 
                 {/* menu div */}
-                <div className="w-full flex justify-center absolute top-27 left-0">
+                <div className="w-full flex justify-center absolute top-20 left-0 z-50">
 
-                    <div className="menu h-min w-[50%] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
+                    <div className="menu h-min w-[50%] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
                         <ul className="flex  flex-wrap items-center justify-center ">
                             <NavLink to="/">
                                 <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl">

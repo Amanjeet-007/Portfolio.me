@@ -12,9 +12,11 @@ const Data = {
   [2025]: [
     { id:1, name: "Ai-powered code converter", status: true },
     { id:2, name: "Simple CRUD App", status: true },
-    { id:3, name: "Graduation Complete", status: false },
+    { id:3, name: "I will Graduate this year", status: false },
 
   ],
-  NA:[{ id:1,name:"Not Avilable",status:false}], id:1,
+  NA:[
+    { id:1,name:"Not Avilable",status:false},
+  ]
 }
 export default Data

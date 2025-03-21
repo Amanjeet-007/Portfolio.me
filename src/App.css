@@ -12,14 +12,19 @@
   font-weight: normal;
   font-style: normal;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
+  background: linear-gradient(to bottom, #1e1e1ebf, #121212c9), url("./assets/abstract-pattern.jpg");
+  background-size: cover, contain;
+  background-blend-mode: overlay;
   overflow: hidden;
-  background-color: black;
   font-family: 'Bebas Neue', sans-serif;
   color: white;
 }
 h2{
-  font-size: 100px;
+  font-size: 4rem;
   font-family: 'Black ops',sans-serif;
 }
 .name{
@@ -47,9 +52,15 @@ h2{
   border-radius:25px;
   color: rgb(255, 0, 0);
 }
-marquee{
-  font-family: 'Black ops',sans-serif;
+
+marquee {
+  font-family: 'Black ops', sans-serif;
+  background: rgba(255, 255, 255, 0.288);
+  backdrop-filter: blur(10px); /* Adds glass-like effect */
+  color: rgb(0, 0, 0);
+  background-size: 200% 200%;
 }
+
 /* Add this in your global styles (e.g., styles.css) */
 .menu::-webkit-scrollbar {
   display: none; /* Hide scrollbar in WebKit (Chrome, Safari, Edge) */
@@ -68,26 +79,56 @@ marquee{
   cursor: pointer;
   margin: 14px;
   border-radius: 5px;
-  border-left: 20px solid transparent; /* Left border is transparent */
-  border-right: 20px solid transparent; /* Right border is transparent */
-  border-bottom: 40px solid #007bff; /* Bottom border forms the visible triangle */
+  cursor: pointer;
+  margin: 14px;
+  border-radius: 5px;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #007bff;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease;
 
+}
+.dbtn:hover {
+  transform: scale(1.1);
 }
 .hero{
   flex-direction: row;
 }
 .task{
-  display: flex;
+  display: inline-block;
   word-wrap: normal;
   letter-spacing: 2px;
   font-size: 20px;
   align-items: start;
   justify-content: center;
+  box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.task:hover {
+  animation: bounce 0.5s ease-in-out;
 }
 .info{
+    position: absolute;
     flex-wrap: wrap;
-    width: 100%;
+    width: min-content;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+
   }
+.right{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Flexible columns */
+  column-count: 3;
+}
 @media (max-width: 600px){
   body{
     overflow: scroll;
@@ -95,11 +136,13 @@ marquee{
   .hero{
     flex-direction: column;
   }
+  
   .info{
     display: none;
   }
   .task{
     letter-spacing: 1px;
+    margin-top: 10px;
   }
   .left,.right{
     display: flex;
@@ -107,6 +150,9 @@ marquee{
     justify-content: center;
     width: 100vw;
     height: min-content;
+  }
+  .right{
+    padding-top: 10px;
   }
   .year{
     position:absolute;
@@ -126,23 +172,8 @@ marquee{
     rotate: -90deg;
   }}
 
-
-
-/*
-custom sccrollbar
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #ff0000, #ff7300);
-  border-radius: 10px;
-} */
-
 .project{
+  color: rgba(125, 255, 125, 0.936);
   padding: 10px 5px  ;
 }
-/* .project img{
 
-} */
