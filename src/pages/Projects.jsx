@@ -7,6 +7,20 @@ export default function Projects() {
             </header>
             <main className="px-[10%] py-[4%]">
                 <div className="project w-[98%]">
+                    <div className="card">
+                        <p>MERN stack</p>
+                    </div>
+                    <div className="card">
+                        <p>programming based</p>
+                    </div>
+                    <div className="card">
+                        <p>AI</p> 
+                    </div>
+                    <div className="card">
+                        <p>
+                            Innovation
+                        </p>
+                    </div>
                      {/* <li className='mx-10 tracking-widest'>C</li>
                               <li className='mx-10 tracking-widest'>C++</li>
                               <li className='mx-10'>Java</li>
@@ -17,7 +31,7 @@ export default function Projects() {
                               <li className='mx-10 tracking-widest'>Node</li>
                               <li className='mx-10 tracking-widest'>MongoDB</li>
                               <li className='mx-10 tracking-widest'>Express</li> */}
-                    <table className="w-full" >
+                    {/* <table className="w-full" >
                         <caption><h1 className="text-[4rem] mb-10 ">Projects</h1></caption>
                        <tbody>
                         <tr className="p-[50px] align-middle">
@@ -27,7 +41,7 @@ export default function Projects() {
                         </tr>
                        </tbody>
                         
-                    </table>
+                    </table> */}
                     
                 </div>
             </main>

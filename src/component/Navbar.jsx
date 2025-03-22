@@ -19,11 +19,19 @@ export default function Navbar() {
 
     return (
         <>
-        
+    
             <nav className="bg-[#C9182B] h-16  w-[90%] mt-8 flex items-center p-4 rounded justify-between relative">
-                {/* <Ball/> */}
+                <div className="absolute right-0 top-10 -z-1">
+                    <div className="bulb relative">
+                        <img src="src\assets\bulb.png" alt="bulb" className="h-50" />
+                            <div className="light absolute right-17 top-22 rounded-4xl -z-2">
+                                
 
-                {/* icon */}
+                            </div>
+
+                    </div>
+                </div>
+
                 <div className="icon h-min w-min" onClick={() => { icon(); (show ? setShow(false) : setShow(true)) }} ref={boxRef}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-8 cursor-pointer" >
                         <path fillRule="evenodd" d="M3 5.25a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 5.25Zm0 4.5A.75.75 0 0 1 3.75 9h16.5a.75.75 0 0 1 0 1.5H3.75A.75.75 0 0 1 3 9.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Zm0 4.5a.75.75 0 0 1 .75-.75h16.5a.75.75 0 0 1 0 1.5H3.75a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" />
@@ -33,7 +41,7 @@ export default function Navbar() {
                 {/* menu div */}
                 <div className="w-full flex justify-center absolute top-20 left-0 z-50">
 
-                    <div className="menu h-min w-[50%] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
+                    <div className="menu h-min w-[50%] bg-white/10 backdrop-blur-md border border-white/20 shadow-lg rounded-lg flex items-center justify-around p-2" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
                         <ul className="flex  flex-wrap items-center justify-center ">
                             <NavLink to="/">
                                 <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl">

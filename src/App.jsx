@@ -26,8 +26,9 @@ function App() {
 
   return (
     <>
-      <marquee behavior="" direction="left" className=" text-white absolute top-0.5">
-       Hello World || Currently : learning Ecommerce & React Native because mobile Devlopmentreally fasinating me 😁. Planing AI & ML after deep understanding of py. 
+      <marquee behavior="" direction="left" className=" text-white top-0.5">
+        Great Powers comes with great responsiblity
+       {/* Hello World || Currently : learning Ecommerce & React Native because mobile Devlopmentreally fasinating me 😁. Planing AI & ML after deep understanding of py.  */}
         
       </marquee>
       <header className='w-[100%] flex justify-center  '>
@@ -43,13 +44,13 @@ function App() {
         </div>
         </div>
         <div className="right w-1/2 h-[85vh] flex flex-col pt-40 relative top-12">
-        <Info/>
+        {/* <Info/> */}
       
         {
           (
             data.map((el)=>{
               return(
-                <div className="task h-min p-2 w-60 rounded text-black"
+                <div className="task p-2 rounded text-black"
                 style={{color:(el.status?"rgba(125, 255, 5, 0.936)":"rgb(177, 197, 0)")}}
                 key={el.id}
                 >
