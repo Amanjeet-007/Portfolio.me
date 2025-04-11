@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 // icon
-const icons = [`src/assets/3d-house.png`,`src/assets/idea.png`,"src/assets/around-the-world.png","src/assets/info.png"]
+const icons = [
+    `https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/Home-icon.png`,           `https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Light_bulb.png`,
+    "https://cdn0.iconfinder.com/data/icons/virtual-world-2/64/communication_connection_message_connect_chat-1024.png",
+    "https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/19-512.png"]
 const iconSlice = createSlice({
     name:"icon",
     initialState:{

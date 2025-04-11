@@ -14,9 +14,9 @@ export default function Navbar() {
     return (
         <>
 
-            <nav className="bg-black h-16 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between cursor-pointer">
+            <nav className="bg-black h-14 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between cursor-pointer">
                 <motion.div className="name h-min w-[80px] z-99 " whileHover={{rotateY:180}} transition={{duration:.4}} drag="x" dragConstraints={{ top:0, left: -5, right: 100, bottom: 0 }}>
-            <img src="src\assets\A.gif" alt="A" className="rounded-[50%]"/>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKW9eqX73c3jGMIM2JZEmFL9_VFCB84mdCgw&s" alt="A" className="rounded-[50%]"/>
                 </motion.div>
 
                 {/* menu div */}
@@ -43,13 +43,13 @@ export default function Navbar() {
                 </div>
 
                 <motion.div
-                    className="icon h-[2.5rem] mx-6 min-w-[30px] flex rounded-[50%] overflow-hidden cursor-pointer z-40 "
+                    className="icon h-[2.5rem] mx-6 min-w-[30px] flex rounded-[30%] overflow-hidden cursor-pointer z-40 "
                     onClick={() => { (show ? setShow(false) : setShow(true)) }}
-                    whileHover={{scale:1.2}}
+                    whileHover={{scale:1.1}}
                     >
                         
                     {/* <a href="https://www.flaticon.com/free-icons/3d-house" title="3d house icons">3d house icons created by Freepik - Flaticon</a> */}
-                    <img src={icon} alt="created by Freepik - Flaticon" />
+                    <img src={icon} alt="image" />
                     
                 </motion.div>
 
