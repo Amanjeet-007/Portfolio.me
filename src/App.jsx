@@ -46,12 +46,15 @@ function App() {
       <header className='w-[100%] flex justify-center  '>
         <Navbar />
       </header>
-      <div className="  hero flex justify-center items-center h-full w-full ">
+      <div className="  hero flex justify-center items-center h-full w-full md:h-full md:m-0 ">
        
-        <div className="left  w-1/2 flex items-center justify-center h-[85vh] pt-40">
+        <div className="left  w-1/2 flex md:mx-0 mx-35 h-[85vh] pt-40">
 
         </div>
-        <div className="right w-1/2 h-[85vh] flex flex-col pt-40 relative top-12">
+        
+        <img src="https://i.pinimg.com/736x/5f/25/85/5f2585303f8531910db2a8777e20421d.jpg" className='absolute bottom-0 left-0 translate-[0%,-50%] w-[28rem] rounded-4xl -z-10 md:left-[30%] ' alt="" />
+        <div className="right w-1/2 h-[85vh] md:mx-0 flex flex-col pt-40 items-center justify-center relative">
+
         </div>
 
       </div>

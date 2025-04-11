@@ -12,7 +12,7 @@ const iconSlice = createSlice({
     },
     reducers:{
         home : (state)=>{state.value = icons[0]},
-        project : (state)=>{state.value = `shttps://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Light_bulb.png`},
+        project : (state)=>{state.value = `https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Light_bulb.png`},
         connect : (state)=>{state.value = "https://cdn0.iconfinder.com/data/icons/virtual-world-2/64/communication_connection_message_connect_chat-1024.png"},
         about : (state)=>{state.value = "https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/19-512.png"}
     }
