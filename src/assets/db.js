@@ -17,6 +17,8 @@ const Data = {
   ],
   NA:[
     { id:1,name:"Not Avilable",status:false},
-  ]
+  ],
+  [2032]:[{name:"Become a milliaoner",status:true}],
+  [2004] :[{name:"My Birth year 😁",status:true}]
 }
 export default Data

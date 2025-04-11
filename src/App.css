@@ -16,22 +16,56 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: linear-gradient(to bottom, #1e1e1ebf, #121212c9), url("./assets/abstract-pattern.jpg");
-  background-size: cover, contain;
+  background-color: rgb(180, 177, 177);
   background-blend-mode: overlay;
   overflow: hidden;
   font-family: 'Bebas Neue', sans-serif;
-  color: white;
+  color: rgb(255, 255, 255);
 }
-/* navbar */
+
+.Logo{
+  
+  height: fit-content;
+}
+/* enter */
+.button{
+  text-transform: uppercase;
+  border-radius: 16px;
+  cursor: pointer;
+  font-family:'Black ops',sans-serif;
+  height: 8rem ;
+  width:20rem;
+}
 h2{
   font-size: 4rem;
   font-family: 'Black ops',sans-serif;
 }
-.name{
-  font-family: 'Black ops',sans-serif;
-  
+
+/*cloud*/
+/* .cloud{
+  box-shadow: inset 10px 10px 40px rgba(255, 235, 235, 0.685),
+              inset -10px 10px 40px rgba(255, 255, 255, 0.632),
+              -10px 10px 40px white,
+              40px 20px 40px white
+              ;
+
 }
+
+.random-shape-div {
+  border: 1px solid white;
+  background-color:rgba(255, 255, 255, 0.057);
+  border-radius: 50%;
+  z-index: -99;
+  box-shadow: 50px 400px 200px white,
+              100px 40px 200px white, 
+              50px 400px 100px white;
+  position: relative; /* To contain potential children if needed */
+
+
+
+
+
+
 .menu{
   transition: .4s;
   transform-origin: center;
@@ -116,8 +150,8 @@ marquee {
   flex-direction: row;
 }
 .task{
-  max-height: min-content;
-  width: 200px;
+  /* max-height: min-content;
+  width: 200px; */
   margin: 0px 40px;
   text-align: center;
   padding: 10px 50px;
@@ -146,19 +180,53 @@ marquee {
   align-items: center;
   justify-content: center;
   width: min-content;
-  background-color: #ff0000;
+  color: white;
+  background-color: #615f5f52;
+  border: 1px solid white;
   margin: 10px;
+  border-radius: 10px;
+  transition: .5s;
+  cursor: pointer;
+}
+.card:hover{
+   animation-name: card;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+  border: 5px solid;
+  scale: .9;
+}
+@keyframes card {
+  0% {
+    border-top-color: rgb(24, 204, 0);
+    border-left-color: rgb(0, 0, 255);
+    border-right-color: rgb(0, 140, 255);
+    border-bottom-color: rgb(226, 0, 0) ;
+  }
+  33%{
+    border-top-color: rgb(0, 187, 0);
+    border-left-color: rgb(255, 0, 0);
+    border-right-color: rgb(186, 0, 133);
+    border-bottom-color: rgb(0, 103, 105) ;
+
+
+  }
+  66%{
+    border-top-color: rgb(0, 187, 0);
+    border-left-color: rgb(186, 0, 133);
+    border-right-color: rgb(0, 103, 105);
+    border-bottom-color: rgb(255, 0, 0) ;
+  }
+  100%{
+    border-top-color:rgb(255, 0, 0) ;
+    border-left-color:rgb(0, 187, 0) ;
+    border-right-color:rgb(186, 0, 133) ;
+    border-bottom-color:rgb(0, 103, 105)  ;
+  }
 }
 .card p{
   font-size: 2rem;
-}
-@keyframes bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-.task:hover {
-  animation: bounce 0.5s ease-in-out;
 }
 .info{
     position: absolute;
@@ -213,12 +281,13 @@ marquee {
     border-bottom: 20px solid #007bff; /* Bottom border forms the visible triangle */
     rotate: 90deg;
   }
-
   .dbtn:first-child{
     rotate: -90deg;
   }
   marquee{
-    left: -100px;
+    top: 0px;
+    rotate: -45deg;
+    /* right: -100px; */
   
   }
 
