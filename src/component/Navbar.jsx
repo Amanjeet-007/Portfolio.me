@@ -47,8 +47,6 @@ export default function Navbar() {
                     onClick={() => { (show ? setShow(false) : setShow(true)) }}
                     whileHover={{scale:1.1}}
                     >
-                        
-                    {/* <a href="https://www.flaticon.com/free-icons/3d-house" title="3d house icons">3d house icons created by Freepik - Flaticon</a> */}
                     <img src={icon} alt="image" />
                     
                 </motion.div>
