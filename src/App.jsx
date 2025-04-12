@@ -3,6 +3,7 @@ import Data from './assets/db.js'
 import Navbar from './component/Navbar'
 import './App.css'
 import RandomShapeDiv from './component/Sky.jsx'
+import {motion} from 'motion/react'
 
 
 function Info(){
@@ -46,17 +47,17 @@ function App() {
       <header className='w-[100%] flex justify-center  '>
         <Navbar />
       </header>
-      <div className="  hero flex justify-center items-center h-full w-full md:h-full md:m-0 ">
-       
-        <div className="left  w-1/2 flex md:mx-0 mx-35 h-[85vh] pt-40">
-
+      <div className="  hero flex justify-center items-center h-[100vh] w-[100vw]  pt-25 ">
+        <img src="https://i.pinimg.com/736x/5f/25/85/5f2585303f8531910db2a8777e20421d.jpg" className=' w-[28rem] rounded-4xl -z-10 border-t-gray-700 border-t-1' alt="" />
+        <div className="social h-10 w-full absolute bottom-1.5 flex justify-center items-center">
+        <div className="left flex">
+          <motion.img whileHover={{scale:1.2}} src="https://img.icons8.com/?size=160&id=118557&format=png" alt="github" />
+          <motion.img whileHover={{scale:1.2}} src="https://img.icons8.com/?size=160&id=64154&format=png" alt="linkedin" />
+          <motion.img whileHover={{scale:1.2}} src="https://img.icons8.com/?size=160&id=TSZw5VixabhS&format=png" alt="instagram" />
+          <motion.img whileHover={{scale:1.2}} src="https://img.icons8.com/?size=160&id=108636&format=png" alt="whatsapp" />
+          <motion.img whileHover={{scale:1.2}} src="https://img.icons8.com/?size=160&id=112164&format=png" alt="telegram" />
         </div>
-        
-        <img src="https://i.pinimg.com/736x/5f/25/85/5f2585303f8531910db2a8777e20421d.jpg" className='absolute bottom-0 left-0 translate-[0%,-50%] w-[28rem] rounded-4xl -z-10 md:left-[30%] ' alt="" />
-        <div className="right w-1/2 h-[85vh] md:mx-0 flex flex-col pt-40 items-center justify-center relative">
-
         </div>
-
       </div>
 
 

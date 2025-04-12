@@ -31,6 +31,9 @@ body {
   font-family: 'Bebas Neue', sans-serif;
   color: rgb(255, 255, 255);
 }
+nav{
+  background-color: rgb(53, 53, 53);
+}
 
 .Logo{
   
@@ -49,7 +52,12 @@ h2{
   font-size: 4rem;
   font-family: 'Black ops',sans-serif;
 }
-
+.social .left img{
+  height: 40px;
+  width: 40px;
+  margin: 10px;
+  cursor: pointer;
+}
 /*cloud*/
 /* .cloud{
   box-shadow: inset 10px 10px 40px rgba(255, 235, 235, 0.685),

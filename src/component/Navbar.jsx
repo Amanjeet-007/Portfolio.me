@@ -14,9 +14,9 @@ export default function Navbar() {
     return (
         <>
 
-            <nav className="bg-black h-14 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between cursor-pointer">
-                <motion.div className="name h-min w-[80px] z-99 " whileHover={{rotateY:180}} transition={{duration:.4}} drag="x" dragConstraints={{ top:0, left: -5, right: 100, bottom: 0 }}>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKW9eqX73c3jGMIM2JZEmFL9_VFCB84mdCgw&s" alt="A" className="rounded-[50%]"/>
+            <nav className="bg-[rgb(33, 159, 222)] h-14 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between cursor-pointer">
+                <motion.div className="name h-min w-[30px] z-99 " whileHover={{rotateY:180}} transition={{duration:.4}} drag="x" dragConstraints={{ top:0, left: -5, right: 100, bottom: 0 }}>
+            <img src="https://i.pinimg.com/736x/49/74/45/49744598b1f1ee6b1650b19b64dda5a8.jpg" alt="A" className="rounded-[20%]"/>
                 </motion.div>
 
                 {/* menu div */}
