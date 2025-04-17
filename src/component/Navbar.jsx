@@ -14,8 +14,8 @@ export default function Navbar() {
     return (
         <>
 
-            <nav className="bg-[rgb(33, 159, 222)] h-14 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between cursor-pointer">
-                <motion.div className="name h-min w-[30px] z-99 " whileHover={{rotateY:180}} transition={{duration:.4}} drag="x" dragConstraints={{ top:0, left: -5, right: 100, bottom: 0 }}>
+            <nav className="bg-[rgb(33, 159, 222)] h-14 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between">
+                <motion.div className="name h-min w-[30px] z-99 cursor-move " whileHover={{rotateY:20}} transition={{duration:.4}} drag="x" dragConstraints={{ top:0, left: -5, right: 100, bottom: 0 }}>
             <img src="https://i.pinimg.com/736x/49/74/45/49744598b1f1ee6b1650b19b64dda5a8.jpg" alt="A" className="rounded-[20%]"/>
                 </motion.div>
 
@@ -48,7 +48,6 @@ export default function Navbar() {
                     whileHover={{scale:1.1}}
                     >
                     <img src={icon} alt="image" />
-                    
                 </motion.div>
 
             </nav>
