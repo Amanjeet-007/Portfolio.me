@@ -9,13 +9,15 @@ import { Provider } from 'react-redux'
 import Projects from './pages/Projects.jsx';
 import About from './pages/About.jsx';
 import Connect from './pages/Connect.jsx';
+import Welcome from './pages/Welcome.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<App />} />
+          <Route path="/" index element={<Welcome/>} />
+          <Route path="/Home" element={<App/>} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />

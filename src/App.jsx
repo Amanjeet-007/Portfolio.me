@@ -1,28 +1,80 @@
-import { useEffect, useState } from 'react';
-import Data from './assets/db.js'
-import Navbar from './component/Navbar'
-import './App.css'
-
-import { motion } from 'motion/react'
+import { useEffect, useState } from 'react';        // React Hook
+import Data from './assets/db.js'                   // Data (date wala design)
+import Navbar from './component/Navbar'             // Navbar
+import { GoogleGenAI } from "@google/genai";        // Gemini 
+import './App.css'                                  // Stylesheet
+import { motion } from 'motion/react'               // Animnation 
 
 
 
 function App() {
+  
   const [year, setYear] = useState(new Date().getFullYear())
   const [data, setData] = useState([])
-
-
   //data show according to year
   useEffect(() => {
     setData(Data[year] || Data.NA);
   }, [year])
 
+  const [question,setQuestion] = useState("")
+
+
+  const ai = new GoogleGenAI(
+    { apiKey:import.meta.env.VITE_GEMINI_API });
+
+  async function Response(text) {
+    const result = await ai.models.generateContent({
+      model: "gemini-2.0-flash",
+      systemInstruction:`
+ I will provide you with all my personal and professional information below. Based on this data, if someone asks a question about me (e.g., who I am, what I do, my skills, education, social links, resume, etc.), respond only using the information I have given you. Do not make assumptions or add extra details from outside sources. If you don’t find an answer in my provided data, respond with: “I’m not sure based on the info I have.
+
+Name: Amanjeet Kumar 
+age:21
+Profession: Full-Stack Developer  
+Skills: React, Node.js, MongoDB, Express.js, JavaScript, C, C++, Python  
+Resume: [Resume Link]  
+LinkedIn: [Profile URL]  
+GitHub: [Repo URL]  
+Portfolio: [Portfolio URL]  
+About Me: I am passionate about creating impactful web applications
+      `,
+      contents: text,
+    });
+    
+    const answer = result?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+    console.log(answer);
+    return answer;
+    }
+
+  function handleInput(e){
+    const text = e.target.value
+    setQuestion(text);
+  }
+
+   async function handleSubmit(e){
+    e.preventDefault()
+      console.log(question)
+      const answer = await Response(question);
+      console.log(answer)
+      
+      setQuestion("")
+
+    }
+
+   
   return (
     <main>
       <header className='w-[100%] flex justify-center  '>
         <Navbar />
       </header>
       <div className="  hero flex justify-center items-center h-[100vh] w-[100vw]  pt-25 ">
+        {/* <div className="right w-1/3 h-full flex justify-center">
+          <p className='greet '>Hello I'm  <br />Amanjeet Kumar</p>
+        </div>
+        <div className="left w-2/3 flex items-center">
+
+        </div> */}
+      
         {/* Resume */}
         <a href="https://drive.google.com/file/d/1LTA155Rd2tWSzZll4qX9LIuaFWZPqY6j/view" target='blank'>
             <motion.div className="resume absolute bottom-6 right-6 p-[15px] bg-gray-400 text-center cursor-pointer text-black border-black- border-1 rounded-2xl"
@@ -32,25 +84,21 @@ function App() {
             Resume
         </motion.div>
         </a>
-      
+        {/* know about me */} 
+        <form onSubmit={handleSubmit} className='absolute top-80 w-1/4 flex flex-col min-h-20'>
+  <input
+    type="text"
+    name="search"
+    id="search"
+    className='border-2 border-dashed border-blue-600 w-full rounded-full min-h-14 text-2xl'
+    placeholder='Smart Search'
+    onChange={handleInput}
+    value={question}
+  />
+  <button type="submit" className='z-10 cursor-pointer'>Know</button>
+</form>
 
 
-        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" className='pic h-full -z-10 w-[100%]' alt="earth" />
-        <div className="social h-[500px] w-40 absolute bottom-10 left-2 flex justify-center items-center">
-          <div className="left flex flex-col">
-
-            <a href="https://github.com/Amanjeet-007">
-            <motion.img whileHover={{scale:1.2,y:-10}} src="https://img.icons8.com/?size=160&id=118557&format=png" alt="github" />
-            </a>
-            {/* linkedIn */}
-            <a href="https://www.linkedin.com/in/amanjeet-kumar-374b0928a">
-            <motion.img whileHover={{scale:1.2,y:-10}} src="https://img.icons8.com/?size=160&id=64154&format=png" alt="linkedin" />
-            </a>  
-            <a href=""><motion.img whileHover={{scale:1.2,y:-10}} src="https://img.icons8.com/?size=160&id=TSZw5VixabhS&format=png" alt="instagram" /></a>          
-            <a href="https://wa.me/918882137478?text=Hello"><motion.img whileHover={{scale:1.2,y:-10}} src="https://img.icons8.com/?size=160&id=108636&format=png" alt="whatsapp"/></a>   
-            <a href="https://t.me/Rikkysinghrajput"><motion.img whileHover={{scale:1.2,y:-10}} src="https://img.icons8.com/?size=160&id=112164&format=png" alt="telegram" /></a> 
-            </div>
-        </div>
       </div>
 
 
