@@ -30,7 +30,7 @@ export default function Navbar() {
 
                     <div className="menu h-min bg-white/10 backdrop-blur-md border border-black/45 shadow-lg rounded-lg" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
                         <ul className=" w-full flex  flex-wrap items-center justify-around ">
-                            <NavLink to="/Home">
+                            <NavLink to="/amanjeet">
                                 <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl" onClick={() => dispatch(home())}>
                                     Home
                                 </li>

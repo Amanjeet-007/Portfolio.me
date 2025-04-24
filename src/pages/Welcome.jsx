@@ -9,7 +9,7 @@ export default function Welcome(){
         e.preventDefault 
         setTimeout(() => {
             setButton("")
-            navigate("/Home");
+            navigate("/amanjeet");
           }, 500);
     }
     function handleHover(){
