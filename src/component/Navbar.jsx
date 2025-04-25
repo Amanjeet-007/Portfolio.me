@@ -49,7 +49,7 @@ export default function Navbar() {
                 </div>
 
                 {/* for mobile  --start */}
-                <NavLink to="/">
+                <NavLink to="/amanjeet">
                     <img src={icons[0]} alt="home" className="mobile" />
                 </NavLink>
                 <NavLink to="/projects">

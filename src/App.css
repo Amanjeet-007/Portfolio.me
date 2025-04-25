@@ -25,8 +25,8 @@ body{
   overflow: hidden;
   background: linear-gradient(
   45deg,
-   #768892 30%,
-   #566970 
+   #333c41 30%,
+   #8D99AE 
   );
   height: 100vh;
   background-repeat: no-repeat;
@@ -42,7 +42,7 @@ main{
   width: 100%;
 }
 nav{
-  background-color:rgb(64, 30, 123);
+  background-color:rgb(121, 12, 10);
   padding: 20px 25px;
   margin-top: 30px;
 }
@@ -85,8 +85,23 @@ marquee{
 .play{
   display: none;
 }
+/* homepage */
+.ai{
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #670202d0;
+  outline: none;
+  font-size: 20px;
+}
 
-
+.ai input{
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-color: yellow;
+  outline: white;
+}
 /* enter */
 .button{
   text-transform: uppercase;
@@ -168,7 +183,7 @@ marquee{
 }
 .Form input{
   width: 200px;
-  margin: 10px 10px;
+  margin: 10px;
   padding: 4px 6px;
   border: 2px solid black;
 }

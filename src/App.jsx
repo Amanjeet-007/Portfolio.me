@@ -26,17 +26,8 @@ function App() {
     const result = await ai.models.generateContent({
       model: "gemini-2.0-flash",
       systemInstruction:`
- I will provide you with all my personal and professional information below. Based on this data, if someone asks a question about me (e.g., who I am, what I do, my skills, education, social links, resume, etc.), respond only using the information I have given you. Do not make assumptions or add extra details from outside sources. If you don’t find an answer in my provided data, respond with: “I’m not sure based on the info I have.
+      hello i'm Amanjeet. i'm 21 years old if someone ask for name or age then response on my details
 
-Name: Amanjeet Kumar 
-age:21
-Profession: Full-Stack Developer  
-Skills: React, Node.js, MongoDB, Express.js, JavaScript, C, C++, Python  
-Resume: [Resume Link]  
-LinkedIn: [Profile URL]  
-GitHub: [Repo URL]  
-Portfolio: [Portfolio URL]  
-About Me: I am passionate about creating impactful web applications
       `,
       contents: text,
     });
@@ -72,12 +63,11 @@ About Me: I am passionate about creating impactful web applications
           <p className='greet '>Hello I'm  <br />Amanjeet Kumar</p>
         </div>
         <div className="left w-2/3 flex items-center">
-
         </div> */}
       
         {/* Resume */}
         <a href="https://drive.google.com/file/d/1LTA155Rd2tWSzZll4qX9LIuaFWZPqY6j/view" target='blank'>
-            <motion.div className="resume absolute bottom-6 right-6 p-[15px] bg-gray-400 text-center cursor-pointer text-black border-black- border-1 rounded-2xl"
+            <motion.div className="resume absolute bottom-6 left-10 p-[15px] bg-gray-400 text-center cursor-pointer text-black border-black- border-1 rounded-2xl"
             whileHover={{color:'white',backgroundColor:'gray',scale:1.1,rotateX:20}}
             >
           <img src="https://img.icons8.com/?size=160&id=115648&format=png" className='h-[60px] w-[60px] ' alt="" />
@@ -85,25 +75,19 @@ About Me: I am passionate about creating impactful web applications
         </motion.div>
         </a>
         {/* know about me */} 
-        <form onSubmit={handleSubmit} className='absolute top-80 w-1/4 flex flex-col min-h-20'>
+        <form onSubmit={handleSubmit} className='ai absolute bottom-20 w-[20rem] flex flex-col min-h-20'>
   <input
     type="text"
     name="search"
     id="search"
-    className='border-2 border-dashed border-blue-600 w-full rounded-full min-h-14 text-2xl'
+    className='border-2 border-dashed w-full rounded-full min-h-14 text-1xl'
     placeholder='Smart Search'
     onChange={handleInput}
     value={question}
   />
   <button type="submit" className='z-10 cursor-pointer'>Know</button>
 </form>
-
-
       </div>
-
-
-
-
       </main>
   
   )
