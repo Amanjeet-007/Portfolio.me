@@ -51,7 +51,7 @@ export default function Welcome(){
             transition={{delay:.3}}
              />
             </div>
-            <Link to="/Home">
+            <Link to="/amanjeet">
             <img src="https://www.svgrepo.com/show/499775/play.svg" className='play' alt="" />
             </Link>
                 
