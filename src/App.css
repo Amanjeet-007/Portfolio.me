@@ -25,8 +25,8 @@ body{
   overflow: hidden;
   background: linear-gradient(
   45deg,
-   #333c41 30%,
-   #8D99AE 
+   #12638e 30%,
+   #123676 
   );
   height: 100vh;
   background-repeat: no-repeat;
@@ -38,11 +38,12 @@ body{
   color: rgb(255, 255, 255);
 }
 main{
+  padding-top: 100px;
   height: 100%;
   width: 100%;
 }
 nav{
-  background-color:rgb(121, 12, 10);
+  background-color:rgba(239, 233, 233, 0.306);
   padding: 20px 25px;
   margin-top: 30px;
 }
@@ -194,6 +195,28 @@ marquee{
   color: rgb(244, 232, 178);
   font-size: 40px;
 }
+.layer_one{
+  font-family: 'Black ops';
+}
+.layer_one h1{
+  z-index: 99;
+}
+.layer_one h1::after{
+  content: " ";
+  position:absolute;
+  width: 20vw;
+  height: 5px;
+  background-color: rgb(191, 185, 0);
+  border: 2px solid yellow;
+  border-radius:20px;
+  left:40px ;
+  top: 50%;
+  z-index: -1;
+}
+.layer_one h1 span{
+  z-index: 0;
+}
+
 @media (max-width: 600px){
   body{
     position: relative;
