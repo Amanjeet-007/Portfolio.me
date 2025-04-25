@@ -9,7 +9,7 @@ export default function Welcome(){
         e.preventDefault 
         setTimeout(() => {
             setButton("")
-            navigate("/amanjeet");
+            navigate("/home");
           }, 500);
     }
     function handleHover(){
@@ -51,7 +51,7 @@ export default function Welcome(){
             transition={{delay:.3}}
              />
             </div>
-            <Link to="/amanjeet">
+            <Link to="/home">
             <img src="https://www.svgrepo.com/show/499775/play.svg" className='play' alt="" />
             </Link>
                 

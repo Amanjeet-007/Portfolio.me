@@ -67,7 +67,7 @@ function App() {
       
         {/* Resume */}
         <a href="https://drive.google.com/file/d/1LTA155Rd2tWSzZll4qX9LIuaFWZPqY6j/view" target='blank'>
-            <motion.div className="resume absolute bottom-6 left-10 p-[15px] bg-gray-400 text-center cursor-pointer text-black border-black- border-1 rounded-2xl"
+            <motion.div className="resume absolute bottom-24 left-80 p-[15px] bg-gray-400 text-center cursor-pointer text-black border-black- border-1 rounded-2xl"
             whileHover={{color:'white',backgroundColor:'gray',scale:1.1,rotateX:20}}
             >
           <img src="https://img.icons8.com/?size=160&id=115648&format=png" className='h-[60px] w-[60px] ' alt="" />
