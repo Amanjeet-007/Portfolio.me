@@ -20,8 +20,6 @@ export default function Welcome(){
     }
 
 
-
-
     return (
         <>
         <div className="welcome h-[100vh] w-full flex items-center justify-center flex-col">

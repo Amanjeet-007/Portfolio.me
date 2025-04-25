@@ -19,38 +19,38 @@ function App() {
   const [question,setQuestion] = useState("")
 
 
-  const ai = new GoogleGenAI(
-    { apiKey:import.meta.env.VITE_GEMINI_API });
+  // const ai = new GoogleGenAI(
+  //   { apiKey:import.meta.env.VITE_GEMINI_API });
 
-  async function Response(text) {
-    const result = await ai.models.generateContent({
-      model: "gemini-2.0-flash",
-      systemInstruction:`
-      hello i'm Amanjeet. i'm 21 years old if someone ask for name or age then response on my details
+  // async function Response(text) {
+  //   const result = await ai.models.generateContent({
+  //     model: "gemini-2.0-flash",
+  //     systemInstruction:`
+  //     hello i'm Amanjeet. i'm 21 years old if someone ask for name or age then response on my details
 
-      `,
-      contents: text,
-    });
+  //     `,
+  //     contents: text,
+  //   });
     
-    const answer = result?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
-    console.log(answer);
-    return answer;
-    }
+  //   const answer = result?.candidates?.[0]?.content?.parts?.[0]?.text || "No response";
+  //   console.log(answer);
+  //   return answer;
+  //   }
 
-  function handleInput(e){
-    const text = e.target.value
-    setQuestion(text);
-  }
+  // function handleInput(e){
+  //   const text = e.target.value
+  //   setQuestion(text);
+  // }
 
-   async function handleSubmit(e){
-    e.preventDefault()
-      console.log(question)
-      const answer = await Response(question);
-      console.log(answer)
+  //  async function handleSubmit(e){
+  //   e.preventDefault()
+  //     console.log(question)
+  //     const answer = await Response(question);
+  //     console.log(answer)
       
-      setQuestion("")
+  //     setQuestion("")
 
-    }
+  //   }
 
    
   return (
@@ -75,7 +75,7 @@ function App() {
         </motion.div>
         </a>
         {/* know about me */} 
-        <form onSubmit={handleSubmit} className='ai absolute bottom-20 w-[20rem] flex flex-col min-h-20'>
+        {/* <form onSubmit={handleSubmit} className='ai absolute bottom-20 w-[20rem] flex flex-col min-h-20'>
   <input
     type="text"
     name="search"
@@ -86,7 +86,7 @@ function App() {
     value={question}
   />
   <button type="submit" className='z-10 cursor-pointer'>Know</button>
-</form>
+        </form> */}
       </div>
       </main>
   
