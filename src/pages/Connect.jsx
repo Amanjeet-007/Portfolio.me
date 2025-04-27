@@ -29,7 +29,6 @@ export default function Connect() {
         <Navbar />
       </header>
 
-
       <main className="flex items-center justify-center h-full w-[90vh] m-[10vh]">
         <form ref={form} onSubmit={sendEmail} className="Form">
             <div className="w-[100%] h-8 flex bg-gray-600 rounded-[10px] items-center">

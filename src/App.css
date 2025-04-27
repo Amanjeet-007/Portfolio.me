@@ -160,10 +160,10 @@ marquee{
   align-items: center;
   justify-content: center;
   padding: 20px;
+  margin: 15px;
   color: white;
   background-color: #615f5f52;
   border: 1px solid white;
-  margin: 10px;
   border-radius: 10px;
   cursor: pointer;
 }
@@ -197,6 +197,8 @@ marquee{
 }
 .layer_one{
   font-family: 'Black ops';
+  border-top: 5px solid blue;
+  border-bottom: 5px solid blue;
 }
 .layer_one h1{
   z-index: 99;
@@ -206,17 +208,38 @@ marquee{
   position:absolute;
   width: 20vw;
   height: 5px;
-  background-color: rgb(191, 185, 0);
-  border: 2px solid yellow;
+  background-color: #1e78a8;
+  border: 2px solid #12638e;
   border-radius:20px;
-  left:40px ;
-  top: 50%;
+  left:32% ;
+  top: 58px;
   z-index: -1;
 }
 .layer_one h1 span{
   z-index: 0;
 }
-
+.para{
+  color: #123676 ;
+  background-color: rgb(255, 255, 255);
+  backdrop-filter:blur(20px);
+  border-radius: 20px;
+  font-size: 34px;
+  letter-spacing: 1px;
+  justify-content: space-around;
+  box-shadow: 0px 5px 15px black;
+}
+.para:hover{
+  box-shadow: 0px 7px 25px black;
+}
+.para img{
+  height: 50px;
+  margin: 0px;
+  cursor: pointer;
+  z-index: 99;
+}
+.para img:last-child{
+  rotate: 180deg;
+}
 @media (max-width: 600px){
   body{
     position: relative;
@@ -237,9 +260,7 @@ marquee{
     visibility: hidden;
   }
   nav{
-    height: 50px;
     margin: unset;
-    bottom: 0px;
     width: 100%;
     justify-content: space-around;
   }
@@ -252,14 +273,17 @@ marquee{
     display: none;
   }
   .resume{
-    top: 40px;
-    bottom: unset;
+    height: 100px;
+    bottom: 0px;
+    right: 10px;
   }
   .social{
     right: 0px;
+    flex-direction: row;
     left: unset;
     top: 120px;
-    width: 100px;
+    height: min-content;
+    width: 100%;
   }
   .social img,.social a{
     margin: unset;
@@ -273,6 +297,12 @@ marquee{
     margin-top: 20px;
     height: 40x;
     cursor: pointer;
+  }
+  .layer_on h1{
+    font-size: 10vh;
+  }
+  .im{
+    display: none;
   }
 }
 

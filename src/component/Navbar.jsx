@@ -23,8 +23,7 @@ export default function Navbar() {
                 <motion.div className="name h-min w-[30px] z-99 " whileHover={{ rotateY: 20 }} transition={{ duration: .4 }}>
                     <img src="https://i.pinimg.com/736x/49/74/45/49744598b1f1ee6b1650b19b64dda5a8.jpg" alt="A" className="rounded-[20%]" />
                 </motion.div>
-
-
+                
                 {/* menu div */}
                 <div className="w-full flex justify-center absolute top-20 left-0 z-50">
 

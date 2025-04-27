@@ -8,8 +8,8 @@ export default function Projects() {
             <header className='w-[100%] h-min flex justify-center  '>
                 <Navbar />
             </header>
-            <main className="px-[10%] py-[4%] w-[80vw] flex flex-wrap justify-center ">
-                <div className="project m-28 w-[30%] h-full">
+            <main className=" w-[80vw] flex flex-wrap justify-center ">
+                <div className="project w-[30%] h-full">
                     {Type.map((el)=>{
                       return (<motion.div
                         whileHover={{
