@@ -1,6 +1,7 @@
 import {motion }from 'motion/react'
 import { useState } from 'react'
 import { Link ,useNavigate } from 'react-router'
+
 export default function Welcome(){
 
     const [button,setButton] = useState("PORTFOLIO")

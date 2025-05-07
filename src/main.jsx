@@ -10,6 +10,7 @@ import Projects from './pages/Projects.jsx';
 import About from './pages/About.jsx';
 import Connect from './pages/Connect.jsx';
 import Welcome from './pages/Welcome.jsx';
+import Blogs from './pages/Blogs.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/home" element={<App/>} />
           <Route path="/connect" element={<Connect />} />
           <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </BrowserRouter>

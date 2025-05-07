@@ -1,78 +1,50 @@
-import { useState } from "react"
-import { NavLink } from "react-router";
-import { motion } from 'motion/react'
-import { useSelector, useDispatch } from 'react-redux'
-import { home, project, about, connect } from "./icon.js";
-import '../App.css'
-
+import { motion ,AnimatePresence } from 'motion/react'
+import { useState } from 'react'
+import { NavLink } from 'react-router'
 export default function Navbar() {
-    const [show, setShow] = useState(false)
-    const icon = useSelector((state) => state.icon.value)
-    const dispatch = useDispatch()
-
-    // all icons
-    const icons = [
-        `https://cdn1.iconfinder.com/data/icons/bokbokstars-121-classic-stock-icons-1/512/Home-icon.png`, `https://cdn2.iconfinder.com/data/icons/flat-icons-19/512/Light_bulb.png`,
-        "https://cdn0.iconfinder.com/data/icons/virtual-world-2/64/communication_connection_message_connect_chat-1024.png",
-        "https://cdn2.iconfinder.com/data/icons/free-basic-icon-set-2/300/19-512.png"]
+    const [isClick,setIsClick] = useState(false);
+    const options = ["Home","Projects","About","Blogs",]
 
     return (
         <>
+        <nav className="w-full h-min flex items-center justify-between">
+           
 
-            <nav className="bg-[rgb(33, 159, 222)] h-14 absolute w-[80%]  mt-8 flex items-center  p-4 rounded justify-between">
-                <motion.div className="name h-min w-[30px] z-99 " whileHover={{ rotateY: 20 }} transition={{ duration: .4 }}>
-                    <img src="https://i.pinimg.com/736x/49/74/45/49744598b1f1ee6b1650b19b64dda5a8.jpg" alt="A" className="rounded-[20%]" />
-                </motion.div>
-                
-                {/* menu div */}
-                <div className="w-full flex justify-center absolute top-20 left-0 z-50">
-
-                    <div className="menu h-min bg-white/10 backdrop-blur-md border border-black/45 shadow-lg rounded-lg" style={{ visibility: (show ? "visible" : "hidden"), scale: (show ? "1" : "0") }} >
-                        <ul className=" w-full flex  flex-wrap items-center justify-around ">
-                            <NavLink to="/home">
-                                <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl" onClick={() => dispatch(home())}>
-                                    Home
-                                </li>
-                            </NavLink>
-                            <NavLink to='/projects' >
-                                <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl" onClick={() => dispatch(project())}>Projects</li>
-                            </NavLink>
-                            <NavLink to="/connect">
-                                <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl" onClick={() => dispatch(connect())}>Connect</li>
-                            </NavLink>
-                            <NavLink to="/about" >
-                                <li className="flex justify-center mx-2 my-1 py-1 px-8 tracking-widest cursor-pointer rounded-2xl" onClick={() => dispatch(about())}>About</li>
-                            </NavLink>
-                        </ul>
-                    </div>
+            <pre className='logo'>{'< Code />'}</pre>
+            <div className="menu md:none w-min h-full">
+                <ul className='flex'>
+                    {options.map(el=>{
+                        console.log(el.toLowerCase())
+                        return(
+                            <NavLink to={`/${el.toLowerCase()}`} key={el}>  <motion.li>{el}</motion.li> </NavLink>
+                        )
+                    })}
+                </ul>
+               
+            </div>
+            <AnimatePresence>
+            <motion.div className="menu-button"
+            onClick={()=>setIsClick(el=>!el)}
+            animate={isClick?{rotate:360}:{rotate:0}}
+            whileHover={{scale:1.1}}
+            >
+                <div className="curcle">
+                    <motion.span className='bg-emerald-600  w-20 h-20' transition={{duration:.1}} animate={isClick?{opacity:1,scale:1}:{opacity:0,scale:0}}>
+                        <button className="theme">Chnage</button>
+                    </motion.span>
                 </div>
-
-                {/* for mobile  --start */}
-                <NavLink to="/home">
-                    <img src={icons[0]} alt="home" className="mobile" />
-                </NavLink>
-                <NavLink to="/projects">
-                    <img src={icons[1]} alt="project" className="mobile" />
-                </NavLink>
-                <NavLink to="/connect">
-                    <img src={icons[2]} alt="connect" className="mobile" />
-                </NavLink>
-                <NavLink to="/about">
-                    <img src={icons[3]} alt="about" className="mobile" />
-                </NavLink>
-                {/* for mobile ---end */}
-
-                <motion.div
-                    className="icon h-[2.5rem] mx-6 min-w-[30px] flex rounded-[30%] overflow-hidden cursor-pointer z-40 "
-                    onClick={() => { (show ? setShow(false) : setShow(true)) }}
-                    whileHover={{ scale: 1.1 }}
-                >
-                    <img src={icon} alt="image" className="pc" />
+                <motion.div className="box"  animate={isClick?{scale:0,opacity:0}:{scale:1,opacity:1}} ></motion.div>
+                <motion.div className="box" animate={isClick?{scale:0,opacity:0}:{backgroundColor:"white"}}></motion.div>
+                <motion.div className="box" animate={isClick?{scale:0,opacity:0}:{scale:1,opacity:1}}></motion.div>
+                <motion.div className="box flex items-center justify-center text-white text-xl font-bold" animate={isClick?{backgroundColor:"#DA0037",height:"25px",width:"25px"}:{backgroundColor:"white"}} whileHover={isClick?{scale:1.1}:""}>
+                   {isClick?"X":""}
                 </motion.div>
-
-            </nav>
-
-
-        </>
+            </motion.div>
+            </AnimatePresence>
+        </nav>
+         {/* <div className="option absolute top-[80px] bg-red-600 h-min w-min right-20">
+         hiui
+             </div> */}
+            </>
     )
 }

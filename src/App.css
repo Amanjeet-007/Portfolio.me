@@ -12,297 +12,273 @@
   font-weight: normal;
   font-style: normal;
 }
+:root{
+  --primary-color: #171717; /*black*/
+  --text-color: #EDEDED  ;  /*white*/
+  --secondary-color: #444444; /*grey*/
+  /* --terminal-text: rgb(0, 2fwe24, 52); */
+  --terminal-text: #06D001;
+  --unique-color: #DA0037 ;/*reddis*/
+}
 *{
   padding: 0;
   margin: 0;
 }
-html {
+html,body {
+  background-color: var(--primary-color);
   scroll-behavior: smooth;
+  height: 100%;
+  width: 100vw;
+  overflow-x: hidden;
+  scrollbar-width: none;
 }
 body{
-  box-sizing: border-box;
   width: 100vw;
-  overflow: hidden;
-  background: linear-gradient(
-  45deg,
-   #12638e 30%,
-   #123676 
-  );
-  height: 100vh;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: contain;
-  background-blend-mode: overlay;
-  overflow: hidden;
-  font-family: 'Bebas Neue', sans-serif;
-  color: rgb(255, 255, 255);
+
 }
-main{
-  padding-top: 100px;
-  height: 100%;
-  width: 100%;
-}
+/* --------------------------------Navbar */
 nav{
-  background-color:rgba(239, 233, 233, 0.306);
-  padding: 20px 25px;
-  margin-top: 30px;
-}
-#search{
-  font-family: sans-serif;
-  padding-left: 20px;
-  margin-bottom: 20px;
-}
-.Logo{
-  
-  height: fit-content;
-}
-
-/* welcome                ------start   */
-marquee{
-  letter-spacing: 2px;
-  border-radius: 10px;
-}
-.welcome{
-  background-color: #2B2D42;
-}
-.welcome img{
-  height: 80px;
-  rotate: 180deg;
-}
-.welcome img:last-child{
-  rotate: 0deg;
-}
-.welcome button{
-  z-index: 99;
-  /* padding: 8px 30px; */
-  width: 150px;
-  height: 60px;
-  font-size: 25px;
-  background-color: #8D99AE;
-  color:#2B2D42 ;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.play{
-  display: none;
-}
-/* homepage */
-.ai{
   padding: 20px;
-  border-radius: 10px;
-  background-color: #670202d0;
-  outline: none;
-  font-size: 20px;
+  background-color: var(--secondary-color);
+  overflow: visible;
+}
+.logo{
+  color: var(--terminal-text);
+  font-family: 'Black ops';
+  font-size: 25px;
 }
 
-.ai input{
-  font-size: 15px;
-  align-items: center;
-  justify-content: center;
+.menu ul li{
   display: flex;
-  border-color: yellow;
-  outline: white;
-}
-/* enter */
-.button{
-  text-transform: uppercase;
-  border-radius: 16px;
-  cursor: pointer;
-  font-family:'Black ops',sans-serif;
-  height: 8rem ;
-  width:20rem;
-}
-.social .left img{
-  height: 60px;
-  width: 60px;
-  margin: 15px 20px;
-  cursor: pointer;
-}
-.menu{
-  transition: .4s;
-  transform-origin: center;
-  /* overflow:scroll; */
-  flex-wrap: wrap;
-  width: 50%;
-  padding: 10px 20px;
-  scrollbar-3dlight-color: blueviolet;
-  -ms-overflow-style: none;  /* Hide scrollbar in IE/Edge */
-  scrollbar-width: none;      /* Hide scrollbar in Firefox */
   align-items: center;
-}
-.menu li{
-  padding: 5px 10px;
-  font-size: 20px;
-}
-.menu ul li:hover{
-  color: black;
-  transition: .5s;
-  scale: 1.1;
-  background-color: rgba(235, 222, 222, 0.788);
-
+  font-weight: 600;
+  justify-content: center;
+  padding: 7px 20px ;
+  margin: 0px 10px;
+  color: #ffffff;
+  z-index: 1;
+  background-color: var(--primary-color);
+  border-radius: 20px;
 }
 .active{
-  border-radius:25px;
-  color: rgb(255, 0, 0);
+  border-radius: 20px;
+  position: relative;
+  background: linear-gradient(
+    to bottom , #444444 60%,green
+  );
 }
-/* Add this in your global styles (e.g., styles.css) */
-.menu::-webkit-scrollbar {
-  display: none; /* Hide scrollbar in WebKit (Chrome, Safari, Edge) */
+.active::after{
+  content: " ";
+  z-index: 0;
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translate(-50%);
+  height: 5px;
+  width: 40px;
+  background-color:  var(--terminal-text);
+  box-shadow: 0px -5px 15px var(--terminal-text);
+  border-radius: 5px;
 }
-.hero{
+.menu-button{
+  height: 50px;
+  width: 50px;
+  background-color: rgba(255, 0, 0, 0);
+  display: grid;
+  transform-origin: center;
+  grid-template-columns: 20px 20px;
+  grid-template-rows: 20px 20px;
+  justify-items: center;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+  z-index: 99;
+  overflow: visible;
+}
+.menu-button .box{
+  height: 15px;
+  width: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 4px;
+}
+.menu-button .curcle{
+  z-index: 2;
+  position: absolute;
+  rotate: -100deg;
+  color: white;
+  height: 250px;
+  width: 250px;
+  border-radius: 50%;
+  border-bottom-left-radius: 50%;
+  background-color: transparent;  /* main */
+}
+.theme{
+  z-index: 2;
+}
+.opions{
+  z-index:auto;
+}
+  /* Home page style  */
+main{
+  height: 100%;
+  display: flex;
   flex-direction: row;
+  flex-direction: column;
 }
 .card{
+  height: 15rem;
+  width: 12rem;
+  background-color: var(--secondary-color);
+  border-radius:5px;
+  color: #FFAC41;
+  border-top-left-radius: 20px;
+}
+.card img{
+  margin: 20px 20px 10px 20px;
+
+}
+.card p{
+  font-size: 18px;
+  font-weight: 600;
+}
+.card button{
+  font-family: 'Black ops';
+  color: white;
+  height: 35px;
+  width: 120px;
+  background-color: var(--unique-color);
+  margin-top: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 4px;
+  letter-spacing: 1px;
+}
+
+.center h2{
+  position: relative;
+  font-family: 'Bebas Neue';
   text-align: center;
-  min-width: 200px;
-  min-height: 120px;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+.center h2 span{
+  cursor:pointer;
+  font-size: 40px;
+  font-family: 'Black ops';
+
+}
+.hand{
+  position:absolute;
+  top: -5px;
+  right: 60%;
+}
+.hand:hover{
+  rotate: 20deg;
+  transition: .1s;
+}
+.left,.center{
+  margin-top: 30px;
+  height: 80vh;
+}
+.right{
+  height: 50vh;
+  margin-left: 30px;
+ 
+}
+.right .skills .tech{
+  cursor: pointer;
+}
+.right p{
+  font-size: 30px;
+  font-family: 'Black ops';
+  margin-bottom: 20px;
+  margin-top: 300px;
+}
+.top{
+  position: relative;
+  z-index: 99;
+}
+.backGround{
+  height: 87vh;
+  width: 100vw;
+  position: absolute;
+  z-index: -200;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: none;
+  overflow: hidden;
+}
+.backGround span{
+  height: 50px;
+  width:50px;
+  background-color: #000000;
+  margin: 2px;
+  border-radius: 5px;
+  color: rgb(0, 215, 0);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  margin: 15px;
-  color: white;
-  background-color: #615f5f52;
-  border: 1px solid white;
-  border-radius: 10px;
-  cursor: pointer;
+  font-size: 25px;
 }
-.card p{
-  font-size: 2rem;
-}
-.Form{
-  min-width:60vw;
-  border-radius: 10px;
-  height: 400px ;
+.tech{
   display: flex;
-  border: 2px solid black;
-  margin: 100px 10px;
-  flex-direction: column;
-  overflow: hidden;
-  color: green;
-  background-color: black;
-}
-.Form input{
-  width: 200px;
+  align-items: center;
   margin: 10px;
-  padding: 4px 6px;
-  border: 2px solid black;
+  border: 1px solid white ;
+  padding: 5px 13px;
+  border-radius: 5px;
+  transition: .1s;
 }
-.mobile{
-  display: none;
+.tech:hover{
+  box-shadow: 2px 2px 3px #DA0037,
+            -2px 2px 3px #DA0037,
+            2px -2px 3px #DA0037,
+            -2px -2px 3px #DA0037;
 }
-.greet{
-  color: rgb(244, 232, 178);
-  font-size: 40px;
+.tech img,svg{
+  margin: 5px;
+  height: 20px;
 }
-.layer_one{
-  font-family: 'Black ops';
-  border-top: 5px solid blue;
-  border-bottom: 5px solid blue;
-}
-.layer_one h1{
-  z-index: 99;
-}
-.layer_one h1::after{
-  content: " ";
-  position:absolute;
-  width: 20vw;
-  height: 5px;
-  background-color: #1e78a8;
-  border: 2px solid #12638e;
-  border-radius:20px;
-  left:32% ;
-  top: 58px;
-  z-index: -1;
-}
-.layer_one h1 span{
-  z-index: 0;
-}
-.para{
-  color: #123676 ;
-  background-color: rgb(255, 255, 255);
-  backdrop-filter:blur(20px);
-  border-radius: 20px;
-  font-size: 34px;
-  letter-spacing: 1px;
-  justify-content: space-around;
-  box-shadow: 0px 5px 15px black;
-}
-.para:hover{
-  box-shadow: 0px 7px 25px black;
-}
-.para img{
-  height: 50px;
-  margin: 0px;
-  cursor: pointer;
-  z-index: 99;
-}
-.para img:last-child{
-  rotate: 180deg;
-}
-@media (max-width: 600px){
-  body{
-    position: relative;
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    width: 100vw;
-    overflow: scroll;
-  }
-  main{
-    overflow: hidden;
+ /* second section  project in Home page*/
+ .project{
+  height: 100vh;
+  width: 100vw;
+ }
 
+@media (max-width:600px) {
+  nav{
+    background-color: transparent;
+    border-bottom: 2px solid var(--secondary-color);
+    overflow-x: hidden;
+    scrollbar-width: none;
   }
-  .hero{
+  .menu{
+    display: none;
+  }
+  .menu-button .curcle{
+    display: none;
+  }
+  /* Home page style  */
+  main,.top{
     flex-direction: column;
   }
-  .pic{
-    visibility: hidden;
+  pre{
+    font-size: 25px;
   }
-  nav{
-    margin: unset;
-    width: 100%;
-    justify-content: space-around;
+  .right{
+  margin-left: 0px;
+  margin-top:20vmin;
+
   }
-  .mobile{
-    display: unset;
-    width: 40px;
-    height: 40px;
+  .right p{
+    text-align: center;
+    width: 100vw;
+    font-size: 26px;
   }
-  .pc,.name,.menu,.icon{
-    display: none;
-  }
-  .resume{
-    height: 100px;
-    bottom: 0px;
-    right: 10px;
-  }
-  .social{
-    right: 0px;
-    flex-direction: row;
-    left: unset;
-    top: 120px;
-    height: min-content;
-    width: 100%;
-  }
-  .social img,.social a{
-    margin: unset;
-    width: 100px;
-  }
-  .active{
-    scale: 1.3;
-  }
-  .play{
-    display: unset;
-    margin-top: 20px;
-    height: 40x;
-    cursor: pointer;
-  }
-  .layer_on h1{
-    font-size: 10vh;
-  }
-  .im{
-    display: none;
+  main .left,.top .left,.right{
+    width: 100vw;
+    height: 40vh;
   }
 }
-
