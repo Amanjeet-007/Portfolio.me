@@ -52,7 +52,7 @@ function App() {
           <div className="center text-white  flex items-center justify-center" ref={hover}>
             <h2>Hey, <motion.span className='hand'  initial={{position:'absolute',opacity:0}} whileHover={{rotate:'10deg',opacity:1}}>👋</motion.span> <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet kumar</span>,<br /><pre>A FullStack Devloper<br /> AI Learner </pre></h2>
           </div>
-          <div className="right text-amber-50 w-1/3 h-full flex items-center flex-col justify-center">
+          <div className="right text-amber-50 w-1/3 flex items-center flex-col justify-center">
           <p>Technical expertise</p>
         <div className="skills flex flex-wrap w-[100%] justify-around h-min">
             <motion.div whileHover={{scale:1.2}} className="tech"><img src="https://cdn-icons-png.flaticon.com/128/541/541509.png" alt="js" />JavaScript </motion.div>

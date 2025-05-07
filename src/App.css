@@ -118,24 +118,54 @@ nav{
 .opions{
   z-index:auto;
 }
-  /* Home page style  */
+/* ----------------------------------welcome page style */
+.welcome{
+  font-family: 'Bebas Neue';
+  background-color: var(--primary-color);
+}
+.welcome img{
+  height: 80px;
+  rotate: 180deg;
+}
+.welcome img:last-child{
+  rotate: 0deg;
+}
+.welcome button{
+  z-index: 99;
+  letter-spacing: 1px;
+  /* padding: 8px 30px; */
+  width: 150px;
+  height: 60px;
+  font-size: 25px;
+  background-color: var(--secondary-color);
+  color: var(--text-color) ;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.play{
+  margin-top: 10px;
+  display: none;
+}
+  /*--------------------------------- Home page style  */
 main{
   height: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   flex-direction: column;
 }
 .card{
   height: 15rem;
   width: 12rem;
-  background-color: var(--secondary-color);
+  background: rgba(255, 255, 255, 0.034); /* Transparent white */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  padding: 20px; /* Some spacing */
+  color: white; /* Text color */
   border-radius:5px;
-  color: #FFAC41;
   border-top-left-radius: 20px;
-}
-.card img{
-  margin: 20px 20px 10px 20px;
-
 }
 .card p{
   font-size: 18px;
@@ -181,9 +211,17 @@ main{
   height: 80vh;
 }
 .right{
-  height: 50vh;
+  min-width: 30vw;
+  height: min-content;
+  margin-top: 150px;
   margin-left: 30px;
- 
+  background: rgba(255, 255, 255, 0.034); /* Transparent white */
+  backdrop-filter: blur(10px); /* Blurring effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  border-radius: 10px; /* Rounded corners */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+  padding: 20px; /* Some spacing */
+  color: white; /* Text color */
 }
 .right .skills .tech{
   cursor: pointer;
@@ -192,7 +230,6 @@ main{
   font-size: 30px;
   font-family: 'Black ops';
   margin-bottom: 20px;
-  margin-top: 300px;
 }
 .top{
   position: relative;
@@ -260,6 +297,9 @@ main{
   .menu-button .curcle{
     display: none;
   }
+  .play{
+    display: flex;
+  }
   /* Home page style  */
   main,.top{
     flex-direction: column;
@@ -268,8 +308,9 @@ main{
     font-size: 25px;
   }
   .right{
+    height: min-content;
   margin-left: 0px;
-  margin-top:20vmin;
+  margin-top:50vmin;
 
   }
   .right p{
