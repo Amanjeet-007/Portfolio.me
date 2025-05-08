@@ -244,6 +244,12 @@ main{
   position: relative;
   z-index: 99;
 }
+.center p{
+  text-align: center;
+  font-size: 22px;
+  padding: 5px;
+  display: none;
+}
 .backGround{
   height: 87vh;
   width: 100vw;
@@ -364,6 +370,7 @@ main{
     padding: 5px;
   }
   .right p{
+    display: flex;
     text-align: center;
     width: 100vw;
     font-size: 26px;
