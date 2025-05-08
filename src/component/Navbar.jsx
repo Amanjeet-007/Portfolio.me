@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router'
 export default function Navbar() {
     const [isClick,setIsClick] = useState(false);
-    const options = ["Home","Projects","About","Blogs",]
+    const options = ["Home","Projects","About","Blogs","Connect"]
 
     return (
         <>
@@ -16,7 +16,9 @@ export default function Navbar() {
                     {options.map(el=>{
                         console.log(el.toLowerCase())
                         return(
-                            <NavLink to={`/${el.toLowerCase()}`} key={el}>  <motion.li>{el}</motion.li> </NavLink>
+                            <NavLink to={`/${el.toLowerCase()}`} key={el}>  <motion.li
+                            whileHover={{scaleX:1.1,scaleY:1.2,scaleZ:1.1,color:'white'}}
+                            >{el}</motion.li> </NavLink>
                         )
                     })}
                 </ul>
@@ -33,6 +35,29 @@ export default function Navbar() {
                         <button className="theme">Chnage</button>
                     </motion.span>
                 </div>
+                <motion.div className="MobileList absolute top-[70px] -right-3"
+                initial={{opacity:0}}
+                animate={isClick?{opacity:1,scale:1}:{opacity:0,scale:0}}
+                >
+                    <NavLink to={"/home"}>
+                    <div className="icons">
+                        <img src="https://cdn-icons-png.flaticon.com/128/10349/10349274.png" alt="home" />
+                    </div>
+                        </NavLink>
+                    <NavLink to={"/projects"}>
+                    <div className="icons"><img src="https://cdn-icons-png.flaticon.com/128/16291/16291033.png" alt="project" /></div>
+                    </NavLink>
+                    <NavLink to={"/blogs"}>
+                    <div className="icons"><img src="https://cdn-icons-png.flaticon.com/128/3959/3959425.png" alt="Blog" /></div>
+                    </NavLink>
+                    <NavLink to={'/connect'}>
+                    <div className="icons"><img src="https://cdn-icons-png.flaticon.com/128/9333/9333996.png" alt="Connect" /></div>
+                    </NavLink>
+                    <NavLink to={'/about'}>
+                    <div className="icons"><img src="https://cdn-icons-png.flaticon.com/128/1/1176.png" alt="About" /></div>
+                    </NavLink>
+
+                </motion.div>
                 <motion.div className="box"  animate={isClick?{scale:0,opacity:0}:{scale:1,opacity:1}} ></motion.div>
                 <motion.div className="box" animate={isClick?{scale:0,opacity:0}:{backgroundColor:"white"}}></motion.div>
                 <motion.div className="box" animate={isClick?{scale:0,opacity:0}:{scale:1,opacity:1}}></motion.div>

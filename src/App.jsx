@@ -43,15 +43,23 @@ function App() {
            <Span/>
           </div>
           <div className="left w-1/3 h-[80vh] flex items-center justify-center">
-            <div className="card flex items-center flex-col">
+            <motion.div className="card flex items-center flex-col"
+            whileHover={{scaleX:1.05,scaleZ:1.1,scaleY:1.1}}
+            >
               <img src="https://img.icons8.com/?size=160&id=EvfjU4d05f0I&format=png" className='h-28' alt="" />
               <p>Amanjeet Kumar</p>
+              <a href="https://drive.google.com/file/d/1LTA155Rd2tWSzZll4qX9LIuaFWZPqY6j/view" target='blank'>
               <button>Resume</button>
-            </div>
+              </a>
+            </motion.div>
           </div>
           <div className="center text-white  flex items-center justify-center" ref={hover}>
-            <h2>Hey, <motion.span className='hand'  initial={{position:'absolute',opacity:0}} whileHover={{rotate:'10deg',opacity:1}}>👋</motion.span> <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet kumar</span>,<br /><pre>A FullStack Devloper<br /> AI Learner </pre></h2>
+            <h2>Hey, <motion.span className='hand'  initial={{position:'absolute',opacity:0}} whileHover={{rotate:'10deg',opacity:1}} transition={{duration:.3}}>👋</motion.span> <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet kumar</span>,<br /><pre>A FullStack Devloper<br /> AI Learner </pre></h2>
+            <p>🚀 I’m Amanjeet, a self-taught full-stack developer
+skilled in React, Node.js, MongoDB, and Express. Currently learning C, DSA, and Artificial Intelligence
+| to build powerful tools and contribute to impactful. open-source and SaaS projects. </p>
           </div>
+          <marquee behavior="" direction=""> hii</marquee>
           <div className="right text-amber-50 w-1/3 flex items-center flex-col justify-center">
           <p>Technical expertise</p>
         <div className="skills flex flex-wrap w-[100%] justify-around h-min">
@@ -71,9 +79,9 @@ function App() {
           </div>
           </div>
         </div>
-        <div className="project">
+        {/* <div className="project">
             
-        </div>
+        </div> */}
       </main>
     </>
   )
