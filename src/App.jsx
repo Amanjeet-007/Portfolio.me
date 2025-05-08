@@ -55,11 +55,10 @@ function App() {
           </div>
           <div className="center text-white  flex items-center justify-center" ref={hover}>
             <h2>Hey, <motion.span className='hand'  initial={{position:'absolute',opacity:0}} whileHover={{rotate:'10deg',opacity:1}} transition={{duration:.3}}>👋</motion.span> <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet kumar</span>,<br /><pre>A FullStack Devloper<br /> AI Learner </pre></h2>
-            <p>🚀 I’m Amanjeet, a self-taught full-stack developer
+            {/* <p>🚀 I’m Amanjeet, a self-taught full-stack developer
 skilled in React, Node.js, MongoDB, and Express. Currently learning C, DSA, and Artificial Intelligence
-| to build powerful tools and contribute to impactful. open-source and SaaS projects. </p>
+| to build powerful tools and contribute to impactful. open-source and SaaS projects. </p> */}
           </div>
-          <marquee behavior="" direction=""> hii</marquee>
           <div className="right text-amber-50 w-1/3 flex items-center flex-col justify-center">
           <p>Technical expertise</p>
         <div className="skills flex flex-wrap w-[100%] justify-around h-min">

@@ -245,9 +245,6 @@ main{
   z-index: 99;
 }
 .center p{
-  text-align: center;
-  font-size: 22px;
-  padding: 5px;
   display: none;
 }
 .backGround{
