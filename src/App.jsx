@@ -43,7 +43,7 @@ function App() {
            <Span/>
           </div>
           <div className="left w-1/3 h-[80vh] flex items-center justify-center">
-            <motion.div className="card flex items-center flex-col"
+            <motion.div className="card"
             whileHover={{scaleX:1.05,scaleZ:1.1,scaleY:1.1}}
             >
               <img src="https://img.icons8.com/?size=160&id=EvfjU4d05f0I&format=png" className='h-28' alt="" />
@@ -53,21 +53,23 @@ function App() {
               </a>
             </motion.div>
           </div>
-          <div className="center text-white  flex items-center justify-center" ref={hover}>
-            <h2>Hey, <motion.span className='hand'  initial={{position:'absolute',opacity:0}} whileHover={{rotate:'10deg',opacity:1}} transition={{duration:.3}}>👋</motion.span> <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet kumar</span>,<br /><pre>A FullStack Devloper<br /> AI Learner </pre></h2>
-            {/* <p>🚀 I’m Amanjeet, a self-taught full-stack developer
+          <div className="center text-white  flex items-center justify-center flex-col relative" ref={hover}>
+            <h2>Hey, <motion.span className='hand'  initial={{position:'absolute',opacity:0}} whileHover={{rotate:'10deg',opacity:1}} transition={{duration:.3}}>👋</motion.span> <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet kumar</span></h2>
+            <h3><pre className='font-extrabold'> FullStack Devloper|AI Learner </pre></h3>
+            <p>🚀 I’m Amanjeet, a self-taught full-stack developer
 skilled in React, Node.js, MongoDB, and Express. Currently learning C, DSA, and Artificial Intelligence
-| to build powerful tools and contribute to impactful. open-source and SaaS projects. </p> */}
+| to build powerful tools and contribute to impactful. open-source and SaaS projects. </p>
           </div>
           <div className="right text-amber-50 w-1/3 flex items-center flex-col justify-center">
-          <p>Technical expertise</p>
+          
         <div className="skills flex flex-wrap w-[100%] justify-around h-min">
+        <p> {"#"} Technical expertise</p>
             <motion.div whileHover={{scale:1.2}} className="tech"><img src="https://cdn-icons-png.flaticon.com/128/541/541509.png" alt="js" />JavaScript </motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/3098/3098090.png" alt="py" />Python</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/5098/5098279.png" alt="" />C++</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" alt="" /> HTML & <img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="" /> CSS</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/3334/3334886.png" alt="" /> React</motion.div> 
-            <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://img.icons8.com/?size=96&id=x7XMNGh2vdqA&format=png" alt="" />Tailwind</motion.div>
+            <motion.div className="tech" whilever={{scale:1.2}}> <img src="https://img.icons8.com/?size=96&id=x7XMNGh2vdqA&format=png" alt="" />Tailwind</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" />NodeJs</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://netforemost.com/wp-content/uploads/2024/08/1646733543-1.webp" alt="" />ExpressJs</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/9672/9672250.png" alt="" />MongoDb</motion.div>
