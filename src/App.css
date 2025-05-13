@@ -157,6 +157,7 @@ main{
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  width: 100vw;
   flex-direction: row;
   flex-direction: column;
 }
@@ -382,6 +383,16 @@ label{
 }
 .blogs{
   padding: 20px;
+}
+.container{
+  height: 90vh;
+  width: 100vw;
+}
+.bCard{
+  background-color: var(--secondary-color);
+  border: 3px solid var(--unique-color);
+  color: var(--text-color);
+  padding: 15px;
 }
 @media (max-width:600px) {
   nav{

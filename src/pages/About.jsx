@@ -10,9 +10,9 @@ export default function About() {
       </header>
 
       {/* Main content area */}
-      <main className="container mx-auto px-4 py-12 min-h-screen text-center">
+      <main className="container px-4 py-12  text-center bg-red-600">
         {/* Hero Section */}
-        <section className="flex flex-col md:flex-row items-center justify-between mb-16">
+        <section className="flex bg-green-500 flex-col md:flex-row items-center justify-between mb-16">
           {/* Text Content */}
           <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
