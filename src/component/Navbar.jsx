@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { NavLink } from 'react-router'
 export default function Navbar() {
     const [isClick,setIsClick] = useState(false);
-    const options = ["Home","Projects","About","Blogs","Connect"]
+    const options = ["Home","Projects","Blogs","Connect"] //"About",
 
     return (
         <>
@@ -14,7 +14,6 @@ export default function Navbar() {
             <div className="menu md:none w-min h-full">
                 <ul className='flex'>
                     {options.map(el=>{
-                        console.log(el.toLowerCase())
                         return(
                             <NavLink to={`/${el.toLowerCase()}`} key={el}>  <motion.li
                             whileHover={{scaleX:1.1,scaleY:1.2,scaleZ:1.1,color:'white'}}
@@ -53,9 +52,9 @@ export default function Navbar() {
                     <NavLink to={'/connect'}>
                     <div className="icons"><img src="https://cdn-icons-png.flaticon.com/128/9333/9333996.png" alt="Connect" /></div>
                     </NavLink>
-                    <NavLink to={'/about'}>
+                    {/* <NavLink to={'/about'}>
                     <div className="icons"><img src="https://cdn-icons-png.flaticon.com/128/1/1176.png" alt="About" /></div>
-                    </NavLink>
+                    </NavLink> */}
 
                 </motion.div>
                 <motion.div className="box"  animate={isClick?{scale:0,opacity:0}:{scale:1,opacity:1}} ></motion.div>

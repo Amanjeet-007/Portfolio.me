@@ -69,7 +69,7 @@ skilled in React, Node.js, MongoDB, and Express. Currently learning C, DSA, and 
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/5098/5098279.png" alt="" />C++</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" alt="" /> HTML & <img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="" /> CSS</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/3334/3334886.png" alt="" /> React</motion.div> 
-            <motion.div className="tech" whilever={{scale:1.2}}> <img src="https://img.icons8.com/?size=96&id=x7XMNGh2vdqA&format=png" alt="" />Tailwind</motion.div>
+            <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://img.icons8.com/?size=96&id=x7XMNGh2vdqA&format=png" alt="" />Tailwind</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" />NodeJs</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://netforemost.com/wp-content/uploads/2024/08/1646733543-1.webp" alt="" />ExpressJs</motion.div>
             <motion.div className="tech" whileHover={{scale:1.2}}> <img src="https://cdn-icons-png.flaticon.com/128/9672/9672250.png" alt="" />MongoDb</motion.div>
@@ -80,6 +80,7 @@ skilled in React, Node.js, MongoDB, and Express. Currently learning C, DSA, and 
           </div>
           </div>
         </div>
+        <marquee behavior="" direction="" className="text-teal-50"> Hello World</marquee>
         {/* <div className="project">
             
         </div> */}
