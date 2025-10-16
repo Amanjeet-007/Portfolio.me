@@ -1,18 +1,27 @@
+@import "tailwindcss";
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url('../Font/BebasNeue-Regular.ttf') format('truetype');
+  font-family: 'Audio';
+  src: url('../Font/Audiowide/Audiowide-Regular.ttf') format('truetype');
   gap: 2px;
   font-weight: normal;
   font-style: normal;
 }
-@font-face {
-  font-family: 'Black ops';
-  src: url('../Font/BlackOpsOne-Regular.ttf') format('truetype');
+@font-face{
+  font-family: "mont1";
+  src: url('../Font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
+  gap: 2px;
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+  font-family: "mont2";
+  src: url('../Font/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
   gap: 2px;
   font-weight: normal;
   font-style: normal;
 }
 :root{
+  --b:#321E1E;
   --primary-color: #171717; /*black*/
   --text-color: #EDEDED  ;  /*white*/
   --secondary-color: #444444; /*grey*/
@@ -24,479 +33,43 @@
   padding: 0;
   margin: 0;
 }
-html,body {
-  background-color: var(--primary-color);
-  scroll-behavior: smooth;
-  height: 100%;
-  width: 100vw;
-  overflow-x: hidden;
-  scrollbar-width: none;
+html,body{
+  background-color: #171717;
 }
-body{
-  width: 100vw;
-
-}
-/* --------------------------------Navbar */
 nav{
-  padding: 20px;
-  background-color: var(--secondary-color);
-  overflow: visible;
+  background-color: transparent;
+  color: #ffffff;
 }
-.logo{
-  color: var(--terminal-text);
-  font-family: 'Black ops';
-  font-size: 25px;
-}
-
-.menu ul li{
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-  justify-content: center;
-  padding: 7px 20px ;
-  margin: 0px 10px;
-  color: rgba(255, 255, 255, 0.776);
-  z-index: 1;
-  background-color: var(--primary-color);
-  border-radius: 20px;
-}
-.active{
-  border-radius: 20px;
-  position: relative;
-  color: rgb(255, 255, 255);
-  /* background: linear-gradient(
-    to bottom , #444444 60%,green
-  ); */
-}
-.menu ul li::after{
-  content: " ";
-  z-index: 0;
-  position: absolute;
-  bottom: 2px;
-  left: 50%;
-  transform: translate(-50%);
-  height: 5px;
-  width: 40px;
-  background-color:  var(--terminal-text);
-  box-shadow: 0px -10px 20px var(--terminal-text);
-  border-radius: 5px;
-}
-.menu-button{
-  margin-top: 10px;
-  height: min-content;
-  width: min-content;
-  background-color: rgba(255, 0, 0, 0);
-  display: grid;
-  transform-origin: center;
-  grid-template-columns: 20px 20px;
-  grid-template-rows: 20px 20px;
-  /* justify-items: center; */
-  /* align-items: center; */
-  cursor: pointer;
-  position: relative;
-  z-index: 99;
-  overflow: visible;
-}
-.menu-button .box{
-  height: 15px;
-  width: 15px;
-  background-color: rgb(255, 255, 255);
-  border-radius: 4px;
-}
-.menu-button .curcle{
-  z-index: 2;
-  position: absolute;
-  rotate: -100deg;
+nav #logo{
   color: white;
-  height: 250px;
-  width: 250px;
-  border-radius: 50%;
-  border-bottom-left-radius: 50%;
-  background-color: transparent;  /* main */
+    font-family: 'Audio';
+    font-size: 35px;
+    font-weight: 800;
 }
-.MobileList{
-  z-index: 99;
-  display: none;
+#options .option{
+  border: 2px solid rgb(54, 34, 34);
+    font-family:'Audio',sans-serif ;
 }
-.theme{
-  z-index: 2;
+#options .active .option{
+    border: 2px solid transparent;
 }
-.opions{
-  z-index:auto;
+#options .option:hover{
+    border: 2px solid transparent;
 }
-/* ----------------------------------welcome page style */
-.welcome{
-  font-family: 'Bebas Neue';
-  background-color: var(--primary-color);
-}
-.welcome img{
-  height: 80px;
-  rotate: 180deg;
-}
-.welcome img:last-child{
-  rotate: 0deg;
-}
-.welcome button{
-  z-index: 99;
-  letter-spacing: 1px;
-  /* padding: 8px 30px; */
-  width: 150px;
-  height: 60px;
-  font-size: 25px;
-  background-color: var(--secondary-color);
-  color: var(--text-color) ;
-  border-radius: 10px;
-  cursor: pointer;
-}
-.play{
-  margin-top: 10px;
-  display: none;
-}
-  /*--------------------------------- Home page style  */
-main{
-  height: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  width: 100vw;
-  flex-direction: row;
-  flex-direction: column;
-}
-.card{
-  height: min-content;
-  width: 12rem;
-  background: rgba(255, 255, 255, 0.034); /* Transparent white */
-  backdrop-filter: blur(10px); /* Blurring effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-radius: 10px; /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-  padding: 20px; /* Some spacing */
-  color: white; /* Text color */
-  border-radius:5px;
-  border-top-left-radius: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  margin: 10px;
-  cursor: pointer;
-}
-.card p{
-  margin-bottom: 10px;
-  font-size: 18px;
-  font-weight: 600;
-}
-.card button{
-  font-family: 'Black ops';
-  color: white;
-  height: 35px;
-  width: 120px;
-  background-color: var(--unique-color);
-  margin-top: 20px;
-  font-size: 18px;
-  cursor: pointer;
-  border-radius: 4px;
-  letter-spacing: 1px;
-}
-.center{
-  /* background: red;  */
-  width: 35%;
-  padding: 10px;
-}
-.right{
-  border: 4px solid white;
+button{
+  font-family:'Audio',sans-serif ;
 }
 .center h2{
-  position: relative;
-  font-family: 'Bebas Neue';
-  font-size: 30px;
-  letter-spacing: 1px;
+  font-family:'Audio' ;
 }
-.center h2 span{
-  cursor:pointer;
-  font-size: 40px;
-  font-family: 'Black ops';
-
+marquee{
+  font-family:'Audio',sans-serif ;
 }
-.center p{
-  text-align: center;
-}
-.hand{
-  height: 50vh;
-  position:absolute;
-  /* top: -5px; */
-  right: 0%;
-  width: 100%;
-}
-.hand:hover{
-  rotate: 20deg;
-  transition: .1s;
-}
-.left,.center{
-  margin-top: 30px;
-  height: 80vh;
-}
-.left{
-  width: 27%;
-  padding-left: 5%;
-}
-.right{
-  min-width: 30vw;
-  height: min-content;
-  margin-top: 150px;
-  margin-left: 30px;
-  text-align: center;
-  background: rgba(255, 255, 255, 0.034); /* Transparent white */
-  backdrop-filter: blur(10px); /* Blurring effect */
-  -webkit-backdrop-filter: blur(10px); /* Safari support */
-  border-radius: 10px; /* Rounded corners */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
-  padding: 20px;  /*Some spacing */
-  color: white; /* Text color */
-  text-align: center;
-}
-.right .skills .tech{
-  cursor: pointer;
-}
-.right p{
-  font-size: 30px;
-  font-family: 'Black ops';
-  margin-bottom: 20px;
-}
-.top{
-  position: relative;
-  z-index: 99;
-}
-.backGround{
-  height: 87vh;
-  width: 100vw;
-  position: absolute;
-  z-index: -200;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  padding: none;
-  overflow: hidden;
-}
-.backGround span{
-  height: 50px;
-  width:50px;
-  background-color: #000000;
-  margin: 2px;
-  border-radius: 5px;
-  color: rgb(0, 215, 0);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 25px;
-}
-.tech{
-  display: flex;
-  align-items: center;
-  margin: 10px;
-  border: 1px solid white ;
-  padding: 5px 13px;
-  border-radius: 5px;
-  transition: .1s;
-}
-.tech:hover{
-  box-shadow: 2px 2px 3px #DA0037,
-            -2px 2px 3px #DA0037,
-            2px -2px 3px #DA0037,
-            -2px -2px 3px #DA0037;
-}
-.tech img,svg{
-  margin: 5px;
-  height: 20px;
-}
- /* second section  project in Home page*/
- .project{
-  height: 100vh;
-  width: 100vw;
- }
- .top{
-  z-index: 0;
- }
- /*----------------------------------------Project page*/
- .project{
-  height: 100%;
-  width: 100vw;
-  display: flex;
-  justify-content: space-around;
-  padding-top: 20px;
- }
- .card{
-  position: relative;
-  width: 245px;
- }
- .line{
-  top: -30%;
-  left: 0%;
-  width: 60%;
-  flex-direction: column;
-  display: flex;
-  justify-content: space-between;
-  border: 3px solid;
-  border-color: rgba(255, 255, 255, 0)   ;
-  border-left-color: aqua;
-  height: min-content;
-  align-items: center;
-  border-radius: 5px;
- }
- .line span{
-  position: relative;
-  margin-top: 50px;
- }
- .line span::before{
-  content: " ";
-  height: 10px;
-  width: 10px;
-  background-color: aqua;
-  border-radius: 50%;
-  position:absolute;
-  left: -100%;
-  top: 30%;
- }
-/* ----------------------------------------connect page */
-.terminal{
-  margin-top: 30px;
-  background-color: var(--secondary-color
-  );
-  color: var(--text-color);
-}
-.ttop{
-  background: var(--unique-color);
-}
-input,textarea{
-  color: var(--text-color);
-  border: 2px solid var(--primary-color);
-  width:90%;
-  margin-left: 20px;
-  padding: 5px
-}
-.send{
-  width: 100%;
-  padding:5px;
-  cursor: pointer;
-  background-color: var(--terminal-text);
-}
-label{
-  color: var(--text-color
-  );
-  margin: 5px  10px;
-}
-.connect h2{
-  margin-top: 20px;
-  color: var(--terminal-text);
-}
-.or{
-  margin: 20px;
-  font-size: 25px;
-  color: var(--unique-color);
-  font-weight: 600;
-}
-.social{
-  width: 100%;
-}
-.social img{
-  margin: 20px;
-}
-.blogs{
-  padding: 20px;
-}
-.container{
-  height: 90vh;
-  width: 100vw;
-}
-.bCard{
-  background-color: var(--secondary-color);
-  border: 3px solid var(--unique-color);
-  color: var(--text-color);
-  padding: 15px;
-}
-@media (max-width:600px) {
-  nav{
-    background-color: transparent;
-    border-bottom: 2px solid var(--secondary-color);
-    /* overflow-x: hidden; */
-    scrollbar-width: none;
-    z-index: 99;
-  }
-  .stack{
-    rotate: 0;
-  }
-  .MobileList{
-    display: flex;
-    background-color: var(--secondary-color);
-    flex-direction: column;
-    /* height: min-content; */
-    color: white;
-    /* width: min-content; */
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 99;
-  }
-  .MobileList .icons{
-    width: 30px;
-    margin: 25px 5px;
-    height: 5px;
-    display: flex;
-    border-radius: 5px;
-    align-items: center;
-    justify-content: center;
-  }
-  .MobileList .icons img{
-    height: 30px;
-  }
-  .active{
-    background-color: #ffffff3c;
-  }
-  .menu{
-    display: none;
-  }
-  .menu-button .curcle{
-    display: none;
-  }
-  .play{
-    display: flex;
-  }
-  /* Home page style  */
-  main,.top{
-    flex-direction: column;
-    height: min-content;
-  }
-  pre{
-    font-size: 20px;
-  }
-  .right{
-  margin-left: 0px;
-  margin-top:50vmin;
-  /* background-color: red; */
-
-  }
-  .center{
-    flex-direction: column;
-  }
-  .center p{
-    text-align: center;
-    font-size: 22px;
-    padding: 5px;
-  }
-  .right p{
-    display: flex;
-    text-align: center;
-    width: 100vw;
-    font-size: 26px;
-  }
-  main .left,.top .left,.right,.center{
-    width: 100vw;
-    height: min-content;
-    text-align: center;
-  }
-  .left{
-    padding: 0;
-  }
-  .card{
-    rotate:0deg ;
-  }
+h1{
+  font-family:'Bebas Neue',Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 500;
+  line-height: 7vmax;
+  font-size: 10vmin;
 }

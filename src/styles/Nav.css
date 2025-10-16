@@ -1,0 +1,125 @@
+nav {
+    /* height: min-content; */
+    height: 110px;
+    background-color: transparent;
+    width: 100vw;
+    /* overflow: hidden; */
+    position: fixed;
+    top: 0px;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 99;
+    /* position: relative; */
+}
+
+#logo {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: nowrap;
+    color: black;
+}
+
+#logo span {
+    display: inline-block;
+}
+
+.new {
+    opacity: 0;
+}
+
+button {
+    padding: 10px;
+}
+
+#options {
+    display: flex;
+    flex-wrap: wrap;
+
+    background-color: #171717;
+    position: fixed;
+    padding: 7px 20px;
+    border-radius: 30px;
+    box-shadow: 0px 2px 5px #b6b6b6;
+    margin-top: 10px;
+    left: 50%;
+    top: 10px;
+    transform: translate(-50%);
+
+}
+
+#options .option {
+    padding: 7px 12px;
+    margin: 10px 2vmin;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+
+}
+
+#options .option p {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+}
+
+#options a {
+    text-decoration: none;
+}
+
+/* #options .option:active {
+    border: 2px solid white;
+} */
+
+.option span img {
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+button {
+    background-color: #ffffff;
+    color: rgb(50, 47, 47);
+    padding: 15px 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border-radius: 10px;
+    border: 2px solid rgb(255, 255, 255);
+    outline: 2px solid black;
+}
+.active{
+    scale: 1.2;
+}
+.active p{
+    opacity: 0;
+    rotate: 0deg 45deg 0deg;
+}
+.active span img{
+    opacity: 1;
+    rotate: 0deg 180deg 0deg;
+}
+.active p:hover{
+    opacity: 1;
+    rotate: 0deg;
+}
+.active span img:hover{
+    opacity: 0;
+    rotate: 0deg -45deg 0deg;
+}
+
+
+@media (max-width:1125px) {
+    #options {
+        z-index: 99;
+        bottom: 20px;
+        top: unset;
+        width: 80vw;
+    }
+}

@@ -12,8 +12,6 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@reduxjs/toolkit": "^2.6.1",
-    "@splinetool/react-spline": "^4.0.0",
-    "@splinetool/runtime": "^1.9.75",
     "@tailwindcss/vite": "^4.0.9",
     "dotenv": "^16.5.0",
     "emailjs-com": "^3.2.0",
