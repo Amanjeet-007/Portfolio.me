@@ -29,12 +29,17 @@
   --terminal-text: #06D001;
   --unique-color: #DA0037 ;/*reddis*/
 }
-*{
+/* *{
   padding: 0;
   margin: 0;
-}
+} */
 html,body{
-  background-color: #171717;
+  /* background-color: rgb(192, 162, 12); */
+  background-color: rgb(224, 112, 0);
+}
+main{
+  margin-top: 100px; /*for testing */
+  min-height: 100%;
 }
 nav{
   background-color: transparent;
@@ -59,6 +64,9 @@ nav #logo{
 button{
   font-family:'Audio',sans-serif ;
 }
+.center{
+  margin-top: 140px;
+}
 .center h2{
   font-family:'Audio' ;
 }
@@ -72,4 +80,20 @@ h1{
   font-weight: 500;
   line-height: 7vmax;
   font-size: 10vmin;
+}
+
+/* about */
+.about{
+  background: #DA0037;
+}
+
+/* blogs */
+.card{
+  /* bg color for parent rgb(81, 48, 16) */
+  background-color: #ffffff50;
+  backdrop-filter: blur(50px);
+  padding: 0px 20px;
+}
+.card .title{
+font-family: 'Audio';
 }

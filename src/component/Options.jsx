@@ -6,10 +6,11 @@ import gsap from 'gsap';
 export default function Options(){
     const options = [
         ["Home", "https://cdn-icons-png.flaticon.com/128/10307/10307931.png", "/home"],
-        ["Projects", "https://cdn-icons-png.flaticon.com/128/9672/9672290.png", "/projects"],
         ["About", "https://cdn-icons-png.flaticon.com/128/13984/13984272.png", '/about'],
+        ["Skills", "https://cdn-icons-png.flaticon.com/128/13984/13984272.png", '/Skill'],
+        ["Projects", "https://cdn-icons-png.flaticon.com/128/9672/9672290.png", "/projects"],
         ["Blogs", "https://cdn-icons-png.flaticon.com/128/4136/4136043.png", '/blogs'],
-        ["Connect", "https://cdn-icons-png.flaticon.com/128/10308/10308279.png", '/connect']
+        // ["Connect", "https://cdn-icons-png.flaticon.com/128/10308/10308279.png", '/connect']
     ]
 
     function hoverHandler(e) {

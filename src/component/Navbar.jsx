@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import '../styles/Nav.css'
 import gsap from 'gsap';
 import Options from './Options';
+import { NavLink } from 'react-router';
 
 export default function Navbar() {
     useEffect((e) => {
@@ -65,10 +66,10 @@ export default function Navbar() {
                     <span className='new'>w</span>
                 </p>
             </div>
-
             <Options/>
-            
-            <button className='cursor-pointer'>Explore</button>
+            <NavLink to={"/connect"}>
+            <button className='cursor-pointer'>Connect</button>
+            </NavLink>
         </nav>
     )
 }

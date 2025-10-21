@@ -1,55 +1,53 @@
 import Navbar from "../component/Navbar"
-import {motion} from 'motion/react'
-export default function Blogs(){
-    return(
-        <main>
-            <Navbar/>
-     <div className="blogs w-full h-full flex items-center flex-col">
+import '../App.css'
+import { motion } from 'motion/react'
 
-    
-    <motion.div
-      className="bCard max-w-sm rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out cursor-pointer"
-      whileHover={{ scale: 1.03 }} // Subtle scale up animation on hover
-    >
-      {/* Blog Post Image */}
-      {/* Using an img tag with object-cover to ensure the image fills the space without distortion */}
-      {/* Added a placeholder image and a simple error fallback */}
-      <img
-        className="w-full h-48 object-cover"
-        src={"asf" || 'https://placehold.co/600x400/E5E7EB/1F2937?text=Blog+Image'} // Placeholder if no image URL is provided
-        alt={"asf" || 'Blog post image'}
-        onError={(e) => { e.target.onerror = null; e.target.src = 'https://placehold.co/600x400/E5E7EB/1F2937?text=Image'; }} // Fallback on error
-      />
 
-      {/* Card Body */}
-      <div className="px-6 py-4">
-        {/* Blog Post "asf" */}
-        {/* Using text-xl and font-bold for a prominent "asf" */}
-        <div className="font-bold text-xl mb-2 ml-4 ">{"Upcoming.." || 'Blog Post "Upcoming Blog"'}</div>
-        {/* Blog Post Excerpt/Description */}
-        {/* Using text-gray-700 for body text and text-base for standard size */}
-        <p className="text-base">
-          {`` || 'This Blog is related to redux tool kit '}
-        </p>
+
+export default function Blogs() {
+  const blogs = [
+    {
+      id: 0,
+      path: "/firstblog",
+      image: "https://media.licdn.com/dms/image/v2/D5612AQHY0LBRCLhk1Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1727362192771?e=2147483647&v=beta&t=1jpwJm68AOOU1rNNFU3rlZSj5EDni0tbHlCezPI0yVU",
+      title: "System design basic",
+      date: "2025 - 10 - 20",
+      status: "upcoming",
+      summary: "An intnroduction guide for system design"
+    },
+    {
+      id: 1,
+      path: "/2nd",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmJZ8TBRf7TmDqUdEUduoB2nOS17UOPOus3Q&s",
+      title: "OOPs advance",
+      date: Date.now(),
+      status: "upcoming",
+      summary: "An brife guide of OOPs concepts"
+    },
+
+
+  ]
+
+  return (
+    <main>
+      <Navbar />
+      <div className="blogs w-full h-full flex items-center justify-around flex-wrap ">
+        {
+          blogs.map(el => {
+            return (
+              <motion.div
+                className="card h-80 w-90  bg-red-800 m-10 rounded-2xl flex items-center flex-col overflow-hidden text-black cursor-pointer border-2 border-black"
+                whileHover={{ scale: 1.1 }}
+              >
+                <p className="">{el.date}</p>
+                <img src={el.image} alt="" className="h-40 bg-white w-[100%] rounded-2xl" />
+                <p className="title text-2xl m-2 font-extrabold">{el.title}</p>
+                <p className="text-center">{el.summary}</p>
+              </motion.div>
+            )
+          })
+        }
       </div>
-
-      {/* Card Footer - Optional Info */}
-      {/* Using text-sm for smaller text like "date" and "Amanjeet" */}
-      <div className="px-6 pt-4 pb-2 flex justify-between items-center  text-sm">
-        {/* "date" */}
-        {"date" && <span>{"soon"}</span>}
-        {/* "Amanjeet" */}
-        {"Amanjeet" && <span>By {"Amanjeet"}</span>}
-      </div>
-
-      {/* Optional: Link Overlay or Button */}
-      {/* You might wrap the entire card in an <a> tag or add a "Read More" button */}
-       <a href={"Amanjeet"} className="border-2 mt-20 bg-emerald-50 block px-6 py-3 text-center text-blue-600 hover:text-blue-800 transition-colors duration-200">
-         Read More
-       </a>
-
-    </motion.div>
- </div>
-        </main>
-    )
+    </main>
+  )
 }
