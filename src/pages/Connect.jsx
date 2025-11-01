@@ -33,21 +33,23 @@ export default function Connect() {
       </header>
 
       {/* Main content area */}
-      <main className=" connect flex flex-col md:flex-row items-center justify-center">
+      <main >
+        <div className="connect flex-col w-[80vw] text-white h-full bg-red-800 md:flex-row items-center justify-center text-center">
           <h2 className="text-2xl font-bold">Connect with Me</h2>
 
         {/* Contact Form Section */}
-        <div className="terminal w-[90%] max-w-md p-8 rounded-lg shadow-xl mb-8 md:mb-0 md:mr-12">
+        <div className="terminal w-[90%] max-w-md p-8 rounded-lg shadow-xl">
           {/* Form Header (Terminal-like) */}
+
           <div className=" ttop w-full h-8 flex rounded-t-lg items-center justify-center px-4">
             <span className="ml-4 text-sm text-gray-300 font-bold">Send a Message</span>
           </div>
 
           {/* The Form */}
-          <form ref={form} onSubmit={sendEmail} className="Form mt-4 space-y-6">
+          <form ref={form} onSubmit={sendEmail} className="Form text-gray-200 mt-4 space-y-6 flex items-center justify-center flex-col">
             {/* Email Input */}
             <div>
-              <label htmlFor="user_email" className='block text-sm font-medium text-gray-700 mb-1'>
+              <label htmlFor="user_email" className='block text-sm font-medium  mb-1'>
                 Your Email:
               </label>
               <input
@@ -62,7 +64,7 @@ export default function Connect() {
 
             {/* Name Input */}
             <div>
-              <label htmlFor="name" className='block text-sm font-medium text-gray-700 mb-1'>
+              <label htmlFor="name" className='block text-sm font-medium  mb-1'>
                 Your Name:
               </label>
               <input
@@ -77,7 +79,7 @@ export default function Connect() {
 
             {/* Message Textarea */}
             <div >
-              <label htmlFor="message" className='block text-sm font-medium text-gray-700 mb-1'>
+              <label htmlFor="message" className='block text-sm font-medium mb-1'>
                 Your Message:
               </label>
               <textarea
@@ -172,6 +174,7 @@ export default function Connect() {
               <img src="https://img.icons8.com/ios-filled/50/0088CC/telegram-app.png" alt="telegram" className="w-10 h-10 md:w-12 md:h-12" /> {/* Adjusted size and color */}
             </motion.a>
           </div>
+        </div>
         </div>
       </main>
     </>

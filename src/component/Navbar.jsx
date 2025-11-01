@@ -1,18 +1,43 @@
-import { useEffect, useRef } from 'react';
-
+import { useEffect, useRef, useState } from 'react';
 import '../styles/Nav.css'
 import gsap from 'gsap';
 import Options from './Options';
 import { NavLink } from 'react-router';
+import { motion } from 'motion/react';
 
 export default function Navbar() {
+    const [click, setClick] = useState(false)
+
+    // menu animation 
+    const childVariant = {
+        FLInitial: { //first and last element initial style
+            rotate: 0
+        },
+        CInitial: { //canter div initial style
+            scale: 1,
+            opacity: 1
+        },
+        fAnimate: { //first div animation
+            rotate: 45,
+            position:"absolute"
+        },
+        cAnimate: { // central div animation
+            scale: 0,
+            opacity: 0
+        },
+        lAnimate: { //last div animation
+            rotate: -45
+        },
+      
+    }
+
     useEffect((e) => {
         const Old = document.querySelectorAll(".neo")
         const New = document.querySelectorAll(".new")
         const logo = document.querySelector("#logo")
         const tl = gsap.timeline()
         gsap.set(Old, {
-            y: 20
+            y: 25
         })
         // logo Enter
         const handleEnter = () => {
@@ -22,7 +47,7 @@ export default function Navbar() {
                 stagger: 0.09,
             })
             tl.to(New, {
-                y: -25,
+                y: -35,
                 opacity: 1,
                 stagger: 0.09,
             })
@@ -55,7 +80,6 @@ export default function Navbar() {
         <nav>
             <div id="logo">
                 <p>
-                    {/* {["Neo"].map(el=>{return( <span className='neo'>{el}</span>)})} */}
                     <span className='neo'>N</span>
                     <span className='neo'>e</span>
                     <span className='neo'>o</span>
@@ -66,10 +90,24 @@ export default function Navbar() {
                     <span className='new'>w</span>
                 </p>
             </div>
-            <Options/>
+            <Options show={click} />
             <NavLink to={"/connect"}>
-            <button className='cursor-pointer'>Connect</button>
+                <button className='connectBtn cursor-pointer'>Connect</button>
             </NavLink>
+        {/* menu */}
+            <div
+                onClick={() => { setClick(!click) }}
+                className="menu h-[35px] w-[35px] flex items-center justify-around flex-col origin-center">
+                <motion.div className="h-[5px] w-[40px] bg-amber-50"
+                    animate={click ? "fAnimate" : "FLInitial"} variants={childVariant}
+                ></motion.div>
+                <motion.div className="h-[5px] w-[40px] bg-amber-50"
+                    animate={click ? "cAnimate" : "CInitial"} variants={childVariant}
+                ></motion.div>
+                <motion.div className="h-[5px] w-[40px] bg-amber-50"
+                    animate={click ? "lAnimate" : "FLInitial"} variants={childVariant}
+                ></motion.div>
+            </div>
         </nav>
     )
 }

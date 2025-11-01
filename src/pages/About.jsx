@@ -8,26 +8,29 @@ export default function About() {
       <header className='w-full flex justify-center'>
         <Navbar />
       </header>
-
       {/* Main content area */}
-      <main className="container px-4 py-12  text-center bg-red-600">
+      <main className="container px-7 py-20  text-center">
+        <div className="aboutPage">
+        <h1 className="text-4xl md:text-5xl font-bold  mb-4">
+         <span>Amanjeet kumar</span>
+        </h1>
         {/* Hero Section */}
-        <section className="flex bg-green-500 flex-col md:flex-row items-center justify-between mb-16">
+        <section className="flex flex-col md:flex-row items-center justify-between mb-16">
           {/* Text Content */}
-          <div className="md:w-1/2 md:pr-8 mb-8 md:mb-0">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Hi, I'm Amanjeet kumar
-            </h1>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+          <div className="md:w-[40%] md:pr-8 mb-8 md:mb-0 border-2 border-gray-400 p-5 rounded-2xl">
+
+            <p className="text-xl text-white leading-relaxed text-start mt-0 md:text-center ">
+              I’m Amanjeet — a curious builder who loves turning ideas into experiences. I explore the world of code, design, and AI with one goal in mind: to create things that make people stop, think, and smile.
             </p>
-            <p className="text-lg text-gray-600 leading-relaxed mt-4">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <p className="text-xl text-white leading-relaxed mt-4 text-start">
+              I enjoy understanding how things operate under the hood — from system internals to data flow — and then using that knowledge to build something meaningful.
             </p>
+
           </div>
 
           {/* Profile Image Placeholder */}
-          <div className="md:w-1/2 flex justify-center">
+          <div className="md:w-[30%] flex justify-center">
             <div className="w-64 h-64 bg-gray-300 rounded-full flex items-center justify-center overflow-hidden shadow-lg">
               {/* Replace with your actual image */}
               <img
@@ -38,17 +41,27 @@ export default function About() {
               />
             </div>
           </div>
+          <div className="md:w-[40%] md:pr-8 mb-8 md:mb-0 border-2 border-gray-400 p-5 mt-30 rounded-2xl md:mt-0 ">
+            <p className="text-xl text-white leading-relaxed text-end md:text-center  ">
+              I like mixing logic with imagination — writing code that not only functions but also feels crafted. Learning, experimenting, and pushing boundaries are all part of my daily rhythm.
+            </p>
+            <p className="text-xl text-white leading-relaxed mt-4 text-end md:text-center ">
+              Right now, I’m on a journey to master the art of building impactful digital tools — the kind that simplify lives, inspire ideas, and spark innovation.
+            </p>
+          </div>
+
         </section>
 
 
         {/* Interests/Personal Touch Section */}
         <section>
-           <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Interests & Passion</h2>
-           <p className="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
-             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
-           </p>
-           {/* You could add icons or small images related to interests here */}
+          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Interests & Passion</h2>
+          <p className="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
+
+          </p>
+          {/* You could add icons or small images related to interests here */}
         </section>
+        </div>
       </main>
     </>
   );

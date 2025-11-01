@@ -1,18 +1,20 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { NavLink } from "react-router";
 import '../styles/Nav.css'
 import gsap from 'gsap';
+import { motion } from "motion/react";
 
-export default function Options(){
+export default function Options({show}){
+
+    const [screen , setScreen] = useState(window.innerWidth)
+    
     const options = [
         ["Home", "https://cdn-icons-png.flaticon.com/128/10307/10307931.png", "/home"],
         ["About", "https://cdn-icons-png.flaticon.com/128/13984/13984272.png", '/about'],
-        ["Skills", "https://cdn-icons-png.flaticon.com/128/13984/13984272.png", '/Skill'],
         ["Projects", "https://cdn-icons-png.flaticon.com/128/9672/9672290.png", "/projects"],
         ["Blogs", "https://cdn-icons-png.flaticon.com/128/4136/4136043.png", '/blogs'],
         // ["Connect", "https://cdn-icons-png.flaticon.com/128/10308/10308279.png", '/connect']
     ]
-
     function hoverHandler(e) {
         const paragraph = e.currentTarget.querySelector("p");
         const icon = e.currentTarget.querySelector("span img")
@@ -84,6 +86,15 @@ export default function Options(){
 
         logo.addEventListener("mouseenter", handleEnter)
         logo.addEventListener("mouseleave", handleExist)
+
+        //screen size
+        if(screen != window.innerWidth){
+            setScreen(window.innerWidth)
+        }
+        else{
+            console.log(screen)
+        }
+
         // cleanup
         return () => {
             logo.removeEventListener("mouseenter", handleEnter);
@@ -92,7 +103,10 @@ export default function Options(){
     }, [])
     return(
         <>
-    <div id="options">
+    <motion.div
+    initial={(screen<1000)?{opacity:0,x:20}:{opacity:1}}
+    animate={(screen<1000) && show ?{opacity:1,x:-70}:screen>1000?{opacity:1}:{opacity:0}}
+    id="options">
                 {options.map((el, i) => {
                     return (
                         <NavLink to={el[2]} key={i}>
@@ -107,7 +121,7 @@ export default function Options(){
                         </NavLink>
                     )
                 })}
-            </div>
+            </motion.div>
         </>
     )
 }

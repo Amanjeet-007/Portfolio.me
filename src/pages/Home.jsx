@@ -1,46 +1,118 @@
 import { motion } from 'motion/react'              // Animnation 
+import { Link } from 'react-router'
+import '../App.css'
 
 export default function Home() {
+  const tools = [
+    {
+      name: "Frontend",
+      tool: [
+        { name: "HTML", icon: "https://cdn-icons-png.flaticon.com/128/174/174854.png" },
+        { name: "CSS", icon: "https://cdn-icons-png.flaticon.com/128/732/732190.png" },
+        // { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
+        { name: "React", icon: "https://cdn-icons-png.flaticon.com/128/875/875209.png" },
+        {name:"Next",icon:"https://www.svgrepo.com/show/354113/nextjs-icon.svg"},
+        { name: "Motion", icon: "https://framerusercontent.com/assets/MadJ73ykiBPmXMK5j0iTVYDPACI.png" },
+        { name: "Gsap", icon: "https://gsap.com/community/uploads/monthly_2020_03/tweenmax.png.cf27916e926fbb328ff214f66b4c8429.png" },
+      ]
+    },
+    {
+      name: "Backend",
+      tool: [
+        { name: "Node", icon: "https://www.svgrepo.com/show/354119/nodejs-icon.svg" },
+        { name: "Json", icon: "https://cdn-icons-png.flaticon.com/512/136/136525.png" },
+        { name: "Express", icon: "https://user-images.githubusercontent.com/11978772/40430986-a0eb7b92-5e63-11e8-80eb-43fe07f664a6.png" },
+      ]
+    },
+    {
+      name: "Database & Tools",
+      tool: [
+        { name: "MongoDb", icon: "https://www.svgrepo.com/show/331488/mongodb.svg" },
+        {name:"Git" , icon:"https://cdn-icons-png.flaticon.com/128/15466/15466163.png"},
+        { name: "Postman", icon: "https://cdn.iconscout.com/icon/free/png-256/free-postman-logo-icon-svg-download-png-2945092.png" },
+        {name:"Github" , icon:"https://cdn-icons-png.flaticon.com/128/733/733553.png"},
+        {name:"Docker",icon:"https://cdn-icons-png.flaticon.com/128/919/919853.png"}
+      ]
+    },
+    {
+      name: "Programming Languages",
+      tool: [
+        { name: "Python", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png" },
+        { name: "C++", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png" },
+        { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
+      ]
+    }
+  ]
 
   return (
 
     <>
-      <div className="flex h-full w-full items-center justify-around flex-col">
-        <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
-          <div className="">
-            <h2 className='text-[10vmin] text-center leading-[10vmin] h-[20vmin] inline-block'>Hey,
-              <motion.span className='hand '
-                initial={{ position: 'absolute' }}
-                whileHover={{ rotate: '15deg' }}
-                transition={{ duration: .3 }}>👋</motion.span>
-              <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet</span>
-            </h2>
+      <div className="flex h-full w-full items-center justify-around flex-col ">
+        <div className="" data-scroll data-scroll-speed=".9">
+          <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
+            <div className="flex flex-col items-center justify-center">
+              <h2 className=' name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block'>Hey,
+                <motion.span className='hand '
+                  initial={{ position: 'absolute' }}
+                  whileHover={{ rotate: '15deg' }}
+                  transition={{ duration: .3 }}>👋</motion.span>
+                <br /> I'm <span className="text-[#06D001]">A<span className='text-[#DA0037]'>man</span>jeet</span>
+              </h2>
+              <h3 className='slogan text-[1.7vmax] relative flex flex-col text-center items-center justify-center w-[500px] pt-10 mb-5'><pre className='font-extrabold'> Full-Stack Devloper | React Expert | Node.js Specialist </pre></h3>
 
-            <h3 className='text-2xl relative w-full'><pre className='flex  items-center justify-center font-extrabold text-center h-20'> FullStack Devloper
+            </div>
 
-              {/* <span className='path h-[10vmin] absolute w-[60vw] rounded-2xl border-4 border-green-500 bottom-4 border-t-0'></span>
-              <span className='left absolute h-40 w-20 -left-57 -top-40 rounded-2xl  border-4 border-green-500'>
-                <span className=' bg-white w-[100%] h-10'></span>
-              </span>
-              <span className="right absolute h-40 w-20 -right-57 -top-40 rounded-2xl  border-4 border-green-500"></span> */}
-
-            </pre></h3>
-
+            {/* <div className=" m-[20px] border-b-[1px] w-full border-amber-800 h-16 flex">
+               &copy;
+          </div> */}
+            <p data-scroll data-scroll-speed=".8" className='para w-[80%] text-[1.5rem] h-min p-8 m-2 text-center'>🚀 A passionate full-stack developer with expertise in creating modern, responsive Full-Stack web application. 
+            </p>
+            <button className='mt-10 cursor-pointer z-0'>View My Work</button>
           </div>
-
-          <div className="m-[20px] border-b-[1px] w-full border-amber-800 h-10">
-          </div>
-          <p className='w-[80%] text-[3vmin] h-[20vmin] flex items-center justify-center text-center'>🚀 A self-taught full-stack developer
-            skilled in React, Node.js, MongoDB, and Express. Currently learning C, DSA, and Artificial Intelligence
-            | to build powerful tools and contribute to impactful. open-source and SaaS projects. </p>
-
         </div>
-
       </div>
-      <div className="about h-[40vh] w-full bg-red-500 border-t-10 border-b-10 border-black  ">
-          
+      <div data-scroll data-scroll-speed=".5" className="social h-[18vh]  border-t-2 border-b-2 border-gray-500 flex w-full mt-[-5rem] items-center justify-around z-1 ">
+        {
+          [{
+            icon: <svg className='cursor-pointer' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="black"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>,
+            link: "https://github.com/Amanjeet-007"
+          }, {
+            link: "https://www.linkedin.com/in/amanjeet-kumar-374b0928a/",
+            icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30"><path d="M6.94048 4.99993C6.94011 5.81424 6.44608 6.54702 5.69134 6.85273C4.9366 7.15845 4.07187 6.97605 3.5049 6.39155C2.93793 5.80704 2.78195 4.93715 3.1105 4.19207C3.43906 3.44699 4.18654 2.9755 5.00048 2.99993C6.08155 3.03238 6.94097 3.91837 6.94048 4.99993ZM7.00048 8.47993H3.00048V20.9999H7.00048V8.47993ZM13.3205 8.47993H9.34048V20.9999H13.2805V14.4299C13.2805 10.7699 18.0505 10.4299 18.0505 14.4299V20.9999H22.0005V13.0699C22.0005 6.89993 14.9405 7.12993 13.2805 10.1599L13.3205 8.47993Z"></path></svg>
+          }, {
+            link: "https://www.instagram.com/amanjeet_singh_007_/",
+            icon: <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="30" height="30"><path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path></svg>
+          }].map((el) => {
+            return (
+              <div className="py-2 px-5 bg-white rounded-full flex items-center justify-center cursor-pointer border-2 h-12 border-black">
+                <a href={el.link} className='cursor-pointer '>
+                  {el.icon}
+                </a>
+              </div>
+            )
+          })
+        }
       </div>
-      <div className="skills h-[80vh]">
+      <div data-scroll data-scroll-speed=".1" className="skills h-min w-min flex flex-col">
+        {
+          tools.map(el => {
+            return (
+              <div className="skillwrapper pl-60 h-min text-white ">
+                <p className='text-3xl m-5'>{el.name}</p>
+                <div className=" w-[100vw] pl-10 flex flex-wrap items-center justify-start ">
+                  {el.tool.map(childEl=>{
+                    return(
+                      <motion.div whileHover={{scale:1.2}} className= "card mt-5 mr-8 rounded-2xl flex items-center flex-col border-1 border-gray-600 ">
+                        <img src={childEl.icon} alt={childEl.name} className='h-20' />
+                        <p className='m-2'>{childEl.name}</p>
+                      </motion.div>
+                    )
+                  })}
+                </div>
+              </div>
+            )
+          })
+        }
 
       </div>
       <div className="projects h-[100vh]">
@@ -49,91 +121,6 @@ export default function Home() {
       <div className="blogs h-[100vh]">
 
       </div>
-
-      {/*<div className="top flex w-full h-full bg-red-600">
-       <div className="left w-1/3 h-[80vh] flex items-center justify-center">
-        <motion.div className="card" whileHover={{ scaleX: 1.05, scaleZ: 1.1, scaleY: 1.1 }}>
-          <img src="https://img.icons8.com/?size=160&id=EvfjU4d05f0I&format=png" className='h-28' alt="" />
-          <p>Amanjeet Kumar</p>
-          <a href="https://drive.google.com/file/d/1LTA155Rd2tWSzZll4qX9LIuaFWZPqY6j/view" target='blank'>
-            <button>Resume</button>
-          </a>
-        </motion.div>
-      </div> */}
-
-
-
-      {/* <div className="right text-amber-50 w-1/3 flex items-center flex-col justify-center">
-        <div className="skills flex flex-wrap w-[100%] justify-around h-min">
-          <p> {"#"} Technical expertise</p>
-          <motion.div
-            whileHover={{ scale: 1.2 }}
-            className="tech">
-            <img src="https://cdn-icons-png.flaticon.com/128/541/541509.png" alt="js" />JavaScript </motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/3098/3098090.png" alt="py" />Python</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/5098/5098279.png" alt="" />C++</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/174/174854.png" alt="" /> HTML & <img src="https://cdn-icons-png.flaticon.com/128/732/732190.png" alt="" /> CSS</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/3334/3334886.png" alt="" /> React</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://img.icons8.com/?size=96&id=x7XMNGh2vdqA&format=png" alt="" />Tailwind</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/919/919825.png" alt="" />NodeJs</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://netforemost.com/wp-content/uploads/2024/08/1646733543-1.webp" alt="" />ExpressJs</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/9672/9672250.png" alt="" />MongoDb</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/1161/1161388.png" alt="" />JsonWebToken</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <img src="https://cdn-icons-png.flaticon.com/128/4494/4494748.png" alt="" /> Git & <img src="https://cdn-icons-png.flaticon.com/128/10090/10090320.png" alt="" /> Github</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}> <img src="https://cdn.iconscout.com/icon/free/png-256/free-redux-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-10-pack-icons-283024.png?f=webp&w=256" alt="" />Redux</motion.div>
-
-          <motion.div
-            className="tech"
-            whileHover={{ scale: 1.2 }}>
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18.0379 0.13033C14.8991 -0.272747 11.7113 0.264019 8.87752 1.67275C6.04379 3.08148 3.69144 5.29889 2.11796 8.04457C0.544486 10.7903 -0.179442 13.9409 0.0377277 17.098C0.254897 20.2551 1.40341 23.277 3.33802 25.7813C5.27263 28.2857 7.90645 30.1601 10.9064 31.1676C13.9063 32.175 17.1376 32.2702 20.1917 31.4412C23.2457 30.6121 25.9854 28.896 28.0641 26.5099C30.1428 24.1237 31.4672 21.1748 31.8699 18.0359C32.4098 13.8273 31.2559 9.57657 28.6619 6.21869C26.068 2.8608 22.2465 0.670781 18.0379 0.13033Z" fill="#FF6C37"></path><path d="M11.5674 17.0111C11.5736 17.0238 11.5841 17.0339 11.5969 17.0397C11.6097 17.0456 11.6242 17.0468 11.6378 17.0431L14.1978 16.4911L13.121 15.3999L11.5866 16.9343C11.5745 16.9425 11.5659 16.9548 11.5623 16.969C11.5588 16.9832 11.5606 16.9982 11.5674 17.0111Z" fill="white"></path><path d="M23.5548 6.0193C23.198 6.01966 22.8459 6.10004 22.5243 6.25451C22.2027 6.40898 21.9199 6.63361 21.6966 6.91187C21.4733 7.19012 21.3153 7.51491 21.2342 7.86232C21.153 8.20973 21.1508 8.57091 21.2277 8.91928C21.3047 9.26765 21.4588 9.59433 21.6786 9.87527C21.8985 10.1562 22.1786 10.3842 22.4983 10.5426C22.818 10.701 23.1691 10.7856 23.5259 10.7903C23.8826 10.795 24.2358 10.7196 24.5596 10.5697L22.9372 8.9473C22.9186 8.92872 22.9038 8.90665 22.8937 8.88235C22.8836 8.85805 22.8784 8.83201 22.8784 8.8057C22.8784 8.77939 22.8836 8.75334 22.8937 8.72904C22.9038 8.70475 22.9186 8.68268 22.9372 8.6641L25.0572 6.5457C24.6314 6.20338 24.1011 6.01756 23.5548 6.0193Z" fill="white"></path><path d="M25.3483 6.8208L23.3611 8.8L24.9195 10.3584C25.0343 10.2778 25.1414 10.1867 25.2395 10.0864C25.6666 9.6564 25.9152 9.08072 25.9354 8.47497C25.9556 7.86923 25.7458 7.27828 25.3483 6.8208Z" fill="white"></path><path d="M21.3722 10.4737H21.337C21.2957 10.4733 21.2544 10.4771 21.2138 10.4849H21.1994C21.1548 10.4945 21.111 10.5073 21.0682 10.5233L21.0346 10.5393C21.0024 10.5527 20.9714 10.5687 20.9418 10.5873L20.9066 10.6097C20.8679 10.6364 20.8315 10.6664 20.7978 10.6993L14.905 16.5936L15.6346 17.3232L21.8746 11.8465C21.9099 11.8155 21.942 11.7812 21.9706 11.7441L21.9978 11.7089C22.0191 11.6776 22.0384 11.645 22.0554 11.6113C22.065 11.5921 22.073 11.5729 22.081 11.5537C22.0918 11.5281 22.1009 11.5019 22.1082 11.4753C22.1082 11.4561 22.1194 11.4369 22.1242 11.4177C22.1321 11.378 22.1375 11.338 22.1402 11.2977V11.2449C22.1402 11.2161 22.1402 11.1873 22.1402 11.1585C22.1402 11.1297 22.1402 11.1201 22.1322 11.1009C22.1026 10.9499 22.0289 10.811 21.9204 10.7019C21.8119 10.5929 21.6735 10.5184 21.5226 10.4881H21.4922C21.4526 10.4804 21.4125 10.4756 21.3722 10.4737Z" fill="white"></path><path d="M13.3962 15.1168L14.6058 16.32L20.5146 10.4112C20.7069 10.2232 20.9575 10.1064 21.225 10.08C20.1802 9.28 19.041 9.4896 13.3962 15.1168Z" fill="white"></path><path d="M22.2075 12.0769L22.1355 12.1473L15.8955 17.6225L16.9563 18.6817C19.5867 16.1937 21.9211 13.8241 22.2075 12.0769Z" fill="white"></path><path d="M6.64277 24.9039C6.64601 24.9153 6.65267 24.9253 6.66182 24.9328C6.67098 24.9402 6.6822 24.9447 6.69397 24.9455L9.41396 25.1327L7.88917 23.6079L6.65557 24.8399C6.64757 24.8483 6.64212 24.8587 6.63985 24.87C6.63759 24.8814 6.6386 24.8931 6.64277 24.9039Z" fill="white"></path><path d="M8.17383 23.3247L9.78182 24.9327C9.80091 24.9531 9.82645 24.9663 9.85413 24.9701C9.88181 24.9739 9.90996 24.968 9.93382 24.9535C9.95875 24.9411 9.97861 24.9205 9.98999 24.8951C10.0014 24.8697 10.0036 24.8411 9.99622 24.8143L9.72582 23.6591C9.70831 23.5842 9.71627 23.5056 9.74844 23.4358C9.7806 23.366 9.83514 23.3089 9.90342 23.2735C12.7226 21.8607 14.9962 20.4063 16.665 18.9535L15.545 17.8335L13.145 18.3503L8.17383 23.3247Z" fill="white"></path><path d="M15.2012 17.4944L14.5996 16.8928L13.7676 17.7232C13.7616 17.7304 13.7583 17.7395 13.7583 17.7488C13.7583 17.7582 13.7616 17.7672 13.7676 17.7744C13.7714 17.7829 13.7783 17.7898 13.7868 17.7936C13.7954 17.7974 13.805 17.798 13.814 17.7952L15.2012 17.4944Z" fill="white"></path><path d="M25.4043 8.11051C25.3961 8.08533 25.3826 8.0622 25.3647 8.04267C25.3469 8.02314 25.325 8.00766 25.3006 7.99728C25.2763 7.9869 25.25 7.98185 25.2235 7.98247C25.197 7.9831 25.171 7.98938 25.1471 8.0009C25.1233 8.01242 25.1022 8.02891 25.0852 8.04926C25.0683 8.06962 25.0559 8.09336 25.0489 8.1189C25.0419 8.14444 25.0404 8.17118 25.0446 8.19733C25.0488 8.22348 25.0585 8.24844 25.0731 8.27051C25.1209 8.36674 25.1399 8.47474 25.1277 8.58148C25.1155 8.68823 25.0726 8.78917 25.0043 8.87211C24.9819 8.89921 24.9676 8.93213 24.9632 8.96703C24.9587 9.00193 24.9643 9.03738 24.9792 9.06924C24.9941 9.10111 25.0178 9.12807 25.0475 9.14699C25.0771 9.16591 25.1116 9.17601 25.1467 9.17611C25.1739 9.17582 25.2007 9.16967 25.2253 9.15807C25.2499 9.14647 25.2716 9.1297 25.2891 9.10891C25.4024 8.97122 25.4735 8.80379 25.4939 8.62669C25.5143 8.4496 25.4832 8.27037 25.4043 8.11051Z" fill="#FF6C37"></path></svg> Postman</motion.div>
-        </div>
-      </div> 
-    </div>*/}
     </>
-
-
   )
 }

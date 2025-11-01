@@ -10,6 +10,7 @@ nav {
     align-items: center;
     justify-content: space-between;
     z-index: 99;
+    box-shadow: 0px 3px 20px #006eff;
     /* position: relative; */
 }
 
@@ -37,19 +38,20 @@ button {
 #options {
     display: flex;
     flex-wrap: wrap;
-
-    background-color: #171717;
+    background-color: rgba(255, 255, 255, 0.26);
+    backdrop-filter: blur(20px);
     position: fixed;
+    color: black;
     padding: 7px 20px;
     border-radius: 30px;
-    box-shadow: 0px 2px 5px #b6b6b6;
-    margin-top: 10px;
+    /* box-shadow: 0px 2px 5px #006eff; */
+    margin-top: 25px;
     left: 50%;
-    top: 10px;
+    right: unset;
+    top: 0px;
     transform: translate(-50%);
 
 }
-
 #options .option {
     padding: 7px 12px;
     margin: 10px 2vmin;
@@ -71,10 +73,6 @@ button {
     text-decoration: none;
 }
 
-/* #options .option:active {
-    border: 2px solid white;
-} */
-
 .option span img {
     height: 30px;
     position: absolute;
@@ -83,6 +81,7 @@ button {
     opacity: 0;
     transform: translate(-50%, -50%);
 }
+
 button {
     background-color: #ffffff;
     color: rgb(50, 47, 47);
@@ -93,32 +92,58 @@ button {
     border: 2px solid rgb(255, 255, 255);
     outline: 2px solid black;
 }
-.active{
+
+.active {
     scale: 1.2;
 }
-.active p{
+
+.active p {
     opacity: 0;
     rotate: 0deg 45deg 0deg;
 }
-.active span img{
+
+.active span img {
     opacity: 1;
     rotate: 0deg 180deg 0deg;
 }
-.active p:hover{
+
+.active p:hover {
     opacity: 1;
     rotate: 0deg;
 }
-.active span img:hover{
+
+.active span img:hover {
     opacity: 0;
     rotate: 0deg -45deg 0deg;
 }
 
+.cursor-pointer {
+    display: unset;
+}
+
+.menu {
+    display: none;
+}
 
 @media (max-width:1125px) {
+   
+    .connectBtn {
+        display: none;
+    }
+
     #options {
+        position: fixed;
         z-index: 99;
-        bottom: 20px;
-        top: unset;
-        width: 80vw;
+        width: 250px;
+        top: 12%;
+        border-radius: 10px 10px 10px 20px;
+        width: min-content;
+        left: unset;
+        right: -60px;
+        height: min-content;
+        /* display: none; */
+    }
+    .menu {
+        display: flex;
     }
 }

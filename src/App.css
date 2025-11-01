@@ -1,4 +1,5 @@
 @import "tailwindcss";
+
 @font-face {
   font-family: 'Audio';
   src: url('../Font/Audiowide/Audiowide-Regular.ttf') format('truetype');
@@ -6,75 +7,105 @@
   font-weight: normal;
   font-style: normal;
 }
-@font-face{
+
+@font-face {
   font-family: "mont1";
   src: url('../Font/Montserrat/Montserrat-Italic-VariableFont_wght.ttf') format('truetype');
   gap: 2px;
   font-weight: normal;
   font-style: normal;
 }
-@font-face{
+
+@font-face {
   font-family: "mont2";
   src: url('../Font/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
   gap: 2px;
   font-weight: normal;
   font-style: normal;
 }
-:root{
-  --b:#321E1E;
-  --primary-color: #171717; /*black*/
-  --text-color: #EDEDED  ;  /*white*/
-  --secondary-color: #444444; /*grey*/
+
+:root {
+  --b: #321E1E;
+  --primary-color: #171717;
+  /*black*/
+  --text-color: #EDEDED;
+  /*white*/
+  --secondary-color: #444444;
+  /*grey*/
   /* --terminal-text: rgb(0, 2fwe24, 52); */
   --terminal-text: #06D001;
-  --unique-color: #DA0037 ;/*reddis*/
+  --unique-color: #DA0037;
+  /*reddis*/
 }
+
 /* *{
   padding: 0;
   margin: 0;
 } */
-html,body{
+html,
+body {
+  width: 100%;
+
   /* background-color: rgb(192, 162, 12); */
-  background-color: rgb(224, 112, 0);
+  /* background-color: rgb(224, 112, 0); */
+  background-color: rgb(21, 16, 33);
 }
-main{
-  margin-top: 100px; /*for testing */
+
+main {
+  margin-top: 100px;
+  /*for testing */
+  overflow: hidden;
   min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-nav{
-  background-color: transparent;
+
+nav {
+  /* background-color: transparent; */
+  background-color: rgb(21, 16, 33);
   color: #ffffff;
 }
-nav #logo{
+
+nav #logo {
   color: white;
-    font-family: 'Audio';
-    font-size: 35px;
-    font-weight: 800;
+  font-family: 'Audio';
+  font-size: 35px;
+  font-weight: 800;
 }
-#options .option{
+
+#options .option {
   border: 2px solid rgb(54, 34, 34);
-    font-family:'Audio',sans-serif ;
+  font-family: 'Audio', sans-serif;
 }
-#options .active .option{
-    border: 2px solid transparent;
+
+#options .active .option {
+  border: 2px solid transparent;
 }
-#options .option:hover{
-    border: 2px solid transparent;
+
+#options .option:hover {
+  border: 2px solid transparent;
 }
-button{
-  font-family:'Audio',sans-serif ;
+
+button {
+  font-family: 'Audio', sans-serif;
 }
-.center{
-  margin-top: 140px;
+
+.center {
+  margin-top: 150px;
 }
-.center h2{
-  font-family:'Audio' ;
+
+.center h2 {
+  font-family: 'Audio';
 }
-marquee{
-  font-family:'Audio',sans-serif ;
+
+marquee {
+  font-family: 'Audio', sans-serif;
 }
-h1{
-  font-family:'Bebas Neue',Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif ;
+
+h1 {
+  font-family: 'Bebas Neue', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   color: white;
   letter-spacing: 2px;
   font-weight: 500;
@@ -83,17 +114,120 @@ h1{
 }
 
 /* about */
-.about{
+.about {
+  margin-top: -11vh;
   background: #DA0037;
 }
 
 /* blogs */
-.card{
+.card {
   /* bg color for parent rgb(81, 48, 16) */
   background-color: #ffffff50;
   backdrop-filter: blur(50px);
   padding: 0px 20px;
 }
-.card .title{
-font-family: 'Audio';
+
+.card .title {
+  font-family: 'Audio';
 }
+
+.center p {
+  background-color: rgba(19, 1, 1, 0.301);
+  mix-blend-mode: blur(20px);
+  border-radius: 10px;
+}
+
+.social {
+  background-color: #0f114d;
+}
+
+.All {
+  background-color: #0f114d;
+  border-top: 1px solid white;
+}
+
+
+.skills {
+  font-family: 'Audio';
+  margin: 10px 20px;
+}
+
+.skills .card {
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.08);
+  padding: 10px 20px;
+}
+/* //about */
+.aboutPage h1 span{
+  font-family: 'Audio';
+}
+@media (max-width:1125px) {
+  nav {
+    background-color: #0f114d;
+  }
+
+  .name {
+    margin-top: 20px;
+    width: 100vw;
+  }
+
+  .slogan {
+    font-size: 10px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .para {
+    /* font-size: ; */
+  }
+
+  .center h2 {
+    margin-top: -40px;
+    font-size: 13vw;
+    line-height: 70px;
+  }
+
+  .center p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+
+  }
+
+  .about {
+    height: 20vh;
+  }
+
+  .skills {
+    text-align: center;
+    justify-content: center;
+    width: 100vw;
+    justify-content: space-around;
+  }
+
+  .skills .card {
+    /* padding: 0; */
+    margin: 5;
+  }
+
+  .skillwrapper {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+/* projects */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+/* body {
+  /* -ms-overflow-style: none;  Internet Explorer and Edge */
+/* scrollbar-width: none;     Firefox */
+/* } */
+/* .All{
+  
+} */
