@@ -12,6 +12,10 @@ import Connect from './pages/Connect.jsx';
 import Welcome from './pages/Welcome.jsx';
 import Blogs from './pages/Blogs.jsx';
 
+// blogs
+import PyJs from './pages/Blogs/PyJs.jsx';
+import System from './pages/Blogs/System.jsx';
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
@@ -22,6 +26,9 @@ createRoot(document.getElementById('root')).render(
           <Route path="/connect" element={<Connect />} />
           <Route path="/about" element={<About />} />
           <Route path="/blogs" element={<Blogs />} />
+            {/* blogs */}
+            <Route path="/blogs/python&JavaScript" element={<PyJs/>}/>
+            <Route path="/blogs/Systemdesign" element={<System/>}/>
           <Route path="/projects" element={<Projects />} />
         </Routes>
       </BrowserRouter>

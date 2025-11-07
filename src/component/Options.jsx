@@ -13,8 +13,9 @@ export default function Options({show}){
         ["About", "https://cdn-icons-png.flaticon.com/128/13984/13984272.png", '/about'],
         ["Projects", "https://cdn-icons-png.flaticon.com/128/9672/9672290.png", "/projects"],
         ["Blogs", "https://cdn-icons-png.flaticon.com/128/4136/4136043.png", '/blogs'],
-        // ["Connect", "https://cdn-icons-png.flaticon.com/128/10308/10308279.png", '/connect']
+        
     ]
+    
     function hoverHandler(e) {
         const paragraph = e.currentTarget.querySelector("p");
         const icon = e.currentTarget.querySelector("span img")
@@ -90,10 +91,12 @@ export default function Options({show}){
         //screen size
         if(screen != window.innerWidth){
             setScreen(window.innerWidth)
+            
         }
         else{
             console.log(screen)
         }
+        
 
         // cleanup
         return () => {
@@ -101,6 +104,9 @@ export default function Options({show}){
             logo.removeEventListener("mouseleave", handleExist)
         };
     }, [])
+    if(screen<1000){
+            options.push(["Connect", "https://cdn-icons-png.flaticon.com/128/10308/10308279.png", '/connect'])
+        }
     return(
         <>
     <motion.div

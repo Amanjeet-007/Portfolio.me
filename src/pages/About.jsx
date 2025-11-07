@@ -20,10 +20,10 @@ export default function About() {
 
           <div className="md:w-[40%] md:pr-8 mb-8 md:mb-0 border-2 border-gray-400 p-5 rounded-2xl">
 
-            <p className="text-xl text-white leading-relaxed text-start mt-0 md:text-center ">
+            <p className="text-xl text-white leading-relaxed mt-0 text-center ">
               I’m Amanjeet — a curious builder who loves turning ideas into experiences. I explore the world of code, design, and AI with one goal in mind: to create things that make people stop, think, and smile.
             </p>
-            <p className="text-xl text-white leading-relaxed mt-4 text-start">
+            <p className="text-xl text-white leading-relaxed mt-4 text-center">
               I enjoy understanding how things operate under the hood — from system internals to data flow — and then using that knowledge to build something meaningful.
             </p>
 
@@ -42,10 +42,10 @@ export default function About() {
             </div>
           </div>
           <div className="md:w-[40%] md:pr-8 mb-8 md:mb-0 border-2 border-gray-400 p-5 mt-30 rounded-2xl md:mt-0 ">
-            <p className="text-xl text-white leading-relaxed text-end md:text-center  ">
+            <p className="text-xl text-white leading-relaxed text-center  ">
               I like mixing logic with imagination — writing code that not only functions but also feels crafted. Learning, experimenting, and pushing boundaries are all part of my daily rhythm.
             </p>
-            <p className="text-xl text-white leading-relaxed mt-4 text-end md:text-center ">
+            <p className="text-xl text-white leading-relaxed mt-4 text-center ">
               Right now, I’m on a journey to master the art of building impactful digital tools — the kind that simplify lives, inspire ideas, and spark innovation.
             </p>
           </div>

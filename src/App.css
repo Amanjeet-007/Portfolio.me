@@ -120,7 +120,7 @@ h1 {
 }
 
 /* blogs */
-.card {
+.blogs .card {
   /* bg color for parent rgb(81, 48, 16) */
   background-color: #ffffff50;
   backdrop-filter: blur(50px);
@@ -137,13 +137,14 @@ h1 {
   border-radius: 10px;
 }
 
-.social {
+.homesocial {
   background-color: #0f114d;
 }
 
 .All {
   background-color: #0f114d;
   border-top: 1px solid white;
+  box-shadow: inset 0px 3px 20px #006eff;
 }
 
 
@@ -160,6 +161,11 @@ h1 {
 /* //about */
 .aboutPage h1 span{
   font-family: 'Audio';
+}
+/*connect*/
+.connect{
+  display: flex;
+  /* flex-direction: column; */
 }
 @media (max-width:1125px) {
   nav {
@@ -178,9 +184,9 @@ h1 {
     flex-direction: column;
   }
 
-  .para {
-    /* font-size: ; */
-  }
+  /* .para {
+    font-size: ;
+  } */
 
   .center h2 {
     margin-top: -40px;
