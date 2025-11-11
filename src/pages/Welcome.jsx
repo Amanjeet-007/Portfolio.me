@@ -55,9 +55,6 @@ export default function Welcome(){
             <Link to="/home">
             <img src="https://www.svgrepo.com/show/499775/play.svg" className='play h-40 hidden ' alt="" />
             </Link>
-                
-
-
         </div>
         </>
     )

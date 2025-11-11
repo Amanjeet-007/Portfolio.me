@@ -1,8 +1,25 @@
-import { motion } from 'motion/react'              // Animnation 
+import { motion ,AnimatePresence } from 'motion/react'              // Animnation 
 import { Link } from 'react-router'
+import { ProjectList } from './Projects'
+import { useEffect, useRef ,useState } from 'react'
+import { useAnimation } from 'motion/react'
 import '../App.css'
 
 export default function Home() {
+  const notice = useRef(null)
+  const controls = useAnimation()
+
+  useEffect(()=>{
+      setTimeout(()=>{
+  notice.current.style.opacity = 0
+  },9000)
+    async function runAfterAnother() {
+        await controls.start({x:0,opacity:1 ,transition: { duration: 0.8 ,delay:5 },})
+        await controls.start({x:10,opacity:0,transition: { duration: 0.8 ,delay:15 },})
+    }
+    runAfterAnother()
+  },[])
+
   // Skills list
   const tools = [
     {
@@ -12,7 +29,7 @@ export default function Home() {
         { name: "CSS", icon: "https://cdn-icons-png.flaticon.com/128/732/732190.png" },
         // { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
         { name: "React", icon: "https://cdn-icons-png.flaticon.com/128/875/875209.png" },
-        {name:"Next",icon:"https://www.svgrepo.com/show/354113/nextjs-icon.svg"},
+        { name: "Next", icon: "https://www.svgrepo.com/show/354113/nextjs-icon.svg" },
         { name: "Motion", icon: "https://framerusercontent.com/assets/MadJ73ykiBPmXMK5j0iTVYDPACI.png" },
         { name: "Gsap", icon: "https://gsap.com/community/uploads/monthly_2020_03/tweenmax.png.cf27916e926fbb328ff214f66b4c8429.png" },
       ]
@@ -29,18 +46,19 @@ export default function Home() {
       name: "Database & Tools",
       tool: [
         { name: "MongoDb", icon: "https://www.svgrepo.com/show/331488/mongodb.svg" },
-        {name:"Git" , icon:"https://cdn-icons-png.flaticon.com/128/15466/15466163.png"},
+        { name: "Git", icon: "https://cdn-icons-png.flaticon.com/128/15466/15466163.png" },
         { name: "Postman", icon: "https://cdn.iconscout.com/icon/free/png-256/free-postman-logo-icon-svg-download-png-2945092.png" },
-        {name:"Github" , icon:"https://cdn-icons-png.flaticon.com/128/733/733553.png"},
-        {name:"Docker",icon:"https://cdn-icons-png.flaticon.com/128/919/919853.png"}
+        { name: "Github", icon: "https://cdn-icons-png.flaticon.com/128/733/733553.png" },
+        { name: "Docker", icon: "https://cdn-icons-png.flaticon.com/128/919/919853.png" },
+        { name: "N8N", icon: "https://th.bing.com/th/id/OIP.9gBs36qI6HSRCL6DfoZvQQAAAA?w=176&h=180&c=7&r=0&o=7&dpr=1.9&pid=1.7&rm=3" }
       ]
     },
     {
       name: "Programming Languages",
       tool: [
+        { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
         { name: "Python", icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png" },
         { name: "C++", icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png" },
-        { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
       ]
     }
   ]
@@ -48,8 +66,8 @@ export default function Home() {
   return (
 
     <>
-    <div className="  flex h-full w-full items-center justify-around flex-col ">
-        <div className="" data-scroll data-scroll-speed=".9">
+      <div className="  flex h-full w-full items-center justify-around flex-col ">
+        <div className="">
           <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
             <div className="flex flex-col items-center justify-center">
               <h2 className=' name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block'>Hey,
@@ -66,13 +84,13 @@ export default function Home() {
             {/* <div className=" m-[20px] border-b-[1px] w-full border-amber-800 h-16 flex">
                &copy;
           </div> */}
-            <p data-scroll data-scroll-speed=".8" className='para w-[80%] text-[1.5rem] h-min p-8 m-2 text-center'>🚀 A passionate full-stack developer with expertise in creating modern, responsive Full-Stack web application. 
+            <p className='para w-[80%] text-[1.5rem] h-min p-8 m-2 text-center'>🚀 A passionate full-stack developer with expertise in creating modern, responsive Full-Stack web application.
             </p>
             <button className='mt-10 cursor-pointer z-0'>View My Work</button>
           </div>
         </div>
       </div>
-      <div data-scroll data-scroll-speed=".5" className="homesocial h-[18vh]  border-t-2 border-b-2 border-gray-500 flex w-full mt-[-5rem] items-center justify-around z-1 ">
+      <div className="homesocial h-[18vh]  border-t-2 border-b-2 border-gray-500 flex w-full mt-[-5rem] items-center justify-around z-1 ">
         {
           [{
             icon: <svg className='cursor-pointer' xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="black"><path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path></svg>,
@@ -94,16 +112,24 @@ export default function Home() {
           })
         }
       </div>
-      <div data-scroll-section data-scroll data-scroll-speed=".1" className="skills h-min w-min flex flex-col">
+      <div className="skills h-min w-min flex flex-col">
         {
           tools.map(el => {
             return (
               <div className="skillwrapper  h-min text-white ">
                 <p className='text-3xl m-5 text-center'>{el.name}</p>
                 <div className=" w-[100vw] pl-0 flex flex-wrap items-center justify-center ">
-                  {el.tool.map((childEl , i)=>{
-                    return(
-                      <motion.div whileHover={{scale:1.2}} key={i} className= "card m-5 rounded-2xl flex items-center flex-col border-1 border-gray-600 ">
+                  {el.tool.map((childEl, i) => {
+                    return (
+                      <motion.div
+                        whileHover={{ scale: 1.2,duration:0.3 }}
+                        initial={{ opacity: 0, x: -60 }}
+                        whileInView={{ opacity: 1, x: 0 }} // while in view 
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                        viewport={{ once: true }}
+                        key={i}
+                        className="card m-5 rounded-2xl flex items-center flex-col border-1 border-gray-600 "
+                      >
                         <img src={childEl.icon} alt={childEl.name} className='h-20' />
                         <p className='m-2'>{childEl.name}</p>
                       </motion.div>
@@ -116,12 +142,40 @@ export default function Home() {
         }
 
       </div>
-      <div className="projects h-[100vh]">
+      <div className="projects h-min flex w-full justify-around flex-wrap">
+        {ProjectList.map((el, i) => {
+          if (el.rank == 1) {
+            return (
+              <div className="bg-cyan-950 p-4 card h-[450px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" key={i} onClick={(e) => toggleTimeline(e)}>
+                {/* link */}
+                <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width={30} viewBox="0 0 24 24" fill="white"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg>
+                </div>
+                <img src="" className='h-58 w-full rounded-2xl' alt="" />
+                <a href="#" className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-amber-600 rounded-xl text-white font-bold'>{"<>"} Source</a>
+                <p className='text-2xl font-bold mt-6 mb-2'>{el.name}</p>
+                <p className='text-[17px]'>{el.disc}</p>
+              </div>
 
-      </div>
-      <div className="blogs h-[100vh]">
+            )
+          }
 
+        })
+        }
       </div>
+      {/* <motion.div
+          className="h-10 w-70 bg-green-500 fixed bottom-9 right-14 rounded-full flex items-center justify-center font-semibold text-white z-99"
+          initial={{x:50,opacity:0}}
+          animate={controls}
+          transition={{ duration: 1.5 , delay:10 , ease:easeInOut }}
+          ref={notice}
+        >
+          Ask anything about me
+        </motion.div> */}
+      {/* <div className="blogs h-[100vh]">
+
+      </div> */}
     </>
+
   )
 }

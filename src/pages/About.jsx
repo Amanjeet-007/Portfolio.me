@@ -1,4 +1,4 @@
-import Navbar from "../component/Navbar";
+
 
 export default function About() {
 
@@ -6,10 +6,9 @@ export default function About() {
     <>
       {/* Header with Navbar */}
       <header className='w-full flex justify-center'>
-        <Navbar />
       </header>
       {/* Main content area */}
-      <main className="container px-7 py-20  text-center">
+      <main className="container px-7  text-center">
         <div className="aboutPage">
         <h1 className="text-4xl md:text-5xl font-bold  mb-4">
          <span>Amanjeet kumar</span>
@@ -55,7 +54,7 @@ export default function About() {
 
         {/* Interests/Personal Touch Section */}
         <section>
-          <h2 className="text-3xl font-bold text-gray-800 mb-6 text-center">Interests & Passion</h2>
+          <h2 className="text-3xl font-bold mb-6 text-center text-gray-200">Interests & Passion</h2>
           <p className="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
 
           </p>

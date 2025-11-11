@@ -1,6 +1,6 @@
 nav {
     height: min-content;
-    /* background-color: transparent; */
+    background-color: rgb(15, 32, 64);
     width: 100vw;
     overflow: hidden;
     position: fixed;

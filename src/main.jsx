@@ -5,32 +5,13 @@ import './index.css'
 import App from './App.jsx'
 import store from './component/Store.js'
 import { Provider } from 'react-redux'
-//pages
-import Projects from './pages/Projects.jsx';
-import About from './pages/About.jsx';
-import Connect from './pages/Connect.jsx';
-import Welcome from './pages/Welcome.jsx';
-import Blogs from './pages/Blogs.jsx';
 
-// blogs
-import PyJs from './pages/Blogs/PyJs.jsx';
-import System from './pages/Blogs/System.jsx';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Welcome/>} />
-          <Route path="/home" element={<App/>} />
-          <Route path="/connect" element={<Connect />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/blogs" element={<Blogs />} />
-            {/* blogs */}
-            <Route path="/blogs/python&JavaScript" element={<PyJs/>}/>
-            <Route path="/blogs/Systemdesign" element={<System/>}/>
-          <Route path="/projects" element={<Projects />} />
-        </Routes>
+       <App/>
       </BrowserRouter>
     </Provider>
   </StrictMode>,

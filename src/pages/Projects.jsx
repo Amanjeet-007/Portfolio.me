@@ -1,13 +1,12 @@
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
-import Navbar from "../component/Navbar";
+
 
 gsap.registerPlugin(useGSAP);
 
-export default function Projects() {
-
   const ProjectList = [
     {
+      rank:1,
       name: "E-Commerce Platform",
       disc: "A full-featured online store with a custom CMS ",
       link: "http//:",
@@ -16,6 +15,7 @@ export default function Projects() {
       source: "Haskfjl"
     },
     {
+      rank:1,
       name: "Data Visualization Daskboard",
       disc: "interactive harts and graphs for real time analitycs",
       link: "http//:",
@@ -24,6 +24,7 @@ export default function Projects() {
       source: "Haskfjl"
     },
     {
+      rank:1,
       name: "Social Media App",
       disc: "A mobile fisrt social media web application",
       link: "http//:",
@@ -32,16 +33,20 @@ export default function Projects() {
       source: "Haskfjl"
     },
   ]
+export {ProjectList}
 
+export default function Projects() {
+
+
+//["All", "HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "GraphQL", "D3.js", "Python", "Firebase"]
 
   return (
     <>
       <header className="w-[100%] h-min flex justify-center">
-        <Navbar />
       </header>
       <main>
-        <div className="All  h-20 w-full flex items-center justify-around flex-nowrap overflow-scroll fixed top-[125px] z-50 ">
-          {["All", "HTML", "CSS", "JavaScript", "React", "Node.js", "Express", "GraphQL", "D3.js", "Python", "Firebase"].map((el, i) => {
+        <div className="All h-20 w-full flex items-center justify-around flex-nowrap overflow-scroll fixed top-[125px] z-50 ">
+          {["All","Frontend","Backend","Full Stack"].map((el, i) => {
             return (
               <div className="tech py-1 px-7 rounded-4xl border-2 border-white text-white min-w-[100px] flex items-center justify-center mx-4 cursor-pointer " key={i}>{el}</div>
             )
@@ -49,7 +54,7 @@ export default function Projects() {
 
         </div>
 
-        <section className="boxes-container flex justify-around items-center w-full flex-wrap h-min mt-25">
+        <section className="boxes-container flex justify-around items-center w-full flex-wrap h-min ">
           {ProjectList.map((el, i) => {
             return (
               <div className="bg-cyan-950 p-4 card h-[450px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" key={i} onClick={(e) => toggleTimeline(e)}>

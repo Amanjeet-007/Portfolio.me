@@ -1,8 +1,7 @@
-import Navbar from "../component/Navbar"
 import '../App.css'
 import { motion } from 'motion/react'
 import { Link, Outlet } from "react-router"
-import { image } from "motion/react-client"
+
 
 
 
@@ -41,8 +40,7 @@ export default function Blogs() {
 
   return (
     <main>
-      <Navbar />
-      <div className="blogs w-full h-full flex items-center justify-around flex-wrap mt-10 ">
+      <div className="blogs w-full h-full flex items-center justify-around flex-wrap">
         {
           blogs.map(el => {
             return (

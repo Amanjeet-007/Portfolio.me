@@ -1,44 +1,40 @@
 import Navbar from './component/Navbar'             // Navbar
+import Footer from './component/Footer'             // Footer
 import './App.css'                                  // Stylesheet
 import Home from './pages/Home'
-import { useEffect, useRef } from 'react'
-import { motion ,useAnimation } from 'motion/react'
 import LocomotiveScroll from 'locomotive-scroll';
-import { easeInOut } from 'motion'
+const locomotiveScroll = new LocomotiveScroll();
+import { Routes, Route } from 'react-router'
+
+//pages
+import Projects from './pages/Projects.jsx';
+import About from './pages/About.jsx';
+import Connect from './pages/Connect.jsx';
+import Welcome from './pages/Welcome.jsx';
+import Blogs from './pages/Blogs.jsx';
+
+// blogs
+import PyJs from './pages/Blogs/PyJs.jsx';
+import System from './pages/Blogs/System.jsx';
+
 
 function App() {
-  const notice = useRef(null)
-  const controls = useAnimation()
-
-  useEffect(()=>{
-      setTimeout(()=>{
-  notice.current.style.opacity = 0
-  },9000)
-    async function runAfterAnother() {
-        await controls.start({x:0,opacity:1 ,transition: { duration: 0.8 ,delay:5 },})
-        await controls.start({x:10,opacity:0,transition: { duration: 0.8 ,delay:15 },})
-    }
-    runAfterAnother()
-  },[])
-
-
-
-  const locomotiveScroll = new LocomotiveScroll();
-
   return (
     <>
       <main data-scroll-container>
         <Navbar />
-        <Home />
-        <motion.div
-          className="h-10 w-70 bg-green-500 fixed bottom-9 right-14 rounded-full flex items-center justify-center font-semibold text-white z-99"
-          initial={{x:50,opacity:0}}
-          animate={controls}
-          // transition={{ duration: 1.5 , delay:10 , ease:easeInOut }}
-          ref={notice}
-        >
-          Ask anything about me
-        </motion.div>
+         <Routes>
+          <Route path="/" element={<Welcome/>} />
+          <Route path="/home" element={<Home/>} />
+          <Route path="/connect" element={<Connect />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/blogs" element={<Blogs />} />
+            {/* blogs */}
+            <Route path="/blogs/python&JavaScript" element={<PyJs/>}/>
+            <Route path="/blogs/Systemdesign" element={<System/>}/>
+          <Route path="/projects" element={<Projects />} />
+        </Routes>
+        <Footer/>
       </main>
     </>
   )

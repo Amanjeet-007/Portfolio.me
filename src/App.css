@@ -64,7 +64,7 @@ main {
 
 nav {
   /* background-color: transparent; */
-  background-color: rgb(21, 16, 33);
+  /* background-color: rgb(21, 16, 33); */
   color: #ffffff;
 }
 
@@ -166,6 +166,12 @@ h1 {
 .connect{
   display: flex;
   /* flex-direction: column; */
+}
+footer{
+  margin-top: 20px;
+  border-radius: 10px;
+  border-top: 3px solid rgb(73, 73, 255);
+  box-shadow: -2px -5px 20px rgb(13, 13, 232);
 }
 @media (max-width:1125px) {
   nav {
