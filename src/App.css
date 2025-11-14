@@ -159,9 +159,9 @@ h1 {
   padding: 10px 20px;
 }
 /* //about */
-.aboutPage h1 span{
+/* .aboutPage h1 span{
   font-family: 'Audio';
-}
+} */
 /*connect*/
 .connect{
   display: flex;

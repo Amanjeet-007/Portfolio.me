@@ -90,14 +90,8 @@ export default function Options({show}){
 
         //screen size
         if(screen != window.innerWidth){
-            setScreen(window.innerWidth)
-            
+            setScreen(window.innerWidth)     
         }
-        else{
-            console.log(screen)
-        }
-        
-
         // cleanup
         return () => {
             logo.removeEventListener("mouseenter", handleEnter);
