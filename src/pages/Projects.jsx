@@ -54,7 +54,7 @@ gsap.registerPlugin(useGSAP);
       rank:2,
       name: "Code Conveter",
       disc: "A mobile fisrt social media web application",
-      link: "http//:",
+      link: "https://github.com/Amanjeet-007/AI-coding",
       img: "",
       stack: ["React", "Gemini Api", "Node.js"],
       source: "Haskfjl"
@@ -125,11 +125,12 @@ export default function Projects() {
             return (
               <div className="bg-cyan-950 p-4 card h-[450px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" key={i} onClick={(e) => toggleTimeline(e)}>
                 {/* link */}
+                <a href="https://github.com/Amanjeet-007/AI-coding">
                 <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width={30} viewBox="0 0 24 24" fill="white"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg>
-                </div>
+                </div></a>
                 <img src={el.img} className='h-58 w-full rounded-2xl' alt="" />
-                <a href="#" className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-amber-600 rounded-xl text-white font-bold'>{"<>"} Source</a>
+                <a href="https://github.com/Amanjeet-007/AI-coding" className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-amber-600 rounded-xl text-white font-bold'>{"<>"} Source</a>
                 <p className='text-2xl font-bold mt-6 mb-2'>{el.name}</p>
                 <p className='text-[17px]'>{el.disc}</p>
                 <div className="flex bottom-0 absolute ">
