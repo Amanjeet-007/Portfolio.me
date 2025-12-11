@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles/Nav.css'
 import gsap from 'gsap';
 import Options from './Options';
@@ -8,27 +8,28 @@ import { motion } from 'motion/react';
 export default function Navbar() {
     const [click, setClick] = useState(false)
 
-    // menu animation 
+    const closeMenu = () => setClick(false);
+
     const childVariant = {
-        FLInitial: { //first and last element initial style
+        FLInitial: {
             rotate: 0
         },
-        CInitial: { //canter div initial style
+        CInitial: { 
             scale: 1,
             opacity: 1
         },
-        fAnimate: { //first div animation
+        fAnimate: { 
             rotate: 45,
-            position:"absolute"
+            position: "absolute"
         },
-        cAnimate: { // central div animation
+        cAnimate: { 
             scale: 0,
             opacity: 0
         },
-        lAnimate: { //last div animation
+        lAnimate: { 
             rotate: -45
         },
-      
+
     }
 
     useEffect((e) => {
@@ -39,7 +40,6 @@ export default function Navbar() {
         gsap.set(Old, {
             y: 25
         })
-        // logo Enter
         const handleEnter = () => {
             tl.to(Old, {
                 y: -5,
@@ -52,7 +52,6 @@ export default function Navbar() {
                 stagger: 0.09,
             })
         }
-        // logo Exit
         const handleExist = () => {
             tl.to(New, {
                 y: 5,
@@ -69,7 +68,6 @@ export default function Navbar() {
 
         logo.addEventListener("mouseenter", handleEnter)
         logo.addEventListener("mouseleave", handleExist)
-        // cleanup
         return () => {
             logo.removeEventListener("mouseenter", handleEnter);
             logo.removeEventListener("mouseleave", handleExist)
@@ -90,21 +88,23 @@ export default function Navbar() {
                     <span className='new'>w</span>
                 </p>
             </div>
-            <Options show={click} />
-            <NavLink to={"/connect"}>
+
+            <Options show={click} closeMenu={closeMenu} />
+
+            <NavLink to={"/connect"} onClick={closeMenu}>
                 <button className='connectBtn cursor-pointer'>Connect</button>
             </NavLink>
-        {/* menu */}
+
             <div
                 onClick={() => { setClick(!click) }}
                 className="menu h-[35px] w-[35px] flex items-center justify-around flex-col origin-center">
-                <motion.div className="h-[5px] w-[40px] bg-amber-50"
+                <motion.div onClick={() => { setClick(!click) }} className="h-[5px] w-[40px] bg-amber-50"
                     animate={click ? "fAnimate" : "FLInitial"} variants={childVariant}
                 ></motion.div>
-                <motion.div className="h-[5px] w-[40px] bg-amber-50"
+                <motion.div onClick={() => { setClick(!click) }} className="h-[5px] w-[40px] bg-amber-50"
                     animate={click ? "cAnimate" : "CInitial"} variants={childVariant}
                 ></motion.div>
-                <motion.div className="h-[5px] w-[40px] bg-amber-50"
+                <motion.div onClick={() => { setClick(!click) }} className="h-[5px] w-[40px] bg-amber-50"
                     animate={click ? "lAnimate" : "FLInitial"} variants={childVariant}
                 ></motion.div>
             </div>
