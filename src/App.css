@@ -32,6 +32,7 @@
   /*white*/
   --secondary-color: #444444;
   /*grey*/
+  --nav-color:#0f2040;
   /* --terminal-text: rgb(0, 2fwe24, 52); */
   --terminal-text: #06D001;
   --unique-color: #DA0037;
@@ -45,9 +46,6 @@
 html,
 body {
   width: 100%;
-
-  /* background-color: rgb(192, 162, 12); */
-  /* background-color: rgb(224, 112, 0); */
   background-color: rgb(21, 16, 33);
 }
 
@@ -63,8 +61,6 @@ main {
 }
 
 nav {
-  /* background-color: transparent; */
-  /* background-color: rgb(21, 16, 33); */
   color: #ffffff;
 }
 
@@ -121,7 +117,6 @@ h1 {
 
 /* blogs */
 .blogs .card {
-  /* bg color for parent rgb(81, 48, 16) */
   background-color: #ffffff50;
   backdrop-filter: blur(50px);
   padding: 0px 20px;
@@ -138,16 +133,13 @@ h1 {
 }
 
 .homesocial {
-  background-color: #0f114d;
+  background-color :var(--nav-color);
 }
-
 .All {
   background-color: #0f114d;
   border-top: 1px solid white;
   box-shadow: inset 0px 3px 20px #006eff;
 }
-
-
 .skills {
   font-family: 'Audio';
   margin: 10px 20px;
@@ -158,14 +150,9 @@ h1 {
   background-color: rgba(255, 255, 255, 0.08);
   padding: 10px 20px;
 }
-/* //about */
-/* .aboutPage h1 span{
-  font-family: 'Audio';
-} */
-/*connect*/
+
 .connect{
   display: flex;
-  /* flex-direction: column; */
 }
 footer{
   margin-top: 20px;
