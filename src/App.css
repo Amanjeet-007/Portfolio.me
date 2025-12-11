@@ -116,7 +116,7 @@ h1 {
 }
 
 /* blogs */
-.blogs .card {
+.card {
   background-color: #ffffff50;
   backdrop-filter: blur(50px);
   padding: 0px 20px;
@@ -159,6 +159,9 @@ footer{
   border-radius: 10px;
   border-top: 3px solid rgb(73, 73, 255);
   box-shadow: -2px -5px 20px rgb(13, 13, 232);
+}
+.tb{
+ -webkit-text-stroke: 1px #0a0a0a;
 }
 @media (max-width:1125px) {
   nav {

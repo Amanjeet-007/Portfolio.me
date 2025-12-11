@@ -133,14 +133,6 @@ export default function Connect() {
               )}
 
             </form>
-            {/* <div className="terminal w-full max-w-md rounded-lg shadow-xl">
-
-              <div className="w-full h-8 flex rounded-t-lg items-center justify-center px-4">
-                <span className="ml-4 text-sm text-gray-300 font-bold">Send a Message</span>
-              </div>
-
-             
-            </div> */}
           </div>
           <div className="right w-1/2 h-full">
             <div className="social flex flex-col items-center  space-y-6 md:space-y-8">

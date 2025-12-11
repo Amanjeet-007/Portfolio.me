@@ -1,6 +1,7 @@
 import { gsap } from 'gsap';
 import { useGSAP } from "@gsap/react";
 import { useEffect } from 'react';
+import { motion } from 'motion/react';
 
 
 gsap.registerPlugin(useGSAP);
@@ -134,24 +135,24 @@ export default function Projects() {
           <section className="boxes-container flex justify-around items-center w-full flex-wrap h-min ">
             {ProjectList.map((el, i) => {
               return (
-                <div className="bg-cyan-950 p-4 card h-[450px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" key={i} onClick={(e) => toggleTimeline(e)}>
+                <motion.div className="p-4 card h-[500px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" whileHover={{ scale: 1.03 }} key={i} onClick={(e) => toggleTimeline(e)}>
                   <a href={el.link}>
                     <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width={30} viewBox="0 0 24 24" fill="white"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg>
                     </div>
                   </a>
-                  <img src={el.img} className='h-58 w-full rounded-2xl' alt="" />
-                  <a href={el.source} className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-amber-600 rounded-xl text-white font-bold'>{"<>"} Source</a>
-                  <p className='text-2xl font-bold mt-6 mb-2'>{el.name}</p>
-                  <p className='text-[17px]'>{el.disc}</p>
+                  <motion.img src={el.img} whileHover={{ scale: .9 }} className='h-58 w-full rounded-2xl mt-4' alt="" />
+                  <motion.a href={el.source} whileHover={{ scale: 1.1 }} className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold'>{"<>"} Source</motion.a>
+                  <p className=' tb text-2xl font-bold mt-12 mb-2 text-[#151021] '>{el.name}</p>
+                  <p className=' tb text-[17px] font-semibold text-[#151021]'>{el.disc}</p>
                   <div className="flex bottom-0 absolute ">
                     {el.stack.map((stackItem, j) => {
                       return (
-                        <p key={j} className=' bg-amber-700 font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border-1 rounded-2xl border-white'>{stackItem}</p>
+                        <p key={j} className=' bg-[#DA0037] font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border-1 rounded-2xl border-white'>{stackItem}</p>
                       )
                     })}
                   </div>
-                </div>
+                </motion.div>
               )
             })}
           </section>

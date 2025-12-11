@@ -138,6 +138,7 @@ export default function Home() {
     <>
       <div className="  flex h-full w-full items-center justify-around flex-col ">
         <div className="">
+          <img src="chakra.png" className='absolute h-20 left-1/2 top-99 -translate-x-1/2' alt="" />
           <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
             <div className="flex flex-col items-center justify-center">
               <h2 className=' name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block'>Hey,

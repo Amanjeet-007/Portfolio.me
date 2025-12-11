@@ -79,7 +79,7 @@ export default function Footer() {
         whileInView={{ opacity: 1 }}
         transition={{ delay: 0.7 }}
       >
-        © 2025 Amanjeet Desh | Built with 💙 using React + TailwindCSS
+        © 2025 Amanjeet | Built with ❤️ using React + Animation
       </motion.div>
     </footer>
   )

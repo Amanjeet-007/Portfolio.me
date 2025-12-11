@@ -20,7 +20,7 @@ export default function About() {
           <div className="md:w-[40%] md:pr-8 mb-8 md:mb-0 border-2 border-gray-400 p-5 rounded-2xl">
 
             <p className="text-xl text-white leading-relaxed mt-0 text-center ">
-              I’m Amanjeet — a curious builder who loves turning ideas into experiences. I explore the world of code, design, and AI with one goal in mind: to create things that make people stop, think, and smile.
+              A curious builder who loves turning ideas into experiences. I explore the world of code, design, and AI with one goal in mind: to create things that make people stop, think, and smile.
             </p>
             <p className="text-xl text-white leading-relaxed mt-4 text-center">
               I enjoy understanding how things operate under the hood — from system internals to data flow — and then using that knowledge to build something meaningful.
@@ -137,7 +137,9 @@ export default function About() {
             {/* Timeline Item 3: B.S. in Computer Science */}
             <div className="flex flex-col items-center gap-1">
               <div className="flex size-10 items-center justify-center rounded-full bg-primary/20 text-accent-blue">
-                <span className="material-symbols-outlined">school</span>
+                <span className="material-symbols-outlined">
+                  <svg xmlns="http://www.w3.org/2000/svg" width={20} viewBox="0 0 24 24" fill="currentColor"><path d="M4 11.3333L0 9L12 2L24 9V17.5H22V10.1667L20 11.3333V18.0113L19.7774 18.2864C17.9457 20.5499 15.1418 22 12 22C8.85817 22 6.05429 20.5499 4.22263 18.2864L4 18.0113V11.3333ZM6 12.5V17.2917C7.46721 18.954 9.61112 20 12 20C14.3889 20 16.5328 18.954 18 17.2917V12.5L12 16L6 12.5ZM3.96927 9L12 13.6846L20.0307 9L12 4.31541L3.96927 9Z"></path></svg>
+                </span>
               </div>
               <div className="w-px grow bg-white/20"></div>
             </div>
@@ -148,7 +150,9 @@ export default function About() {
                 <details className="flex flex-col pt-2 group">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
                     <p className="text-accent-blue text-sm font-medium leading-normal">View details</p>
-                    <span className="material-symbols-outlined text-accent-blue group-open:rotate-180 transition-transform">expand_more</span>
+                    <span className="material-symbols-outlined text-accent-blue group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" width={20} viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.6315L20.9679 10.8838L20.0321 9.11619L12 13.3685L3.9679 9.11619L3.03212 10.8838L12 15.6315Z"></path></svg>
+                    </span>
                   </summary>
                   <p className="text-[#A0A0A0] text-sm font-normal leading-normal pb-2">
                     Graduated with honors. Focused on software engineering principles, data structures, and algorithms. Actively participated in coding clubs and hackathons.
@@ -160,7 +164,9 @@ export default function About() {
             {/* Timeline Item 4 (end): Full-Stack Web Development Bootcamp */}
             <div className="flex flex-col items-center">
               <div className="flex size-10 items-center justify-center rounded-full bg-primary/20 text-accent-blue">
-                <span className="material-symbols-outlined">flag_circle</span>
+                <span className="material-symbols-outlined">
+                  <svg xmlns="http://www.w3.org/2000/svg" width={20} viewBox="0 0 24 24" fill="currentColor"><path d="M12.382 3C12.7607 3 13.107 3.214 13.2764 3.55279L14 5H20C20.5523 5 21 5.44772 21 6V17C21 17.5523 20.5523 18 20 18H13.618C13.2393 18 12.893 17.786 12.7236 17.4472L12 16H5V22H3V3H12.382ZM11.7639 5H5V14H13.2361L14.2361 16H19V7H12.7639L11.7639 5Z"></path></svg>
+                </span>
               </div>
             </div>
             <div className="flex flex-1 flex-col pb-10">
@@ -170,7 +176,9 @@ export default function About() {
                 <details className="flex flex-col pt-2 group">
                   <summary className="flex cursor-pointer list-none items-center justify-between gap-6 py-2">
                     <p className="text-accent-blue text-sm font-medium leading-normal">View details</p>
-                    <span className="material-symbols-outlined text-accent-blue group-open:rotate-180 transition-transform">expand_more</span>
+                    <span className="material-symbols-outlined text-accent-blue group-open:rotate-180 transition-transform">
+                      <svg xmlns="http://www.w3.org/2000/svg" width={20} viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.6315L20.9679 10.8838L20.0321 9.11619L12 13.3685L3.9679 9.11619L3.03212 10.8838L12 15.6315Z"></path></svg>
+                    </span>
                   </summary>
                   <p className="text-[#A0A0A0] text-sm font-normal leading-normal pb-2">
                     In Science Stream I clear the Exam with First Division.It's gives Science Orianted view to solve a Problem in Tiny pieces then solve it using your curiosity
