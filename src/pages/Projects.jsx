@@ -12,6 +12,7 @@ gsap.registerPlugin(useGSAP);
       name: "E-Commerce Platform",
       disc: "A full-featured online store with a custom CMS ",
       link: "http//:",
+      special:"Full stack",
       img: "https://img.freepik.com/free-vector/landing-page-template-second-hand-fashion-store_52683-109215.jpg?semt=ais_hybrid&w=740&q=80",
       stack: ["React", "Node.js", "GraphQL"],
       source: "Haskfjl"
@@ -39,6 +40,7 @@ gsap.registerPlugin(useGSAP);
       name: "Deadpool Animated Website",
       disc: "A mobile fisrt social media web application",
       link: "http//:",
+      special:"Frontend",
       img: "https://i.pinimg.com/736x/c3/76/86/c3768686be0c6d96e940e95e83e399c7.jpg",
       stack: ["React", "Firebase", "Node.js"],
       source: "Haskfjl"
@@ -99,6 +101,7 @@ gsap.registerPlugin(useGSAP);
     },
 
   ]
+
 export {ProjectList}
 
 export default function Projects() {
@@ -115,25 +118,69 @@ export default function Projects() {
     // Add your GSAP logic here
   };
 
+  const FilteredProjects = ProjectList
+
+  const filters = [
+    {
+      name:"All",
+      apply:()=>{
+        ProjectList.filter((el)=>el)
+      }
+    },
+    {
+      name:"Frontend",
+      apply:()=>{
+        FilteredProjects.filter((el)=>{
+          if(el.special == "Frontend"){
+            console.log("Fone")
+            return el
+          }
+        })
+      }
+    },
+    {
+      name:"Backend",
+      apply:()=>{
+        ProjectList.filter((el)=>{
+          if(el.special == "Backend"){
+            
+            return el
+          }
+        })
+      }
+    },
+    {
+      name:"Full Stack",
+      apply:()=>{
+        ProjectList.filter((el)=>{
+          if(el.special == "Full Stack"){
+            return el
+          }
+        })
+      }
+    }
+  ]
+
   return (
     <>
-      {/* No Suspense needed here - the Router handles it! */}
       
         <header className="w-[100%] h-min flex justify-center">
         </header>
+
         <main>
+
           <div className="All h-20 w-full flex items-center justify-around flex-nowrap overflow-scroll fixed top-[125px] z-50 ">
-            {["All", "Frontend", "Backend", "Full Stack"].map((el, i) => {
+            {filters.map((el, i) => {
               return (
-                <div className="tech py-1 px-7 rounded-4xl border-2 border-white text-white min-w-[120px] text-center mx-4 cursor-pointer " key={i}>
-                  {(i == 0 ? `${el} ${ProjectList.length}` : el)}
+                <div className="tech py-1 px-7 rounded-4xl border-2 border-white text-white min-w-[120px] text-center mx-4 cursor-pointer " key={i} onClick={el.apply}>
+                  {(i == 0 ? `${el.name} ${ProjectList.length}` : el.name)}
                 </div>
               )
             })}
           </div>
 
           <section className="boxes-container flex justify-around items-center w-full flex-wrap h-min ">
-            {ProjectList.map((el, i) => {
+            {FilteredProjects.map((el, i) => {
               return (
                 <motion.div className="p-4 card h-[500px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" whileHover={{ scale: 1.03 }} key={i} onClick={(e) => toggleTimeline(e)}>
                   <a href={el.link}>
@@ -156,6 +203,7 @@ export default function Projects() {
               )
             })}
           </section>
+
         </main>
     </>
   );

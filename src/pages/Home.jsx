@@ -94,7 +94,7 @@ const TopProjects = ()=>{
                 <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" width={30} viewBox="0 0 24 24" fill="white"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg>
                 </div>
-                <img src={el.img} className='h-58 w-full rounded-2xl' alt="" />
+                <img src={el.img} className='h-58 w-full rounded-2xl mt-4' alt="" />
                 <a href="#" className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-amber-600 rounded-xl text-white font-bold'>{"<>"} Source</a>
                 <p className='text-2xl font-bold mt-6 mb-2'>{el.name}</p>
                 <p className='text-[17px]'>{el.disc}</p>
@@ -138,7 +138,7 @@ export default function Home() {
     <>
       <div className="  flex h-full w-full items-center justify-around flex-col ">
         <div className="">
-          <img src="chakra.png" className='absolute h-20 left-1/2 top-99 -translate-x-1/2' alt="" />
+          {/* <img src="chakra.png" className='absolute h-20 left-1/2 top-99 -translate-x-1/2' alt="" /> */}
           <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
             <div className="flex flex-col items-center justify-center">
               <h2 className=' name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block'>Hey,

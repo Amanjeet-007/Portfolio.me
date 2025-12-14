@@ -136,7 +136,7 @@ export default function Connect() {
           </div>
           <div className="right w-1/2 h-full">
             <div className="social flex flex-col items-center  space-y-6 md:space-y-8">
-              <div className="flex flex-row flex-wrap w-[400px] m-10 justify-center h-[400px] items-center space-x-6 md:space-x-0 md:space-y-6">
+              <div className="grid grid-cols-2 flex-row flex-wrap w-[400px] m-10 justify-center h-[400px] items-center space-x-6 md:space-x-0 md:space-y-6">
                 {
                   social.map((el, i) => {
                     return (<motion.a
@@ -145,7 +145,7 @@ export default function Connect() {
                       target="_blank" // Open in new tab
                       rel="noopener noreferrer" // Security best practice
                       whileHover={{ scale: 1.1, y: -5 }} // Slightly less aggressive hover effect
-                      className="m-10 flex items-center justify-center flex-col" // Ensure the link is a block for spacing
+                      className="m-10 flex items-center justify-center flex-col px-4 rounded-xl py-2 bg-gray-800"
                     >
                       {el.img}
                       {el.name}

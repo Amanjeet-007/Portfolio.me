@@ -132,7 +132,7 @@ export default function About() {
 
         {/* Education Section */}
         <section className="px-4 py-8 " id="education">
-          <h2 className="text-white text-[25px] text-right font-bold leading-tight tracking-[-0.015em] pb-5">Education</h2>
+          <h2 className="text-white text-[25px] text-center font-bold leading-tight tracking-[-0.015em] pb-5">Education</h2>
           <div className="grid grid-cols-[auto_1fr] gap-x-4">
             {/* Timeline Item 3: B.S. in Computer Science */}
             <div className="flex flex-col items-center gap-1">
