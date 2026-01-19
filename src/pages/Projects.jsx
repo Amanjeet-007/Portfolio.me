@@ -15,7 +15,7 @@ gsap.registerPlugin(useGSAP);
       special:"Full stack",
       img: "https://img.freepik.com/free-vector/landing-page-template-second-hand-fashion-store_52683-109215.jpg?semt=ais_hybrid&w=740&q=80",
       stack: ["React", "Node.js", "GraphQL"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:1,
@@ -24,7 +24,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "https://img.freepik.com/free-vector/business-dashboard-element-set_23-2148359612.jpg?semt=ais_hybrid&w=740&q=80",
       stack: ["D3.js", "React", "Python"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:1,
@@ -33,7 +33,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "https://www.winklix.com/blog/wp-content/uploads/2017/10/instant-messaging-900x500.png",
       stack: ["React", "Firebase", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:2,
@@ -43,7 +43,7 @@ gsap.registerPlugin(useGSAP);
       special:"Frontend",
       img: "https://i.pinimg.com/736x/c3/76/86/c3768686be0c6d96e940e95e83e399c7.jpg",
       stack: ["React", "Firebase", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:2,
@@ -52,7 +52,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "",
       stack: ["React", "Firebase", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:2,
@@ -61,7 +61,7 @@ gsap.registerPlugin(useGSAP);
       link: "https://github.com/Amanjeet-007/AI-coding",
       img: "",
       stack: ["React", "Gemini Api", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:2,
@@ -70,7 +70,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "",
       stack: ["React", "Firebase", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:2,
@@ -79,7 +79,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "",
       stack: ["Express", "JWT", "Cookie"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
      {
       rank:3,
@@ -88,7 +88,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "",
       stack: ["React", "Firebase", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
     {
       rank:3,
@@ -97,7 +97,7 @@ gsap.registerPlugin(useGSAP);
       link: "http//:",
       img: "",
       stack: ["React", "Firebase", "Node.js"],
-      source: "Haskfjl"
+      source: "https://github.com/Amanjeet-007"
     },
 
   ]
@@ -183,13 +183,13 @@ export default function Projects() {
             {FilteredProjects.map((el, i) => {
               return (
                 <motion.div className="p-4 card h-[500px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative" whileHover={{ scale: 1.03 }} key={i} onClick={(e) => toggleTimeline(e)}>
-                  <a href={el.link}>
+                  <a href={el.link} target='_black'>
                     <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
                       <svg xmlns="http://www.w3.org/2000/svg" width={30} viewBox="0 0 24 24" fill="white"><path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path></svg>
                     </div>
                   </a>
                   <motion.img src={el.img} whileHover={{ scale: .9 }} className='h-58 w-full rounded-2xl mt-4' alt="" />
-                  <motion.a href={el.source} whileHover={{ scale: 1.1 }} className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold'>{"<>"} Source</motion.a>
+                  <motion.a href={el.source}  whileHover={{ scale: 1.1 }} className='absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold' target='_black'>{"<>"} Source</motion.a>
                   <p className=' tb text-2xl font-bold mt-12 mb-2 text-[#151021] '>{el.name}</p>
                   <p className=' tb text-[17px] font-semibold text-[#151021]'>{el.disc}</p>
                   <div className="flex bottom-0 absolute ">
