@@ -11,7 +11,7 @@ gsap.registerPlugin(useGSAP);
       rank:1,
       name: "E-Commerce Platform",
       disc: "A full-featured online store with a custom CMS ",
-      link: "http//:",
+      link: "https://neoecommerce.netlify.app/",
       special:"Full stack",
       img: "https://img.freepik.com/free-vector/landing-page-template-second-hand-fashion-store_52683-109215.jpg?semt=ais_hybrid&w=740&q=80",
       stack: ["React", "Node.js", "GraphQL"],
