@@ -105,12 +105,12 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootLayout />,
     children: [
-      {
-        index: true, // Replaces path: "/" for the default child
-        element: <Welcome />,
-      },
-      {
-        path: "home",
+      // {
+      //   index: true, // Replaces path: "/" for the default child
+      //   element: <Welcome />,
+      // },
+      { 
+        index:true,
         element: <Home />,
       },
       {

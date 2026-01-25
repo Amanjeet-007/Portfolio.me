@@ -16,15 +16,16 @@ export default function Blogs() {
       status: "working",
       summary: "Learn And understand the simillarity between Js and Py"
     },
-    {
-      id: 1,
-      path: "oops",
-      image: "https://i.pinimg.com/736x/49/e4/5f/49e45fa4fed20eb38f8f2c06c263e793.jpg",
-      title: "OOPs advance",
-      date: "COMING SOON",
-      status: "upcoming",
-      summary: "An brife guide of OOPs concepts"
-    }, {
+    // {
+    //   id: 1,
+    //   path: "oops",
+    //   image: "https://i.pinimg.com/736x/49/e4/5f/49e45fa4fed20eb38f8f2c06c263e793.jpg",
+    //   title: "OOPs advance",
+    //   date: "COMING SOON",
+    //   status: "upcoming",
+    //   summary: "An brife guide of OOPs concepts"
+    // },
+     {
       id: 2,
       path: "Systemdesign",
       image: "https://media.licdn.com/dms/image/v2/D5612AQHY0LBRCLhk1Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1727362192771?e=2147483647&v=beta&t=1jpwJm68AOOU1rNNFU3rlZSj5EDni0tbHlCezPI0yVU",

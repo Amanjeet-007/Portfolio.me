@@ -8,10 +8,10 @@ export default function About() {
       <header className='w-full flex justify-center'>
       </header>
       {/* Main content area */}
-      <main className="container px-7  text-center flex-grow">
+      <main className="container px-7  flex-grow">
         <div className="aboutPage">
         <h1 className="text-4xl md:text-5xl font-bold  mb-4">
-         <span  className="tracking-light leading-tight">Amanjeet kumar</span>
+         <span  className="tracking-light leading-tight w-full flex items-center justify-center">Amanjeet kumar</span>
         </h1>
         {/* Hero Section */}
         <section className="flex flex-col md:flex-row items-center justify-between mb-16">
@@ -193,9 +193,31 @@ export default function About() {
            {/* Interests/Personal Touch Section */}
         <section>
           <h2 className="text-3xl font-bold mb-6 text-center text-gray-200">Interests & Passion</h2>
-          <p className="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">
-
-          </p>
+          {
+            [
+            {
+              name :"Chess",
+              img:"https://images.unsplash.com/photo-1695480542225-bc22cac128d0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fGNoZXNzfGVufDB8fDB8fHww",
+              link:"https://www.chess.com/member/amanjeet007",
+              about:"I like to play chess when i getting ovethinking 😆"
+            },
+          ].map((el,i)=>{
+            return(
+              <>
+            <div className="flex flex-col items-center">
+            <div style={{background:`url(${el.img})`,backgroundPosition:'center',backgroundSize:"cover",backgroundOrigin:"center",backgroundRepeat:"no-repeat"}} className="h-50 w-50 rounded-2xl cursor-pointer " key={i}>
+            </div>
+            <p className="text-xl font-bold m-2 flex items-center">{el.name} 
+              <a href={el.link} target="_black">
+              <span>
+                <svg height={20} className="cursor-pointer mx-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M10 6V8H5V19H16V14H18V20C18 20.5523 17.5523 21 17 21H4C3.44772 21 3 20.5523 3 20V7C3 6.44772 3.44772 6 4 6H10ZM21 3V11H19L18.9999 6.413L11.2071 14.2071L9.79289 12.7929L17.5849 5H13V3H21Z"></path></svg>
+                </span></a>
+            </p>
+            </div>
+            </>
+          )
+          })
+          }
           {/* You could add icons or small images related to interests here */}
         </section>
     </div>
