@@ -75,6 +75,9 @@ nav #logo {
   border: 2px solid rgb(54, 34, 34);
   font-family: 'Audio', sans-serif;
 }
+li{
+  cursor: pointer;
+}
 
 #options .active .option {
   border: 2px solid transparent;

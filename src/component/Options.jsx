@@ -9,7 +9,7 @@ export default function Options({ show, closeMenu }) {
     const [screen, setScreen] = useState(window.innerWidth)
 
     const options = [
-        ["Home", "https://cdn-icons-png.flaticon.com/128/10307/10307931.png", "/home"],
+        ["Home", "https://cdn-icons-png.flaticon.com/128/10307/10307931.png", "/"],
         ["About", "https://cdn-icons-png.flaticon.com/128/13984/13984272.png", '/about'],
         ["Projects", "https://cdn-icons-png.flaticon.com/128/9672/9672290.png", "/projects"],
         ["Blogs", "https://cdn-icons-png.flaticon.com/128/4136/4136043.png", '/blogs'],

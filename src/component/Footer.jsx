@@ -1,5 +1,6 @@
 import { motion } from "motion/react"
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router";
 
 export default function Footer() {
   return (
@@ -32,9 +33,9 @@ export default function Footer() {
         >
           <h3 className="text-2xl font-semibold mb-4 text-blue-400">Quick Links</h3>
           <ul className="space-y-3 text-lg">
-            <li><a href="#projects" className="hover:text-blue-300 transition">Projects</a></li>
-            <li><a href="#skills" className="hover:text-blue-300 transition">Skills</a></li>
-            <li><a href="#contact" className="hover:text-blue-300 transition">Contact</a></li>
+            <Link to={'/projects'} ><li  className="hover:text-blue-300 transition"> Projects</li></Link>
+            <Link to={'/blogs'}><li className="hover:text-blue-300 transition" >Blogs</li></Link>
+            <Link to={'/connect'}><li className="hover:text-blue-300 transition"> Contact</li></Link>
           </ul>
         </motion.div>
 
