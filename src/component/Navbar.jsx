@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import '../styles/Nav.css'
 import gsap from 'gsap';
@@ -110,4 +111,4 @@ export default function Navbar() {
             </div>
         </nav>
     )
-}
+} 

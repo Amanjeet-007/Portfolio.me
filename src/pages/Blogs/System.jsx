@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Navbar from "../../component/Navbar"
 import Tab from "../../component/Tab"
 

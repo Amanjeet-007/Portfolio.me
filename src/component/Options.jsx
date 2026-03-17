@@ -1,3 +1,5 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router"; // (Make sure this import is correct for your version)
 import '../styles/Nav.css'
@@ -18,7 +20,7 @@ export default function Options({ show, closeMenu }) {
     function hoverHandler(e) {
         const paragraph = e.currentTarget.querySelector("p");
         const icon = e.currentTarget.querySelector("span img")
-        gsap.to(e.currentTarget, { scale: 1.2 })
+        gsap.to(e.currentTarget, { scale: 1.1 })
         gsap.to(paragraph, { rotationY: 45, opacity: 0 })
         gsap.to(icon, { rotationY: -180, opacity: 1 })
     }

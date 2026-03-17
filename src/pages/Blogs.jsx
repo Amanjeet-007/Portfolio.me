@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-key */
 import '../App.css'
 import { motion } from 'motion/react'
 import { Link, Outlet } from "react-router"
