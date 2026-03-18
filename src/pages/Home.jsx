@@ -9,6 +9,7 @@ import { motion } from "motion/react"; // Animnation
 import { ProjectList } from "./Projects";
 import { useEffect } from "react";
 import { useAnimation } from "motion/react";
+import { NavLink } from "react-router";
 import "../App.css";
 import Robot from "../component/robot";
 
@@ -239,14 +240,13 @@ export default function Home() {
     <>
       <div className="  flex h-full w-full items-center justify-around flex-col ">
         <div className="absolute w-full overflow-hidden left-180 bottom-0 -rotate-90">
-        {" "}
-        {/* Add overflow-hidden to contain the robot */}
-        <div className="robot-moving">
-          <Robot />
+          {" "}
+          {/* Add overflow-hidden to contain the robot */}
+          <div className="robot-moving hidden md:flex">
+            <Robot />
+          </div>
         </div>
-      </div>
         <div className="">
-          {/* <img src="chakra.png" className='absolute h-20 left-1/2 top-99 -translate-x-1/2' alt="" /> */}
           <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
             <div className="flex flex-col items-center justify-center">
               <h2 className=" name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block">
@@ -276,11 +276,13 @@ export default function Home() {
               🚀 A passionate full-stack developer with expertise in creating
               modern, responsive Full-Stack web application.
             </p>
-            <button className="mt-10 cursor-pointer z-0">View My Work</button>
+            <NavLink to={"/projects"}>
+              <button className="mt-10 cursor-pointer z-0">View My Work</button>
+            </NavLink>
           </div>
         </div>
       </div>
-      
+
       <div className="homesocial h-[18vh]  border-t-2 border-b-2 border-gray-500 flex w-full mt-[19px] items-center justify-around z-1  relative">
         {[
           {
