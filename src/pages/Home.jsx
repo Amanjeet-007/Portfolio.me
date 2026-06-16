@@ -11,7 +11,6 @@ import { useEffect } from "react";
 import { useAnimation } from "motion/react";
 import { NavLink } from "react-router";
 import "../App.css";
-import Robot from "../component/robot";
 
 const SkillsComp = () => {
   // Skills list
@@ -241,10 +240,6 @@ export default function Home() {
       <div className="  flex h-full w-full items-center justify-around flex-col ">
         <div className="absolute w-full overflow-hidden left-180 bottom-0 -rotate-90">
           {" "}
-          {/* Add overflow-hidden to contain the robot */}
-          <div className="robot-moving hidden md:flex">
-            <Robot />
-          </div>
         </div>
         <div className="">
           <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
