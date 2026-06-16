@@ -1,5 +1,4 @@
 
-
 export default function About() {
 
   return (
@@ -181,7 +180,7 @@ export default function About() {
                     </span>
                   </summary>
                   <p className="text-[#A0A0A0] text-sm font-normal leading-normal pb-2">
-                    In Science Stream I clear the Exam with First Division.It's gives Science Orianted view to solve a Problem in Tiny pieces then solve it using your curiosity
+                    In Science Stream I clear the Exam with First Division.It&#39;s gives Science Orianted view to solve a Problem in Tiny pieces then solve it using your curiosity
                   </p>
                 </details>
               </div>

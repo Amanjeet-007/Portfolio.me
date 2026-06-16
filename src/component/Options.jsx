@@ -7,7 +7,6 @@ import gsap from 'gsap';
 import { motion } from "motion/react";
 
 export default function Options({ show, closeMenu }) {
-
     const [screen, setScreen] = useState(window.innerWidth)
 
     const options = [
@@ -42,8 +41,7 @@ export default function Options({ show, closeMenu }) {
     }
 
     return (
-        <>
-            <motion.div
+        <motion.div
                 initial={(screen < 1000) ? { opacity: 0, x: 20 } : { opacity: 1 }}
                 animate={(screen < 1000) && show ? { opacity: 1, x: -70 } : screen > 1000 ? { opacity: 1 } : { opacity: 0 }}
                 id="options">
@@ -65,7 +63,6 @@ export default function Options({ show, closeMenu }) {
                         </NavLink>
                     )
                 })}
-            </motion.div>
-        </>
+        </motion.div>
     )
 }

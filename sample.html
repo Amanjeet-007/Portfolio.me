@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Wire Animation</title>
+    <style>
+      body {
+        margin: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(20, 20, 20);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      svg {
+        width: 100%;
+        height: 100px;
+      }
+
+      .wire-path {
+        fill: none;
+        stroke: #444; /* Background wire color */
+        stroke-width: 4;
+        stroke-linecap: round;
+      }
+
+      .current-flow {
+        fill: none;
+        stroke: #00f2ff; /* Glowing color */
+        stroke-width: 4;
+        stroke-linecap: round;
+        
+        /* Dash settings: 40px line, 100px gap */
+        stroke-dasharray: 40, 100; 
+        
+        /* Glow Effect */
+        filter: drop-shadow(0 0 8px #00f2ff);
+        
+        /* The Animation */
+        animation: flow 2s linear infinite;
+      }
+
+      @keyframes flow {
+        from {
+          stroke-dashoffset: 140; /* Total (40+100) se shuru */
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+</head>
+<body>
+
+  <svg viewBox="0 0 800 100">
+    <path class="wire-path" d="M 0 50 L 800 50" />
+    
+    <path class="current-flow" d="M 0 50 L 800 50" />
+  </svg>
+    
+</body>
+</html>

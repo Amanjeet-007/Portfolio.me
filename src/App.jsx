@@ -1,4 +1,6 @@
-import React, { Suspense, lazy, useRef } from 'react';
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-refresh/only-export-components */
+import { Suspense, lazy, useRef } from 'react';
 import gsap from 'gsap/gsap-core.js';
 import { createBrowserRouter } from 'react-router';
 import { useGSAP } from '@gsap/react';
@@ -10,7 +12,7 @@ import './App.css';
 import RootLayout from './RootLayout.jsx';
 
 // Standard Imports (Load immediately)
-import Welcome from './pages/Welcome.jsx';
+// import Welcome from './pages/Welcome.jsx';
 import Home from './pages/Home.jsx'; // Usually Home is better standard imported to load fast
 
 // Lazy Imports (Load on demand)
@@ -65,7 +67,7 @@ const Loading = () => {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="h-screen w-full bg-[#0f2040] flex flex-col items-center justify-center font-mono z-[9999]">
+    <div ref={containerRef} className="h-screen w-full bg-[#151021] flex flex-col items-center justify-center font-mono z-[9999] -mt-20">
 
       <div className="w-[300px]">
         {/* Terminal Header */}

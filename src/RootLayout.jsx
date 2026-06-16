@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
-import { Outlet, useLocation } from 'react-router';
-import LocomotiveScroll from 'locomotive-scroll';
-import Navbar from './component/Navbar';
-import Footer from './component/Footer';
+import { useEffect, useRef } from "react";
+import { Outlet, useLocation } from "react-router";
+import LocomotiveScroll from "locomotive-scroll";
+import Navbar from "./component/Navbar";
+import Footer from "./component/Footer";
 
 export default function RootLayout() {
   const scrollRef = useRef(null);
@@ -26,7 +26,7 @@ export default function RootLayout() {
     <div data-scroll-container ref={scrollRef}>
       <Navbar />
       <main>
-        <Outlet /> 
+        <Outlet />
       </main>
       <Footer />
     </div>

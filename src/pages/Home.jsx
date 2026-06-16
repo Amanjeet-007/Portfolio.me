@@ -1,10 +1,10 @@
-/* eslint-disable react/no-unknown-property */
+//* eslint-disable react/no-unknown-property */
 /* eslint-disable no-undef */
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable no-unused-vars */
+//* eslint-disable no-unused-vars */
 /// eslint-disable-next-line react/no-unescaped-entities
 
-import React, { Suspense, lazy } from "react";
+// import React, { Suspense, lazy } from "react";
 import { motion } from "motion/react"; // Animnation
 import { ProjectList } from "./Projects";
 import { useEffect } from "react";
@@ -109,7 +109,7 @@ const SkillsComp = () => {
         },
         {
           name: "C++",
-          icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1822px-ISO_C%2B%2B_Logo.svg.png",
+          icon: "https://download.logo.wine/logo/C%2B%2B/C%2B%2B-Logo.wine.png",
         },
       ],
     },

@@ -3,9 +3,6 @@ import '../App.css'
 import { motion } from 'motion/react'
 import { Link, Outlet } from "react-router"
 
-
-
-
 export default function Blogs() {
   const blogs = [
     {
@@ -42,7 +39,7 @@ export default function Blogs() {
 
   return (
     <main>
-      <div className="blogs w-full h-full flex items-center justify-around flex-wrap">
+      <div className="blogs w-full h-full flex items-center justify-around flex-wrap mt-14">
         {
           blogs.map(el => {
             return (
