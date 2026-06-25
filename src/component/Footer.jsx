@@ -46,7 +46,7 @@ export default function Footer() {
           transition={{ delay: 0.4 }}
         >
           <h3 className="text-2xl font-semibold mb-4 text-blue-400">Contact</h3>
-          <p className="text-base text-gray-200">📍 Patna, India</p>
+          <p className="text-base text-gray-200">📍 Noida, India</p>
           <p className="text-base">
             📧{" "}
             <a
