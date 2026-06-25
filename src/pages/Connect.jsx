@@ -53,14 +53,8 @@ export default function Connect() {
   ]
 
   return (
-    <>
-      {/* Header with Navbar */}
-      <header className='w-full flex justify-center'>
-      </header>
-
-      {/* Main content area */}
       <main >
-        <div className="flex connect flex-col w-[100vw] text-white h-full  md:flex-row items-center text-center justify-around mb-10">
+        <div className="flex mt-4 connect flex-col w-[100vw] text-white h-full  md:flex-row items-center text-center justify-around mb-10">
 
           <div className="left w-[100vw] md:w-60vw] h-full flex items-center justify-center">
             <form ref={form} onSubmit={sendEmail} className="Form text-gray-200 mt-4 space-y-6 flex items-center justify-center flex-col">
@@ -157,6 +151,5 @@ export default function Connect() {
           </div>
         </div>
       </main>
-    </>
   );
 }

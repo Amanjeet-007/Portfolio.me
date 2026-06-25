@@ -8,7 +8,7 @@ export default function About() {
       </header>
       {/* Main content area */}
       <main className="container px-7  flex-grow">
-        <div className="aboutPage">
+        <div className="aboutPage mt-7">
         <h1 className="text-4xl md:text-5xl font-bold  mb-4">
          <span  className="tracking-light leading-tight w-full flex items-center justify-center">Amanjeet kumar</span>
         </h1>

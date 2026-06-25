@@ -128,7 +128,7 @@ const SkillsComp = () => {
             >
               {el.name}
             </motion.p>
-            <div className=" w-[100vw] pl-0 flex flex-wrap items-center justify-center ">
+            <div className=" w-[100vw] p-0 flex -ml-2 flex-wrap items-center justify-center ">
               {el.tool.map((childEl, i) => {
                 return (
                   <motion.div
@@ -138,7 +138,7 @@ const SkillsComp = () => {
                     transition={{ duration: 0.5, ease: "easeOut" }}
                     viewport={{ once: false }}
                     key={i}
-                    className="card m-5 rounded-2xl flex items-center flex-col border-1 border-gray-600 "
+                    className="card m-4 rounded-2xl flex items-center flex-col border-1 border-gray-600 "
                   >
                     <img
                       src={childEl.icon}
@@ -169,6 +169,7 @@ const TopProjects = () => {
               onClick={(e) => toggleTimeline(e)}
             >
               {/* link */}
+              <a href={el.link} target="_black">
               <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -179,14 +180,15 @@ const TopProjects = () => {
                   <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
                 </svg>
               </div>
+              </a>
               <img
                 src={el.img}
                 className="h-58 w-full rounded-2xl mt-4"
                 alt=""
               />
               <a
-                href="#"
-                className="absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-amber-600 rounded-xl text-white font-bold"
+                href={el.source}
+                className="absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold"
               >
                 {"<>"} Source
               </a>
@@ -197,7 +199,7 @@ const TopProjects = () => {
                   return (
                     <p
                       key={i}
-                      className=" bg-amber-700 font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border-1 rounded-2xl border-white"
+                      className=" bg-[#DA0037] font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border-1 rounded-2xl border-white"
                     >
                       {el}
                     </p>

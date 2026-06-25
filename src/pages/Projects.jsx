@@ -14,7 +14,7 @@ const ProjectList = [
     special: "Full stack",
     img: "https://i.postimg.cc/xThKsDVH/neo.webp",
     stack: ["React", "Node.js", "GraphQL"],
-    source: "https://github.com/Amanjeet-007",
+    source: "https://github.com/Amanjeet-007/Ecommerce",
     type:"Full-Stack"
   },
   // {
@@ -217,10 +217,10 @@ export default function Projects() {
                 >
                   {"<>"} Source
                 </motion.a>
-                <p className=" tb text-2xl font-bold mt-12 mb-2 text-[#151021] ">
+                <p className=" text-2xl font-bold mt-10 mb-2 text-[#ffffff] ">
                   {el.name}
                 </p>
-                <p className=" tb text-[17px] font-semibold text-[#151021]">
+                <p className=" text-[17px] font-semibold text-[#dcdcdc]">
                   {el.disc}
                 </p>
                 <div className="flex bottom-0 absolute ">

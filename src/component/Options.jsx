@@ -42,8 +42,8 @@ export default function Options({ show, closeMenu }) {
 
     return (
         <motion.div
-                initial={(screen < 1000) ? { opacity: 0, x: 20 } : { opacity: 1 }}
-                animate={(screen < 1000) && show ? { opacity: 1, x: -70 } : screen > 1000 ? { opacity: 1 } : { opacity: 0 }}
+                initial={(screen < 1000) ? { opacity: 0, x: 20,display:"none" } : { opacity: 1 }}
+                animate={(screen < 1000) && show ? { opacity: 1, x: -70,display:"flex"  } : screen > 1000 ? { opacity: 1 , display:"flex" } : { opacity: 0 , display:"none" }}
                 id="options">
                 {options.map((el, i) => {
                     return (
