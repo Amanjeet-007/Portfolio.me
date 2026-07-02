@@ -181,11 +181,13 @@ const TopProjects = () => {
                 </svg>
               </div>
               </a>
-              <img
-                src={el.img}
-                className="h-58 w-full rounded-2xl mt-4"
-                alt=""
-              />
+              <motion.div
+                className="h-45 w-full rounded-2xl mt-4 img"
+                whileHover={{ scale: 0.9 }}
+                style={{backgroundImage:`url(${el.img})`,backgroundOrigin:"center",backgroundPosition:"center"}}
+                >
+
+                </motion.div>
               <a
                 href={el.source}
                 className="absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold"

@@ -191,7 +191,7 @@ export default function Projects() {
                 key={i}
                 onClick={(e) => toggleTimeline(e)}
               >
-                <a href={el.link} target="_black">
+                <a href={el.link} target="_black" aria-label={el.name}>
                   <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center z-50">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
