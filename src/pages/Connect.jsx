@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/no-unknown-property */
 import { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { motion } from 'framer-motion'; // Correct import for Framer Motion
@@ -58,7 +60,7 @@ export default function Connect() {
 
           <div className="left w-[100vw] md:w-60vw] h-full flex items-center justify-center">
             <form ref={form} onSubmit={sendEmail} className="Form text-gray-200 mt-4 space-y-6 flex items-center justify-center flex-col">
-              <h2 className='text-3xl font-extrabold'>Let's Build Foundation</h2>
+              <h2 className='text-3xl font-extrabold'>Let&rsquo;s Build Foundation</h2>
               {/* Name Input */}
               <div className="flex w-[100%] flex-col md:flex-row ">
                 <div className='w-[100%] md:w-[60%] mr-10 mb-4'>
@@ -136,6 +138,7 @@ export default function Connect() {
                     return (<motion.a
                       href={el.link}
                       key={i}
+                      name={el.name}
                       target="_blank" // Open in new tab
                       rel="noopener noreferrer" // Security best practice
                       whileHover={{ scale: 1.1, y: -5 }} // Slightly less aggressive hover effect

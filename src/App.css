@@ -109,6 +109,12 @@ h1 {
   font-family: "Audio";
 }
 
+.img{
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .center p {
   background-color: rgba(19, 1, 1, 0.301);
   mix-blend-mode: blur(20px);

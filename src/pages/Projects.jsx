@@ -203,12 +203,19 @@ export default function Projects() {
                     </svg>
                   </div>
                 </a>
-                <motion.img
+                <motion.div
+                className="h-45 w-full rounded-2xl mt-4 img  "
+                whileHover={{ scale: 0.9 }}
+                style={{backgroundImage:`url(${el.img})`,backgroundOrigin:"center",backgroundPosition:"center"}}
+                >
+
+                </motion.div>
+                {/* <motion.img
                   src={el.img}
                   whileHover={{ scale: 0.9 }}
                   className="h-45 w-full rounded-2xl mt-4"
                   alt=""
-                />
+                /> */}
                 <motion.a
                   href={el.source}
                   whileHover={{ scale: 1.1 }}

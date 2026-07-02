@@ -57,7 +57,7 @@ export default function Options({ show, closeMenu }) {
                                 className="option" >
                                 <p>{el[0]}</p>
                                 <span>
-                                    <img src={el[1]} alt="" />
+                                    <img src={el[1]} alt={el[0]} />
                                 </span>
                             </div>
                         </NavLink>

@@ -91,7 +91,7 @@ export default function Navbar() {
 
       <Options show={click} closeMenu={closeMenu} />
 
-      <NavLink to={"/connect"} onClick={closeMenu}>
+      <NavLink to={"/connect"} onClick={closeMenu} className='connect'>
         <button className="connectBtn cursor-pointer">Connect</button>
       </NavLink>
 
