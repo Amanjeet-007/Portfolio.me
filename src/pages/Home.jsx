@@ -163,52 +163,66 @@ const TopProjects = () => {
       {ProjectList.map((el, i) => {
         if (el.rank == 1) {
           return (
-            <div
-              className="bg-cyan-950 p-4 card h-[450px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative"
+            <motion.div
+              className="p-4 card h-[400px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative"
+              whileHover={{ scale: 1.03 }}
               key={i}
               onClick={(e) => toggleTimeline(e)}
             >
-              {/* link */}
-              <a href={el.link} target="_black">
-              <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width={30}
-                  viewBox="0 0 24 24"
-                  fill="white"
-                >
-                  <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
-                </svg>
-              </div>
+              <a href={el.link} target="_black" aria-label={el.name}>
+                <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center z-50">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width={30}
+                    viewBox="0 0 24 24"
+                    fill="white"
+                  >
+                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+                  </svg>
+                </div>
               </a>
               <motion.div
-                className="h-45 w-full rounded-2xl mt-4 img"
+                className="h-45 w-full rounded-2xl mt-4 img  "
                 whileHover={{ scale: 0.9 }}
-                style={{backgroundImage:`url(${el.img})`,backgroundOrigin:"center",backgroundPosition:"center"}}
-                >
-
-                </motion.div>
-              <a
+                style={{
+                  backgroundImage: `url(${el.img})`,
+                  backgroundOrigin: "center",
+                  backgroundPosition: "center",
+                }}
+              ></motion.div>
+              {/* <motion.img
+                  src={el.img}
+                  whileHover={{ scale: 0.9 }}
+                  className="h-45 w-full rounded-2xl mt-4"
+                  alt=""
+                /> */}
+              <motion.a
                 href={el.source}
-                className="absolute top-[50%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold"
+                whileHover={{ scale: 1.1 }}
+                className="absolute top-[44%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold"
+                target="_black"
               >
                 {"<>"} Source
-              </a>
-              <p className="text-2xl font-bold mt-6 mb-2">{el.name}</p>
-              <p className="text-[17px]">{el.disc}</p>
+              </motion.a>
+              <p className=" text-2xl font-bold mt-10 mb-2 text-[#ffffff] ">
+                {el.name}
+              </p>
+              <p className=" text-[17px] font-semibold text-[#dcdcdc]">
+                {el.disc}
+              </p>
               <div className="flex bottom-0 absolute ">
-                {el.stack.map((el, i) => {
+                {el.stack.map((stackItem, j) => {
                   return (
                     <p
-                      key={i}
+                      key={j}
                       className=" bg-[#DA0037] font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border-1 rounded-2xl border-white"
                     >
-                      {el}
+                      {stackItem}
                     </p>
                   );
                 })}
               </div>
-            </div>
+            </motion.div>
           );
         }
       })}
