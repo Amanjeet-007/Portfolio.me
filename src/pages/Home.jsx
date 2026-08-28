@@ -76,7 +76,7 @@ const SkillsComp = () => {
         },
         {
           name: "PostgreSQL",
-          icon: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_PostgreSQL.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_PostgreSQL.png",
         },
         {
           name: "Git",
@@ -128,60 +128,59 @@ const SkillsComp = () => {
 
   const groupVariant = {
     hidden: {},
-    visible: { transition: { staggerChildren: 0.06 } },
+    visible: { transition: { staggerChildren: 0.04 } },
   };
 
   const cardVariant = {
-    hidden: { opacity: 0, rotateX: 60, y: 40 },
+    hidden: { opacity: 0, scale: 0.8, y: 15 },
     visible: {
       opacity: 1,
-      rotateX: 0,
+      scale: 1,
       y: 0,
-      transition: { duration: 0.45, ease: "easeOut" },
+      transition: { duration: 0.25, ease: "easeOut" },
     },
   };
 
   return (
-    <div className="skills min-h-screen w-full flex flex-col items-center py-20">
-      <p className="font-bold text-2xl sectionname">Skills</p>
-      {/* Category Filter Buttons with Active Sliding Pill */}
+    <div className="skills min-h-screen w-full flex flex-col items-center py-12 px-4">
+      <p className="font-bold text-2xl sectionname text-white mb-6">Skills</p>
 
-      {/* Skills Sections */}
+
+
       <AnimatePresence mode="wait">
         <motion.div
           key={activeCategory}
-          initial={{ opacity: 0, y: 15 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -15 }}
-          transition={{ duration: 0.25 }}
-          className="w-full flex flex-col items-center"
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.2 }}
+          className="w-full max-w-4xl flex flex-col items-center"
         >
           {filteredTools.map((el) => (
-            <div className="skillwrapper h-min text-white my-4" key={el.name}>
+            <div className="skillwrapper w-full text-white my-3" key={el.name}>
               <motion.div
-                className="w-full p-0 flex flex-wrap items-center justify-center max-w-6xl mx-auto"
+                className="w-full flex flex-wrap items-center justify-center gap-2.5"
                 variants={groupVariant}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.2 }}
+                viewport={{ once: true }}
               >
                 {el.tool.map((childEl) => (
                   <motion.div
                     variants={cardVariant}
-                    whileHover={{ scale: 1.12, y: -6 }}
-                    transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                    whileHover={{ scale: 1.05, y: -2 }}
                     key={childEl.name}
-                    className="card m-4 p-4 rounded-2xl flex items-center flex-col border border-gray-600 bg-gray-900/50 backdrop-blur-sm w-32"
+                    className="card px-3.5 py-2 rounded-full flex items-center gap-2 border border-gray-700/60 bg-gray-900/60 backdrop-blur-md hover:border-blue-500/50 hover:bg-gray-800/80 transition-all cursor-default shadow-sm"
                   >
                     <img
                       src={childEl.icon}
                       alt={childEl.name}
                       loading="lazy"
-                      className="h-16 w-16 object-contain"
+                      className="h-5 w-5 object-contain"
                     />
-                    <p className="mt-3 text-sm font-medium text-center">
+                    <span className="text-xs md:text-sm font-medium text-gray-200">
                       {childEl.name}
-                    </p>
+                    </span>
                   </motion.div>
                 ))}
               </motion.div>
@@ -189,27 +188,26 @@ const SkillsComp = () => {
           ))}
         </motion.div>
       </AnimatePresence>
-      <div className="flex flex-wrap justify-center gap-5 mb-10 p-3 px-7 md:bg-gray-900/80 backdrop-blur-md rounded-full md:border border-gray-800">
+
+      <div className="flex flex-wrap justify-center gap-2 mb-8 p-1.5 md:bg-gray-900/80 md:backdrop-blur-md rounded-full md:border border-gray-800/80 max-w-full">
         {categories.map((category) => {
           const isActive = activeCategory === category;
           return (
             <button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`relative cursor-pointer px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ${
-                isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
-              }`}
-              style={isActive ? { color: "#ffffff" } : undefined}
+              className={`relative cursor-pointer px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 outline-none border-none`}
             >
-              {/* Sliding Pill Indicator for Active State */}
               {isActive && (
                 <motion.div
                   layoutId="activeFilterPill"
-                  className="absolute inset-0 text-amber-50 z-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-lg shadow-blue-500/30"
-                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-md shadow-blue-500/20"
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
                 />
               )}
-              <span className="relative z-10 flex items-center gap-2">
+              <span className={`relative z-10 flex items-center  ${
+                isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
+              }`} >
                 {category}
                 {isActive && (
                   <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />

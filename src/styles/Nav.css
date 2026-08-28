@@ -148,12 +148,12 @@ button {
     position: fixed;
     z-index: 99;
     width: 250px;
-    top: 12%;
+    top: 90px;
     border-radius: 10px 10px 10px 20px;
     width: min-content;
     left: unset;
-    right: -60px;
-    height: min-content;
+    right: -75px;
+    height: calc(100vh - 90px);
     /* display: none; */
   }
   .menu {

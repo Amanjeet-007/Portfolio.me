@@ -44,7 +44,8 @@ export default function Options({ show, closeMenu }) {
         <motion.div
                 initial={(screen < 1000) ? { opacity: 0, x: 20,display:"none" } : { opacity: 1 }}
                 animate={(screen < 1000) && show ? { opacity: 1, x: -70,display:"flex"  } : screen > 1000 ? { opacity: 1 , display:"flex" } : { opacity: 0 , display:"none" }}
-                id="options">
+                id="options" className="flex flex-col md:flex-row">
+                
                 {options.map((el, i) => {
                     return (
                         <NavLink 
