@@ -4,9 +4,9 @@ export default function PyJs() {
   return (
     <>
     <Navbar/>
-    <div className="-mt-16 min-h-screen w-full bg-[#0f172a] text-slate-200 selection:bg-blue-500/30">
+    <div className="mt-16 min-h-screen w-full bg-[#0f172a]  text-slate-200 selection:bg-blue-500/30">
       {/* Background Decoration */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+      <div className="fixed inset-0 overflow-hidden pointer-events-none ">
         <div className="absolute -top-[5%] -left-[10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-[120px]" />
         <div className="absolute -bottom-[10%] -right-[10%] w-[40%] h-[40%] rounded-full bg-yellow-500/10 blur-[120px]" />
       </div>
@@ -41,7 +41,7 @@ export default function PyJs() {
               But once you spend real time in the industry, you realize a fundamental truth:
             </p>
             <blockquote className="border-l-4 border-blue-500 pl-6 py-2 my-10 italic text-white text-2xl font-medium">
-              "There is no single “best” programming language — only the right tool for the right problem."
+              &rdquo;There is no single “best” programming language — only the right tool for the right problem.&ldquo;
             </blockquote>
           </div>
 

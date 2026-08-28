@@ -1,13 +1,12 @@
 nav {
   height: min-content;
-  /* background-color: rgb(15, 32, 64); */
-  background-color: rgb(21, 16, 33);
+  background-color: rgba(36, 16, 82, 0.452);
   /* background-color: transparent; */
   width: 100vw;
   overflow: hidden;
   position: fixed;
   top: 0px;
-  padding: 10px 40px;
+  padding: 10px 40px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;

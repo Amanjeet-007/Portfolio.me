@@ -27,33 +27,47 @@
 }
 
 :root {
-  --b: #321e1e;
-  --primary-color: #171717;
-  /*black*/
-  --text-color: #ededed;
-  /*white*/
-  --secondary-color: #444444;
-  /*grey*/
-  --nav-color: #0f2040;
-  /* --terminal-text: rgb(0, 2fwe24, 52); */
-  --terminal-text: #06d001;
-  --unique-color: #da0037;
-  /*reddis*/
-}
+  --bg-base: #151021;      
+  --bg-surface: rgba(255, 255, 255, 0.04); 
+  --bg-surface-hover: rgba(255, 255, 255, 0.07);
+  --border-subtle: rgba(255, 255, 255, 0.1);
+  --border-strong: rgba(255, 255, 255, 0.18);
 
-/* *{
-  padding: 0;
-  margin: 0;
-} */
+  --b: #321e1e;
+  --primary-color: #171717;      /* black */
+  --secondary-color: #444444;    /* grey */
+  --nav-color: #0f2040;          /* navy, used for nav on small screens */
+
+  --text-color: #ededed;                     /* primary text, white */
+  --text-secondary: rgba(237, 237, 237, 0.65);
+  --text-muted: rgba(237, 237, 237, 0.4);
+
+  --unique-color: #da0037;       /* signature red */
+  --unique-color-light: #ff4d6d; /* lighter red, for gradients/hover */
+  --terminal-text: #06d001;      /* signature green */
+  --terminal-text-dim: #0a9a06;  /* darker green, for subtle use */
+
+  --accent-violet: #7c5cff;
+
+  --gradient-primary: linear-gradient(135deg, #da0037 0%, #ff4d6d 100%);
+  --gradient-success: linear-gradient(135deg, #06d001 0%, #3fdc3a 100%);
+  --gradient-surface: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  --gradient-glow-red: radial-gradient(circle, rgba(218,0,55,0.25) 0%, transparent 70%);
+  --gradient-glow-green: radial-gradient(circle, rgba(6,208,1,0.18) 0%, transparent 70%);
+
+  --success: #06d001;
+  --error: #da0037;
+  --warning: #ffb020;
+  --info: #3b82f6;
+}
 html,
 body {
   width: 100%;
-  background-color: rgb(21, 16, 33);
+  background: radial-gradient(rgb(33, 25, 52),rgba(0, 6, 12, 0.82),rgb(0, 0, 0));
 }
 
 main {
-  margin-top: 50px;
-  /*for testing */
+  padding-top: 50px;
   overflow: hidden;
   min-height: 100%;
   display: flex;
@@ -91,14 +105,11 @@ h1 {
   line-height: 7vmax;
   font-size: 10vmin;
 }
-
-/* about */
 .about {
   margin-top: -11vh;
   background: #da0037;
 }
 
-/* blogs */
 .card {
   background-color: #ffffff50;
   backdrop-filter: blur(50px);
@@ -156,6 +167,7 @@ footer {
 @media (max-width: 1125px) {
   nav {
     background-color: #0f114d;
+    backdrop-filter: blur(50px);
   }
 
   .name {
@@ -169,10 +181,6 @@ footer {
     display: flex;
     flex-direction: column;
   }
-
-  /* .para {
-    font-size: ;
-  } */
 
   .center h2 {
     margin-top: -40px;
@@ -199,7 +207,6 @@ footer {
   }
 
   .skills .card {
-    /* padding: 0; */
     margin: 5;
   }
 
@@ -209,20 +216,10 @@ footer {
   }
 }
 
-/* projects */
 ::-webkit-scrollbar {
   display: none;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-/* body {
-  /* -ms-overflow-style: none;  Internet Explorer and Edge */
-/* scrollbar-width: none;     Firefox */
-/* } */
-/* .All{
-  
-} */
-
-/* Robot.css */
-
-/* Scene setup - Background Transparent */
+.sectionname{
+  color: var(--error);
+}

@@ -1,19 +1,17 @@
-//* eslint-disable react/no-unknown-property */
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable no-undef */
 /* eslint-disable react-hooks/exhaustive-deps */
-//* eslint-disable no-unused-vars */
-/// eslint-disable-next-line react/no-unescaped-entities
+/* eslint-disable no-unused-vars */
 
-// import React, { Suspense, lazy } from "react";
-import { motion } from "motion/react"; // Animnation
 import { ProjectList } from "./Projects";
-import { useEffect } from "react";
-import { useAnimation } from "motion/react";
 import { NavLink } from "react-router";
 import "../App.css";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const SkillsComp = () => {
-  // Skills list
+  const [activeCategory, setActiveCategory] = useState("All");
+
   const tools = [
     {
       name: "Frontend",
@@ -28,9 +26,8 @@ const SkillsComp = () => {
         },
         {
           name: "Tailwind",
-          icon: "data:image/png;base64,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",
+          icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBcUWKpYcq2J1vHUZukxAZgDo1oxERdU6fp6Ns3sWixA&s=10",
         },
-        // { name: "JavaScript", icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png" },
         {
           name: "React",
           icon: "https://cdn-icons-png.flaticon.com/128/875/875209.png",
@@ -57,8 +54,12 @@ const SkillsComp = () => {
           icon: "https://www.svgrepo.com/show/354119/nodejs-icon.svg",
         },
         {
-          name: "Json",
-          icon: "https://cdn-icons-png.flaticon.com/512/136/136525.png",
+          name: "Firebase",
+          icon: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqT8djE3RRCjS12VhVffYljiQFEX4DUKcnF5ihpraG6Cz8EDbIi0bqzDG&s=10",
+        },
+        {
+          name: "Supabase",
+          icon: "https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/webp/supabase.webp",
         },
         {
           name: "Express",
@@ -72,6 +73,10 @@ const SkillsComp = () => {
         {
           name: "MongoDb",
           icon: "https://www.svgrepo.com/show/331488/mongodb.svg",
+        },
+        {
+          name: "PostgreSQL",
+          icon: "https://upload.wikimedia.org/wikipedia/commons/a/ad/Logo_PostgreSQL.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
         },
         {
           name: "Git",
@@ -114,293 +119,282 @@ const SkillsComp = () => {
     },
   ];
 
+  const categories = ["All", ...tools.map((item) => item.name)];
+
+  const filteredTools =
+    activeCategory === "All"
+      ? tools
+      : tools.filter((item) => item.name === activeCategory);
+
+  const groupVariant = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.06 } },
+  };
+
+  const cardVariant = {
+    hidden: { opacity: 0, rotateX: 60, y: 40 },
+    visible: {
+      opacity: 1,
+      rotateX: 0,
+      y: 0,
+      transition: { duration: 0.45, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div className="skills h-min w-min flex flex-col">
-      {tools.map((el, i) => {
-        return (
-          <div className="skillwrapper  h-min text-white" key={i}>
-            <motion.p
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-              viewport={{ once: true }}
-              className="text-3xl m-5 text-center"
-            >
-              {el.name}
-            </motion.p>
-            <div className=" w-[100vw] p-0 flex -ml-2 flex-wrap items-center justify-center ">
-              {el.tool.map((childEl, i) => {
-                return (
+    <div className="skills min-h-screen w-full flex flex-col items-center py-20">
+      <p className="font-bold text-2xl sectionname">Skills</p>
+      {/* Category Filter Buttons with Active Sliding Pill */}
+
+      {/* Skills Sections */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeCategory}
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -15 }}
+          transition={{ duration: 0.25 }}
+          className="w-full flex flex-col items-center"
+        >
+          {filteredTools.map((el) => (
+            <div className="skillwrapper h-min text-white my-4" key={el.name}>
+              <motion.div
+                className="w-full p-0 flex flex-wrap items-center justify-center max-w-6xl mx-auto"
+                variants={groupVariant}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.2 }}
+              >
+                {el.tool.map((childEl) => (
                   <motion.div
-                    whileHover={{ scale: 1.2, duration: 0.3 }}
-                    initial={{ opacity: 0, rotateX: 60, y: 50 }}
-                    whileInView={{ opacity: 1, rotateX: 0, y: 0 }} // while in view
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    viewport={{ once: false }}
-                    key={i}
-                    className="card m-4 rounded-2xl flex items-center flex-col border-1 border-gray-600 "
+                    variants={cardVariant}
+                    whileHover={{ scale: 1.12, y: -6 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 18 }}
+                    key={childEl.name}
+                    className="card m-4 p-4 rounded-2xl flex items-center flex-col border border-gray-600 bg-gray-900/50 backdrop-blur-sm w-32"
                   >
                     <img
                       src={childEl.icon}
                       alt={childEl.name}
-                      className="h-20"
+                      loading="lazy"
+                      className="h-16 w-16 object-contain"
                     />
-                    <p className="m-2">{childEl.name}</p>
+                    <p className="mt-3 text-sm font-medium text-center">
+                      {childEl.name}
+                    </p>
                   </motion.div>
-                );
-              })}
+                ))}
+              </motion.div>
             </div>
-          </div>
-        );
-      })}
+          ))}
+        </motion.div>
+      </AnimatePresence>
+      <div className="flex flex-wrap justify-center gap-5 mb-10 p-3 px-7 md:bg-gray-900/80 backdrop-blur-md rounded-full md:border border-gray-800">
+        {categories.map((category) => {
+          const isActive = activeCategory === category;
+          return (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`relative cursor-pointer px-5 py-2.5 rounded-full text-sm font-semibold transition-colors duration-300 ${
+                isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
+              }`}
+              style={isActive ? { color: "#ffffff" } : undefined}
+            >
+              {/* Sliding Pill Indicator for Active State */}
+              {isActive && (
+                <motion.div
+                  layoutId="activeFilterPill"
+                  className="absolute inset-0 text-amber-50 z-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-lg shadow-blue-500/30"
+                  transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                />
+              )}
+              <span className="relative z-10 flex items-center gap-2">
+                {category}
+                {isActive && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+                )}
+              </span>
+            </button>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
 const TopProjects = () => {
+  const topRankProjects = ProjectList.filter((el) => el.rank === 1);
+
   return (
     <div className="projects h-min flex w-full justify-around flex-wrap">
-      {ProjectList.map((el, i) => {
-        if (el.rank == 1) {
-          return (
-            <motion.div
-              className="p-4 card h-[400px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative"
-              whileHover={{ scale: 1.03 }}
-              key={i}
-              onClick={(e) => toggleTimeline(e)}
-            >
-              <a href={el.link} target="_black" aria-label={el.name}>
-                <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center z-50">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width={30}
-                    viewBox="0 0 24 24"
-                    fill="white"
-                  >
-                    <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
-                  </svg>
-                </div>
-              </a>
-              <motion.div
-                className="h-45 w-full rounded-2xl mt-4 img  "
-                whileHover={{ scale: 0.9 }}
-                style={{
-                  backgroundImage: `url(${el.img})`,
-                  backgroundOrigin: "center",
-                  backgroundPosition: "center",
-                }}
-              ></motion.div>
-              {/* <motion.img
-                  src={el.img}
-                  whileHover={{ scale: 0.9 }}
-                  className="h-45 w-full rounded-2xl mt-4"
-                  alt=""
-                /> */}
-              <motion.a
-                href={el.source}
-                whileHover={{ scale: 1.1 }}
-                className="absolute top-[44%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold"
-                target="_black"
+      {topRankProjects.map((el, i) => (
+        <motion.div
+          className="p-4 card h-[400px] w-[350px] text-white rounded-2xl m-5 overflow-hidden cursor-pointer relative"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.1 }}
+          whileHover={{ scale: 1.03 }}
+          key={el.name}
+        >
+          <a
+            href={el.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={el.name}
+          >
+            <div className="link absolute h-14 w-14 bg-blue-800 rounded-bl-2xl top-0 right-0 flex items-center justify-center z-50">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width={30}
+                viewBox="0 0 24 24"
+                fill="white"
               >
-                {"<>"} Source
-              </motion.a>
-              <p className=" text-2xl font-bold mt-10 mb-2 text-[#ffffff] ">
-                {el.name}
+                <path d="M16.0037 9.41421L7.39712 18.0208L5.98291 16.6066L14.5895 8H7.00373V6H18.0037V17H16.0037V9.41421Z"></path>
+              </svg>
+            </div>
+          </a>
+
+          <motion.div
+            className="h-45 w-full rounded-2xl mt-4 img"
+            whileHover={{ scale: 0.92 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              backgroundImage: `url(${el.img})`,
+              backgroundOrigin: "center",
+              backgroundPosition: "center",
+              backgroundSize: "cover",
+            }}
+          ></motion.div>
+
+          <motion.a
+            href={el.source}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
+            className="absolute top-[44%] left-[50%] translate-x-[-50%] w-40 flex items-center justify-center h-10 bg-[#DA0037] rounded-xl text-white font-bold"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {"<>"} Source
+          </motion.a>
+
+          <p className="text-2xl font-bold mt-10 mb-2 text-[#ffffff]">
+            {el.name}
+          </p>
+          <p className="text-[17px] font-semibold text-[#dcdcdc]">{el.disc}</p>
+
+          <div className="flex bottom-0 absolute">
+            {el.stack.map((stackItem, j) => (
+              <p
+                key={stackItem}
+                className="bg-[#DA0037] font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border border-white rounded-2xl"
+              >
+                {stackItem}
               </p>
-              <p className=" text-[17px] font-semibold text-[#dcdcdc]">
-                {el.disc}
-              </p>
-              <div className="flex bottom-0 absolute ">
-                {el.stack.map((stackItem, j) => {
-                  return (
-                    <p
-                      key={j}
-                      className=" bg-[#DA0037] font-bold m-4 mt-2 ml-0 pt-1 pb-1 pl-4 pr-4 border-1 rounded-2xl border-white"
-                    >
-                      {stackItem}
-                    </p>
-                  );
-                })}
-              </div>
-            </motion.div>
-          );
-        }
-      })}
+            ))}
+          </div>
+        </motion.div>
+      ))}
     </div>
   );
 };
 
+const heroContainer = {
+  hidden: {},
+  visible: {
+    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
+  },
+};
+
+const heroLine = {
+  hidden: { opacity: 0, y: 30 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.7, ease: "easeOut" },
+  },
+};
+
 export default function Home() {
-  // const notice = useRef(null)
-  const controls = useAnimation();
-
-  useEffect(() => {
-    setTimeout(() => {
-      // notice.current.style.opacity = 0
-    }, 9000);
-    async function runAfterAnother() {
-      await controls.start({
-        x: 0,
-        opacity: 1,
-        transition: { duration: 0.8, delay: 5 },
-      });
-      await controls.start({
-        x: 10,
-        opacity: 0,
-        transition: { duration: 0.8, delay: 15 },
-      });
-    }
-    runAfterAnother();
-  }, []);
-
   return (
     <>
-      <div className="  flex h-full w-full items-center justify-around flex-col ">
-        <div className="absolute w-full overflow-hidden left-180 bottom-0 -rotate-90">
-          {" "}
-        </div>
-        <div className="">
-          <div className="center text-white flex justify-around items-center flex-col relative w-full h-full ">
-            <div className="flex flex-col items-center justify-center">
-              <h2 className=" name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block">
+      <div className="flex h-full w-full items-center justify-around flex-col">
+        <div className="absolute w-full overflow-hidden left-180 bottom-0 -rotate-90"></div>
+
+        <div>
+          <div className="center text-white flex justify-around items-center flex-col relative w-full h-full">
+            <motion.div
+              className="flex flex-col items-center justify-center"
+              variants={heroContainer}
+              initial="hidden"
+              animate="visible"
+            >
+              <motion.h2
+                variants={heroLine}
+                className="name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block"
+              >
                 Hey,
-                <motion.span
-                  className="hand "
-                  initial={{ position: "absolute" }}
-                  whileHover={{ rotate: "15deg" }}
-                  transition={{ duration: 0.3 }}
-                >
-                  👋
-                </motion.span>
                 <br /> I&apos;m{" "}
                 <span className="text-[#06D001]">
                   A<span className="text-[#DA0037]">man</span>jeet
                 </span>
-              </h2>
-              <h3 className="slogan text-[1.7vmax] relative flex flex-col text-center items-center justify-center w-[500px] pt-10 mb-5">
-                <pre className="font-extrabold">
-                  {" "}
-                  Full-Stack Devloper | React Expert | N8N Specialist{" "}
-                </pre>
-              </h3>
-            </div>
+              </motion.h2>
 
-            <p className="para w-[80%] text-[1.5rem] h-min p-8 m-2 text-center">
+              <motion.h3
+                variants={heroLine}
+                className=" text-[1.7vmax] relative flex flex-col text-center items-center justify-center w-[500px] pt-10 mb-5 mt-10 md:mt-2"
+              >
+                <p className="font-bold">
+                  Full-Stack Developer | React Expert | N8N Specialist
+                </p>
+              </motion.h3>
+            </motion.div>
+
+            <motion.p
+              variants={heroLine}
+              initial="hidden"
+              animate="visible"
+              transition={{ delay: 0.6 }}
+              className="para w-[80%] text-[1.5rem] h-min p-8 m-2 text-center"
+            >
               🚀 A passionate full-stack developer with expertise in creating
               modern, responsive Full-Stack web application.
-            </p>
-            <NavLink to={"/projects"}>
-              <button className="mt-10 cursor-pointer z-0">View My Work</button>
-            </NavLink>
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.9, duration: 0.5 }}
+            >
+              <NavLink to={"/projects"}>
+                <motion.button
+                  whileHover={{ scale: 1.06 }}
+                  whileTap={{ scale: 0.95 }}
+                  transition={{ type: "spring", stiffness: 400, damping: 15 }}
+                  className="mt-10 cursor-pointer z-0"
+                >
+                  View My Work
+                </motion.button>
+              </NavLink>
+            </motion.div>
           </div>
         </div>
-      </div>
-
-      <div className="homesocial h-[18vh]  border-t-2 border-b-2 border-gray-500 flex w-full mt-[19px] items-center justify-around z-1  relative">
-        {[
-          {
-            icon: (
-              <svg
-                className="cursor-pointer"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                width="30"
-                height="30"
-                fill="black"
-              >
-                <path d="M12.001 2C6.47598 2 2.00098 6.475 2.00098 12C2.00098 16.425 4.86348 20.1625 8.83848 21.4875C9.33848 21.575 9.52598 21.275 9.52598 21.0125C9.52598 20.775 9.51348 19.9875 9.51348 19.15C7.00098 19.6125 6.35098 18.5375 6.15098 17.975C6.03848 17.6875 5.55098 16.8 5.12598 16.5625C4.77598 16.375 4.27598 15.9125 5.11348 15.9C5.90098 15.8875 6.46348 16.625 6.65098 16.925C7.55098 18.4375 8.98848 18.0125 9.56348 17.75C9.65098 17.1 9.91348 16.6625 10.201 16.4125C7.97598 16.1625 5.65098 15.3 5.65098 11.475C5.65098 10.3875 6.03848 9.4875 6.67598 8.7875C6.57598 8.5375 6.22598 7.5125 6.77598 6.1375C6.77598 6.1375 7.61348 5.875 9.52598 7.1625C10.326 6.9375 11.176 6.825 12.026 6.825C12.876 6.825 13.726 6.9375 14.526 7.1625C16.4385 5.8625 17.276 6.1375 17.276 6.1375C17.826 7.5125 17.476 8.5375 17.376 8.7875C18.0135 9.4875 18.401 10.375 18.401 11.475C18.401 15.3125 16.0635 16.1625 13.8385 16.4125C14.201 16.725 14.5135 17.325 14.5135 18.2625C14.5135 19.6 14.501 20.675 14.501 21.0125C14.501 21.275 14.6885 21.5875 15.1885 21.4875C19.259 20.1133 21.9999 16.2963 22.001 12C22.001 6.475 17.526 2 12.001 2Z"></path>
-              </svg>
-            ),
-            link: "https://github.com/Amanjeet-007",
-          },
-          {
-            link: "https://www.linkedin.com/in/amanjeet-kumar-374b0928a/",
-            icon: (
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                viewBox="0 0 24 24"
-              >
-                <rect
-                  x="0"
-                  y="0"
-                  width="24"
-                  height="24"
-                  rx="3"
-                  fill="#0A66C2"
-                />
-
-                <g fill="white">
-                  <rect x="3.8" y="9.2" width="3.9" height="11" />
-                  <circle cx="5.75" cy="5" r="2.3" />
-
-                  <path d="M10.8 9.2h3.7v1.7c.5-1 1.9-1.9 3.8-1.9 4 0 4.7 2.6 4.7 6v5.2h-3.9v-5c0-1.2-.1-2.7-1.7-2.7-1.7 0-1.9 1.3-1.9 2.6v5.1h-3.9V9.2z" />
-                </g>
-              </svg>
-            ),
-          },
-          {
-            link: "https://www.instagram.com/amanjeet_singh_007_/",
-            icon: (
-              <svg
-                viewBox="0 0 24 24"
-                width="30"
-                height="30"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <defs>
-                  <linearGradient
-                    id="ig-grad"
-                    x1="100%"
-                    y1="0%"
-                    x2="0%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="#515BD4" />{" "}
-                    <stop offset="25%" stopColor="#8134AF" />{" "}
-                    <stop offset="50%" stopColor="#DD2A7B" />{" "}
-                    <stop offset="75%" stopColor="#F58529" />{" "}
-                    <stop offset="100%" stopColor="#FEDA77" />{" "}
-                  </linearGradient>
-                </defs>
-
-                <rect
-                  x="0"
-                  y="0"
-                  width="24"
-                  height="24"
-                  rx="5"
-                  fill="url(#ig-grad)"
-                />
-
-                <g fill="none" stroke="white" strokeWidth="1.5">
-                  <rect x="5" y="5" width="14" height="14" rx="4" />
-                  <circle cx="12" cy="12" r="3" />
-                </g>
-                <circle cx="16.5" cy="7.5" r="0.75" fill="white" />
-              </svg>
-            ),
-          },
-        ].map((el, i) => {
-          return (
-            <div
-              className="py-2 px-5 bg-[#0A66C2] rounded-full flex items-center justify-center cursor-pointer border-2 h-12 border-black"
-              key={i}
-            >
-              <a href={el.link} className="cursor-pointer ">
-                {el.icon}
-              </a>
-            </div>
-          );
-        })}
       </div>
 
       {/* Skills */}
       <SkillsComp />
       <br />
-      {/* projects */}
-      <h1>Top Projects</h1>
+
+      {/* Projects */}
+      <motion.h1
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+      >
+        Top Projects
+      </motion.h1>
       <TopProjects />
     </>
   );
