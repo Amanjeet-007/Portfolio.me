@@ -345,8 +345,8 @@ export default function Home() {
                 variants={heroLine}
                 className=" text-[1.7vmax] relative flex flex-col text-center items-center justify-center w-[500px] pt-10 mb-5 mt-10 md:mt-2"
               >
-                <p className="font-bold">
-                  Full-Stack Developer | React Expert | N8N Specialist
+                <p style={{background:"transparent"}} className="font-bold flex flex-wrap w-[90vw] md:block">
+                  Full-Stack Developer | DevOps | Automation Specialist
                 </p>
               </motion.h3>
             </motion.div>
