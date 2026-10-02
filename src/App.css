@@ -60,6 +60,8 @@
   --warning: #ffb020;
   --info: #3b82f6;
 }
+
+
 html,
 body {
   width: 100%;
@@ -74,6 +76,21 @@ main {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+}
+
+.wrap{
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 0%;
+  translate: -50% -7%;
+  height: 100vh;
+}
+
+.bat {
+  width: 521px; height: 161px;
+  background: linear-gradient(var(--bg-base), #0e0e0e);
+  clip-path: path("M0 0 L178 0 A40 40 0 0 0 241 33 L248 7 L252 28 Q260.5 22 269 28 L273 7 L280 33 A40 40 0 0 0 343 0 L521 0 Q430 4 429 99 C400 80 340 90 300 130 Q285 142 261 161 Q236 142 221 130 C181 90 121 80 92 99 Q91 4 0 0 Z");
 }
 
 li {

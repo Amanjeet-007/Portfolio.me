@@ -63,7 +63,24 @@ const SkillsComp = () => {
         },
         {
           name: "Express",
-          icon: "https://user-images.githubusercontent.com/11978772/40430986-a0eb7b92-5e63-11e8-80eb-43fe07f664a6.png",
+          icon: "https://files.svgcdn.io/skill-icons/expressjs-dark.svg",
+        },
+      ],
+    },
+    {
+      name: "Languages",
+      tool: [
+        {
+          name: "JavaScript",
+          icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
+        },
+        {
+          name: "Python",
+          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
+        },
+        {
+          name: "C++",
+          icon: "https://raw.githubusercontent.com/isocpp/logos/master/cpp_logo.png",
         },
       ],
     },
@@ -100,23 +117,6 @@ const SkillsComp = () => {
         },
       ],
     },
-    {
-      name: "Programming Languages",
-      tool: [
-        {
-          name: "JavaScript",
-          icon: "https://cdn-icons-png.flaticon.com/128/5968/5968292.png",
-        },
-        {
-          name: "Python",
-          icon: "https://cdn-icons-png.flaticon.com/512/5968/5968350.png",
-        },
-        {
-          name: "C++",
-          icon: "https://download.logo.wine/logo/C%2B%2B/C%2B%2B-Logo.wine.png",
-        },
-      ],
-    },
   ];
 
   const categories = ["All", ...tools.map((item) => item.name)];
@@ -132,12 +132,12 @@ const SkillsComp = () => {
   };
 
   const cardVariant = {
-    hidden: { opacity: 0, scale: 0.8, y: 15 },
+    hidden: { opacity: 0, scale: 0.9, y: 15 },
     visible: {
       opacity: 1,
       scale: 1,
       y: 0,
-      transition: { duration: 0.25, ease: "easeOut" },
+      transition: { duration: 0.15, ease: "easeIn" },
     },
   };
 
@@ -145,7 +145,36 @@ const SkillsComp = () => {
     <div className="skills min-h-screen w-full flex flex-col items-center py-12 px-4">
       <p className="font-bold text-2xl sectionname text-white mb-6">Skills</p>
 
-
+      <div className="flex flex-wrap justify-center gap-2 mb-8 p-2.5 md:bg-gray-900/80 md:backdrop-blur-md rounded-full md:border border-gray-800/80 max-w-full">
+        {categories.map((category) => {
+          const isActive = activeCategory === category;
+          return (
+            <button
+              key={category}
+              onClick={() => setActiveCategory(category)}
+              className={`relative cursor-pointer px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 outline-none border-none`}
+            >
+              {isActive && (
+                <motion.div
+                  layoutId="activeFilterPill"
+                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-md shadow-blue-500/20 "
+                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                />
+              )}
+              <span
+                className={`relative z-10 flex items-center h-4  ${
+                  isActive ? "text-white" : "text-gray-800 hover:text-gray-700"
+                }`}
+              >
+                {category}
+                {isActive && (
+                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
+                )}
+              </span>
+            </button>
+          );
+        })}
+      </div>
 
       <AnimatePresence mode="wait">
         <motion.div
@@ -154,7 +183,7 @@ const SkillsComp = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
           transition={{ duration: 0.2 }}
-          className="w-full max-w-4xl flex flex-col items-center"
+          className="w-full max-w-4xl flex flex-col items-center "
         >
           {filteredTools.map((el) => (
             <div className="skillwrapper w-full text-white my-3" key={el.name}>
@@ -188,35 +217,6 @@ const SkillsComp = () => {
           ))}
         </motion.div>
       </AnimatePresence>
-
-      <div className="flex flex-wrap justify-center gap-2 mb-8 p-1.5 md:bg-gray-900/80 md:backdrop-blur-md rounded-full md:border border-gray-800/80 max-w-full">
-        {categories.map((category) => {
-          const isActive = activeCategory === category;
-          return (
-            <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`relative cursor-pointer px-3.5 py-1.5 rounded-full text-xs md:text-sm font-medium transition-colors duration-200 outline-none border-none`}
-            >
-              {isActive && (
-                <motion.div
-                  layoutId="activeFilterPill"
-                  className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full shadow-md shadow-blue-500/20"
-                  transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                />
-              )}
-              <span className={`relative z-10 flex items-center  ${
-                isActive ? "text-white" : "text-gray-400 hover:text-gray-200"
-              }`} >
-                {category}
-                {isActive && (
-                  <span className="h-1.5 w-1.5 rounded-full bg-white animate-pulse" />
-                )}
-              </span>
-            </button>
-          );
-        })}
-      </div>
     </div>
   );
 };
@@ -320,7 +320,7 @@ export default function Home() {
       <div className="flex h-full w-full items-center justify-around flex-col">
         <div className="absolute w-full overflow-hidden left-180 bottom-0 -rotate-90"></div>
 
-        <div>
+        <div className="">
           <div className="center text-white flex justify-around items-center flex-col relative w-full h-full">
             <motion.div
               className="flex flex-col items-center justify-center"
@@ -330,7 +330,7 @@ export default function Home() {
             >
               <motion.h2
                 variants={heroLine}
-                className="name text-[10vmin] text-center mt-2 leading-[10vmin] h-[20vmin] inline-block"
+                className="name text-[10vmin] z-50 text-center mt-2 leading-[10vmin] h-[20vmin] inline-block"
               >
                 Hey,
                 <br /> I&apos;m{" "}
@@ -338,12 +338,18 @@ export default function Home() {
                   A<span className="text-[#DA0037]">man</span>jeet
                 </span>
               </motion.h2>
+              <div className="wrap">
+                <div className="bat"></div>
+              </div>
 
               <motion.h3
                 variants={heroLine}
                 className=" text-[1.7vmax] relative flex flex-col text-center items-center justify-center w-[500px] pt-10 mb-5 mt-10 md:mt-2"
               >
-                <p style={{background:"transparent"}} className="font-bold flex flex-wrap w-[90vw] md:block">
+                <p
+                  style={{ background: "transparent" }}
+                  className="font-bold flex flex-wrap w-[90vw] md:block"
+                >
                   Full-Stack Developer | DevOps | Automation Specialist
                 </p>
               </motion.h3>
